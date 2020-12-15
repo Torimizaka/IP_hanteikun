@@ -1,7 +1,7 @@
 
 window.onload = function onLoad() {
     target = document.getElementById("output");
-    target.innerHTML = "Ver1.4cfix 公式垢のプロフに書いてあるバージョンと異なる際は更新してください";
+    target.innerHTML = "Ver1.5fix 公式垢のプロフに書いてあるバージョンと異なる際は更新してください";
     kuriti = [0, 6, 10, 15, 19, 23, 26];
     fanti = [0, 1, 2, 3, 4, 5, 6];
     tt1 = "000";
@@ -15,7 +15,7 @@ window.onload = function onLoad() {
     tt9 = 1;
     tt10 = 1;
     tt11 = 1;
-    tt12 = "";
+    tt12 = "000";
     ketext = document.hanteisuru['kekka'].value;
     daidai = 1;
     daidai2 = 6;
@@ -25,17 +25,21 @@ window.onload = function onLoad() {
     co4 = [];
     co5 = [];
 
-    gtA = [001,018, 031, 063, 125, 201, 317,365,464, 614,710, 722,752, 901, 915,118,521,042,623,330,019,725,849,002,021,106,361,818];
-    gtB = ["023",091,142,192,214,371,528,620,810,821,829,903];
-    gtTA = [432, 566, 703,635,020,623,330,007,071,540];
+    gtA = [001,"018", "031", "063", 125, 201, 317,365,464, 614,710, 722,752, 901, 915,118,521,"042",623,330,"019",725,849,"002","021",106,361,818];
+    gtB = ["023", "091", 142, 192, 214, 371, 528, 620, 810, 821, 829, 903, "013", "072", 403, 707, 971, "003", 110, 194, "005", "012", "022", 209, 413, 920, 982];
+    gtC = ["061","070",199,235,243,354,451,898,923,999];
+    gtTA = [432, 566, 703, 635, 020, 623, 330, 007, 071, 540,422];
+    gtTB = [422,049,524,"048"];
 
 
     genra1 = [];
     genra2 = [];
     genra3 = [];
-    genra4 = [001,002,018,019,021,"023", 031,042, 063,091,106, 118,125,142,192, 201,214, 317,330,361,365,371,464,521,528, 614,620,623,710, 722,725,752,810,818,821,829,849, 901,903, 915];
+    genra4 = [001, "002","003","005","012", "013", "018","019", "021","022", "023", "031", "042","061", "063","070", "072", "091", 106,110, 118, 125, 142, 192,194,199, 201,209, 214,235,243, 317, 330,354, 361, 365, 371, 403,413,451, 464, 521, 528, 614, 620, 623,707, 710, 722, 725, 752, 810, 818, 821, 829, 849,898, 901, 903, 915,920,923,971,982,999];
+    genra5 = [007,"020","048","049", "071", 330, 422,432,524,  540, 566,  623, 635, 703];
+    genra6 = [];
 
-    con = [0, 2, 0, 0, 2, 1, 1, 0, 1, 2, 2, 2, 3, 0, 0,0,3,1,2,0,0,2,0,2,3,3,0,3,0,3,0,0,2,2,0,1,2,3,1,3];
+    con = [0, 2, 0, 0, 2, 1, 1, 0, 1, 2, 2, 2, 3, 0, 0,0,3,1,2,0,0,2,0,2,3,3,0,3,0,3,0,0,2,2,0,1,2,3,1,3,0,2,2,3,1,3,1,1,3,4,4,2,1,0,0,0,0,3,2,0,2,3,0,0,4];
 }
 function textset(){
     ketext = "@IdeaPolisCo\n#IPCo_作業\n幻想体ID:" + tt1 + "\n作業:" + tt2 + "\n出目:" + tt3 + "\n名前:" + tt4 + "\n性別:" + tt5 + "\nランク:" + tt6 + "\n勇気:" + tt7 + "\n慎重:" + tt8 + "\n自制:" + tt9 + "\n正義:" + tt10 + "\n加護:"+tt12+"\n現在カウント:"+tt11;
@@ -47,7 +51,7 @@ function counte() {
     if (tt1 == 001 || tt1 == "001") {
         tt11 = con[0];
     }
-    if (tt1 == 018 || tt1 == "018") {
+    if (tt1 == 018 || tt1 == "018" ||tt1==18) {
         tt11 = con[1];
     }
     if (tt1 == 031 || tt1 == "031") {
@@ -104,7 +108,7 @@ function counte() {
     if (tt1 == 623) {
         tt11 = con[19];
     }
-    if (tt1 == 019) {
+    if (tt1 == 019 || tt1 == "019") {
         tt11 = con[20];
     }
     if (tt1 == 725) {
@@ -113,10 +117,10 @@ function counte() {
     if (tt1 == 849) {
         tt11 = con[22];
     }
-    if (tt1 == 002) {
+    if (tt1 == 002 || tt1 == "002") {
         tt11 = con[23];
     }
-    if (tt1 == 021) {
+    if (tt1 == 021 || tt1 == "021") {
         tt11 = con[24];
     }
     if (tt1 == 106) {
@@ -131,7 +135,7 @@ function counte() {
     if (tt1 == 023 || tt1 == "023") {
         tt11 = con[28];
     }
-    if (tt1 == 091) {
+    if (tt1 == 091 || tt1 == "091") {
         tt11 = con[29];
     }
     if (tt1 == 142) {
@@ -164,7 +168,85 @@ function counte() {
     if (tt1 == 903) {
         tt11 = con[39];
     }
-    if (tt1 == 432 || tt1 == 566 || tt1 == 703 ||tt1==635 ||tt1==020 || tt1==310 || tt1==099 ||tt1==007 ||tt1==071 ||tt1==540) {
+    if (tt1 == 013 || tt1 == "013") {
+        tt11 = con[40];
+    }
+    if (tt1 == 072 || tt1 == "072") {
+        tt11 = con[41];
+    }
+    if (tt1 == 403) {
+        tt11 = con[42];
+    }
+    if (tt1 == 707) {
+        tt11 = con[43];
+    }
+    if (tt1 == 971) {
+        tt11 = con[44];
+    }
+    if (tt1 == 003 || tt1=="003") {
+        tt11 = con[45];
+    }
+    if (tt1 == 110) {
+        tt11 = con[46];
+    }
+    if (tt1 == 194) {
+        tt11 = con[47];
+    }
+    if (tt1 == 005 || tt1 == "005") {
+        tt11 = con[48];
+    }
+    if (tt1 == 012 || tt1 == "012") {
+        tt11 = con[49];
+    }
+    if (tt1 == 022 || tt1 == "022" ) {
+        tt11 = con[50];
+    }
+    if (tt1 == 209) {
+        tt11 = con[51];
+    }
+    if (tt1 == 413) {
+        tt11 = con[52];
+    }
+    if (tt1 == 920) {
+        tt11 = con[53];
+    }
+    if (tt1 == 982 ) {
+        tt11 = con[54];
+    }
+    if (tt1 == 018 || tt1 == "018" || tt1 == 18) {
+        tt11 = con[1];
+    }
+    if (tt1 == 061 || tt1 == "061" || tt1 == 61) {
+        tt11 = con[55];
+    }
+    if (tt1 == 070 || tt1 == "070" || tt1 == 70) {
+        tt11 = con[56];
+    }
+    if (tt1 == 199) {
+        tt11 = con[57];
+    }
+    if (tt1 == 235) {
+        tt11 = con[58];
+    }
+    if (tt1 == 243) {
+        tt11 = con[59];
+    }
+    if (tt1 == 354) {
+        tt11 = con[60];
+    }
+    if (tt1 == 451) {
+        tt11 = con[61];
+    }
+    if (tt1 == 898) {
+        tt11 = con[62];
+    }
+    if (tt1 == 923) {
+        tt11 = con[63];
+    }
+    if (tt1 == 999) {
+        tt11 = con[64];
+    }
+    if (tt1 == 432 || tt1 == 566 || tt1 == 703 ||tt1==635 ||tt1==020 || tt1==310 || tt1==099 ||tt1==007 ||tt1==071 ||tt1==540 || tt1==422 || tt1==049 || tt1==524 || tt1==048) {
         tt11 = 0;
     }
 }
@@ -277,6 +359,7 @@ function gatya() {
     genra1 = [];
     genra2 = [];
     genra3 = [];
+    genra6 = [];
 
     let checkbox = document.querySelectorAll('input[type="checkbox"]');
     if (checkbox[0].checked) {
@@ -286,6 +369,10 @@ function gatya() {
     if (checkbox[1].checked) {
         genra1 = genra1.concat(gtB);
         genra3 = genra3.concat(gtB);
+    }
+    if (checkbox[2].checked) {
+        genra1 = genra1.concat(gtC);
+        genra3 = genra3.concat(gtC);
     }
     genra3 = genra3.concat(gtTA);
     genra2 = genra2.concat(gtTA);
@@ -387,7 +474,13 @@ function rizarutotyu() {
 
     sagyopo = sagyo1 * 10;
 
-    tinp = (tin_Z + tin_T + tin_H + tin_W + tin_A) * 30;
+    ZApo = 30*tin_Z;
+    TEpo = 60 * tin_T;
+    HEpo = 90 * tin_H;
+    WApo = 120 * tin_W;
+    ALpo = 150 * tin_A;
+
+    tinp = ZApo+TEpo+HEpo+WApo+ALpo;
 
     gen1 = 320 * gen_Z;
     gen2 = 440 * gen_T;
@@ -399,8 +492,8 @@ function rizarutotyu() {
     yokupo = "";
     yokupp = 0;
     if (yokusei == 1) {
-        yokupo = "抑制ポイント：1000\n";
-        yokupp = 1000;
+        yokupo = "抑制ポイント：2000\n";
+        yokupp = 2000;
     }
 
     summ = sagyopo + tinp + genpo + yokupp;
@@ -593,6 +686,7 @@ function keisantyu2() {
 }
 
 function hanteityu() {
+    irai=0;
     rankk = 1;
     gene = "";
     name = "noname";
@@ -665,28 +759,37 @@ function hanteityu() {
 
 
     if (kekka[3] == "本能") {
+        irai = 0;
         sagyona = 0;
         keina = "勇気：";
     } else {
         if (kekka[3] == "洞察") {
+            irai = 0;
             sagyona = 1;
             keina = "慎重：";
         } else {
             if (kekka[3] == "愛着") {
+                irai = 0;
                 sagyona = 2;
                 keina = "自制：";
             } else {
                 if (kekka[3] == "抑圧") {
+                    irai = 0;
                     sagyona = 3;
                     keina = "正義：";
                 } else {
                     if (kekka[3] == "返却") {
+                        irai = 0;
                         sagyona = 5;
                     } else { sagyona = 4; }}
             }
 }
     }
-
+    if (kekka[3] == "特殊") {
+        irai = 1;
+        sagyona = 1;
+        keina = "特殊：";
+    } 
 
     kurike = 0;
     fanke = 0;
@@ -699,7 +802,7 @@ function hanteityu() {
             }
             if (kekka[4] == fanti[i]) {
                 kuritxt = "ファンブル、観測上昇なし\n";
-                fanke = 0;
+                fanke = 1;
             }
         }
     }
@@ -753,7 +856,10 @@ function hanteityu() {
     kensaku10 = kekka[12].indexOf('019');
     kensaku11 = kekka[12].indexOf('106');
     kensaku12 = kekka[12].indexOf('829');
- 
+
+    kensaku524 = kekka[12].indexOf('524');
+    kensaku5242 = kekka[12].indexOf('5241');
+    kensaku5243 = kekka[12].indexOf('5242');
 
         if (kensaku10 != -1) {
             if (kekka[2] !=019 ) {
@@ -765,6 +871,56 @@ function hanteityu() {
         text += "職員"+name+"は体が急激に腐敗した\n";
         sibou = 0;
     }
+
+    if (kekka[2] != 524) {
+    if (kensaku5243 != -1) {
+        sibou = 0;
+        text += "▼職員" + name + "はストーブに引き込まれ、空っぽのストーブと共に消失した\n次の作業時には空っぽのストーブのみ戻ってくる\n";
+    } else {
+        if (kensaku5242 != -1) {
+            text += "職員" + name + "の加護欄に「5242」を追加\n";
+            tt12 += ",5242";
+            for (i = 0; i < 5; i++) {
+                kensaku3 = namera[i].indexOf(name);
+                if (kensaku3 != -1) {
+                    nana2 = i + 1;
+                    nana = "se" + nana2 + "8";
+                    document.hanteisuru[nana].value += ",5242";
+                }
+            }
+        } else {
+            if (kensaku524 != -1) {
+                text += "職員" + name + "の加護欄に「5241」を追加\n";
+                tt12 += ",5241";
+                for (i = 0; i < 5; i++) {
+                    kensaku3 = namera[i].indexOf(name);
+                    if (kensaku3 != -1) {
+                        nana2 = i + 1;
+                        nana = "se" + nana2 + "8";
+                        document.hanteisuru[nana].value += ",5241";
+                    }
+                }
+            }
+        }
+    }
+    }
+
+
+    kensaku0611 = kekka[12].indexOf('0611');
+    if (kensaku0611 != -1) {
+        if (kekka[2] != 061 && seihi == 1) {
+            sibou = 0;
+            text += "職員" + name + "は水槽に引きずりこまれた\nこの職員のステータスがこの日の間初期値になる\n";
+
+        }
+    }
+
+    kensaku451 = kekka[12].indexOf('451');
+    if (kensaku451 != -1 && sagyona == 3) {
+        sibou = 0;
+        text += "職員" + name + "は作業前に即座に死亡したためこの作業で発動した能力などは無効\n";
+    }
+
 
     if (kensaku12 != -1 && pani == 1) {
         
@@ -786,7 +942,7 @@ function hanteityu() {
             if (kensaku3 != -1) {
                 nana2 = i + 1;
                 nana = "se" + nana2 + "8";
-                document.hanteisuru[nana].value = "";
+                document.hanteisuru[nana].value = "000";
             }
         }
 
@@ -807,6 +963,9 @@ function hanteityu() {
             dame = jougen - kekka[4];
             if (dame >= 1) {
                 dametxt = "\n" + dame + "ダメージ";
+                if (kekka[2] == "003") {
+                    dametxt = "1ダメージ";
+                }
             }
         } else {
             dame = (rankk - kekka[4]) * 5;
@@ -816,7 +975,9 @@ dametxt = "\n" + dame + "%ダメージ";
             
         }
 
-
+        if (kekka[2] == 110) {
+            dametxt = "";
+        }
 
         
     }
@@ -832,9 +993,22 @@ dametxt = "\n" + dame + "%ダメージ";
         peti = jou;
     }
 
+    kensaku022 = kekka[12].indexOf('022');
+    if (kensaku022 != -1) {
+        if (dame >= 1) {
+            text += "灯の保護のカウンターが減少した\n";
+            con[50] -= 1;
+        }
+    }
+
+
+
     tt11 = kekka[13];
     textset();
 
+    if (peti <= 0) {
+        peti = 0;
+    }
     twetext = gene + "\n" + name + "　" + kekka[3] + "\n\n" + seitxt + kuritxt+text + sitxt+dametxt+"\n獲得PE-BOX："+peti+"\n獲得経験値　"+keitxt;
     document.hanteisuru['del'].value = twetext;
 }
@@ -878,6 +1052,18 @@ function rank() {
 
     }
 
+function gkagohu() {
+    text += "職員" + name + "の加護欄に「"+kagohuti+"」を追加\n";
+    tt12 += kagohuti;
+    for (i = 0; i < 5; i++) {
+        kensaku3 = namera[i].indexOf(name);
+        if (kensaku3 != -1) {
+            nana2 = i + 1;
+            nana = "se" + nana2 + "8";
+            document.hanteisuru[nana].value += kagohuti;
+        }
+    }
+}
 
 function g001() {
     gene = "001 あまたの善とひとつ分の愛";
@@ -899,7 +1085,7 @@ function g001() {
         text = "SP"+daideme4+"回復\n";
     }
 
-    if (sase[sagyona][sagyose3] ==2) {
+    if (peti<=0) {
         text = "職員の自制-5\n";
     }
     con[0] = kekka[13];
@@ -933,6 +1119,64 @@ function g002() {
     }
 
     con[23] = kekka[13];
+}
+
+function g003() {
+    gene = "003 ぽにーてーるのおまんじゅう";
+    sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]];
+    rankk = 1;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        kekka[13] -= 1;
+    }
+    if (kekka[13] <= 0) {
+        text += "部門内のランダムな幻想体のカウンターが下がった\n003のカウンター0→3\n";
+        kekka[13] = 3;
+    }
+
+    con[45] = kekka[13];
+}
+
+function g005() {
+    gene = "005 太陽の後悔";
+    sase = [[1, 1, 0.5, 0.5, 0], [0.5, 0.5, 1, 1, 1], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2]];
+    rankk = 5;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (sagyona == 2) {
+        text += "保護作業に置き換わっているため作業成否、経験値、PE-BOX、ダメージ無効\n作業職員1名を30分保護\n全耐性強いになる（元から強い以上の耐性はそのまま）\n保護職員は鎮圧時2回攻撃可能\n保護職員が死亡・パニックになると太陽の後悔は脱走する\n";
+    } else {
+        if (seihi == 0) {
+            text += "カウンターが減少した\n";
+            kekka[13] -= 1;
+
+            if (kekka[13] == 0) {
+                text += "太陽の後悔は脱走した\nカウンター0→3\n";
+                kekka[13] = 3;
+            }
+        }
+    }
+
+
+    con[48] = kekka[13];
 }
 
 function g007() {
@@ -996,6 +1240,114 @@ function g007() {
 
     }
 
+}
+
+function g012() {
+    gene = "012 私のティザー";
+    sase = [[1.5, 1.5, 2, 2, 2], [0.5, 0.5, 1, 1, 1], [0, 0, 0, 0, 0], [2, 2, 1.5, 1.5, 1.5]];
+    rankk = 5;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+    if (kekka[11] <= 2 && seihi == 0) {
+        daideme1 = 3;
+        daideme2 = 6;
+        daisu();
+
+        text += "▼職員" + name + "のHPSPが" + daideme4 + "回復した\n";
+    }
+    if (seihi == 1) {
+        text += "カウンターが減少した\n";
+        kekka[13] -= 1;
+
+        if (kekka[13] == 0) {
+            text += "私のティザーは脱走した\nカウンター0→4\n";
+            kekka[13] = 4;
+        }
+    }
+    if (kekka[7] >= 3) {
+        ransu = Math.floor(Math.random() * 3 + 1);
+        if (ransu == 1) {
+            sibou = 0;
+            text += "カウンターが全回復した\n";
+            kekka[13] = 4;
+        }
+    }
+    if (seihi == 0) {
+        ransu = Math.floor(Math.random() * 2 + 1);
+        if (ransu == 1) {
+            text += "『とっても弱い子。そこが好きよ？』\n";
+        }
+        if (ransu == 2) {
+            text += "『ふふふ、私の好みはどれでしょう？』\n";
+        }
+    }
+    if (seihi == 1) {
+        text += "『すごいわ！好み通りよ！』\n";
+    }
+    if (sibou == 0) {
+        ransu = Math.floor(Math.random() * 2 + 1);
+        if (ransu == 1) {
+            text += "『貴方のせいよ。貴方が構ってくれないから。』\n";
+        }
+        if (ransu == 2) {
+            text += "『私の方が愛されるべきよ。』\n";
+        }
+    }
+
+    con[49] = kekka[13];
+}
+
+function g013() {
+    gene = "013 蒼穹に綻ぶ日輪草";
+    sase = [[0.5, 0.5, 0, 0, 0], [1.5, 1.5, 1.5 ,1.5, 1.5], [0.5, 0.5, 0.5, 0, 0], [1.5, 1.5, 1.5, 2, 2]];
+    rankk = 4;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    kensaku = kekka[12].indexOf('013');
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (seihi == 1) {
+        text += "職員" + name + "のHPが全回復した\n自制+10、加護欄に「013」追加、死亡時リセット\n";
+        tt12 += ",013";
+        for (i = 0; i < 5; i++) {
+            kensaku3 = namera[i].indexOf(name);
+            if (kensaku3 != -1) {
+                nana2 = i + 1;
+                nana = "se" + nana2 + "8";
+                document.hanteisuru[nana].value += ",013";
+            }
+        }
+    }
+    if (kurike == 1) {
+        text += "部門内のランダムな幻想体のカウンター1回復\n";
+    }
+    if (fanke == 1) {
+        text += "部門内のランダムな幻想体のカウンター1減少\n";
+    }
+
+    if (kensaku != -1 && seihi == 1) {
+        ransu = Math.floor(Math.random() * 3 + 1);
+        if (ransu == 1) {
+            text += "職員"+name+"は花に囲まれている\n";
+            sibou = 0;
+        }
+    }
+
+    con[40] = kekka[13];
 }
 
 function g018() {
@@ -1096,6 +1448,42 @@ function g021() {
     con[24] = kekka[13];
 }
 
+function g022() {
+    gene = "022 灯の保護";
+    sase = [[1.5, 1.5, 1, 1, 1], [1, 1, 1, 1, 0.5], [0.5, 0, 0, 0, 0], [1, 2, 2, 2, 2]];
+    rankk = 2;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (sagyona == 2) {
+        text += "この職員の加護欄に「022」を追加\n加護職員は本能に+5の補正を受け、作業を行う度にHPが5～10回復\n加護職員がダメージを受けるとカウンター減少\n"
+
+        tt12 += ",022";
+        for (i = 0; i < 5; i++) {
+            kensaku3 = namera[i].indexOf(name);
+            if (kensaku3 != -1) {
+                nana2 = i + 1;
+                nana = "se" + nana2 + "8";
+                document.hanteisuru[nana].value += ",022";
+            }
+        }
+    }
+
+    if (kekka[13] == 0) {
+        text += "灯の保護は脱走した\nカウンター0→2\n";
+        kekka[13] = 2;
+    }
+
+    con[50] = kekka[13];
+}
+
 function g023() {
     gene = "023 とっておきのハーブティー";
     sase = [[0.5, 0.5, 0.5, 0.5, 0.5], [1, 1, 1.5, 1.5, 1.5], [1, 1, 0.5, 0.5, 0], [2, 2, 2, 2, 2]];
@@ -1127,7 +1515,7 @@ function g023() {
         daideme1 = 3;
         daideme2 = 6;
         daisu();
-        text += "この次に入室した職員はSPが" + daideme4 + "回復する\n";
+        text += "この次に入室した職員はSPが" + daideme4 + "減少する\n";
     }
 
     con[28] = kekka[13];
@@ -1230,6 +1618,102 @@ function g042() {
     con[17] = kekka[13];
 }
 
+function g048() {
+    gene = "048 心壊人形";
+    peti = 0;
+
+    if (sagyona == 4) {
+        text += "心壊人形が職員" + name + "に同行した\n細かい挙動はエンサイクロペディア参照\n";
+    } else {
+        if (sagyona == 5) {
+            text += "鎮圧を行っていない場合はエンサイクロペディア参照\n鎮圧を行っていた場合は充電を開始し、30分間使用不可\n";
+        } else {
+            text += "ツール型の作業は「使用」です\n";
+        }
+
+    }
+
+}
+
+function g049() {
+    gene = "049 異界の扉";
+    peti = 0;
+
+    if (sagyona == 4) {
+        ransu = Math.floor(Math.random() * 6 + 1);
+        if (ransu == 1) {
+            text = "何かの箱を手に入れた\n全ステータス+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+        }
+        if (ransu == 2) {
+            text = "何かの果実を手に入れた\n本能+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+        }
+        if (ransu == 3) {
+            text = "小さな花を手に入れた\n洞察+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+        }
+        if (ransu == 4) {
+            text = "綺麗な石を手に入れた\n自制+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+        }
+        if (ransu == 5) {
+            text = "何かの羽根を手に入れた\n正義+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+        }
+        if (ransu == 6) {
+            text = "何かの目玉を手に入れた\n全ステータス-25\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+        }
+    } else {
+        text += "ツール型の作業は「使用」です\n";
+    }
+
+}
+
+function g061() {
+    gene = "061 こどもべやのすいそう";
+    sase = [[0, 1, 1.5, 1.5, 2], [0, 0.5, 1, 1.5, 1.5], [0, 0.5, 1.5, 1.5, 1.5], [0, 0.5, 1.5, 1.5, 21]];
+    rankk = 5;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (sagyona == 1) {
+        text += "この職員の加護欄に「061」を記入\nこの日一日獲得経験値1.5倍\n";
+        kensaku = kekka[12].indexOf('061');
+        if (kensaku == -1) {
+            tt12 += ",061";
+            for (i = 0; i < 5; i++) {
+                kensaku3 = namera[i].indexOf(name);
+                if (kensaku3 != -1) {
+                    nana2 = i + 1;
+                    nana = "se" + nana2 + "8";
+                    document.hanteisuru[nana].value += ",061";
+                }
+            }
+        }
+    }
+
+    if (seihi == 0) {
+        text += "この職員の加護欄に「0611」を記入\n";
+        kensaku = kekka[12].indexOf('0611');
+        if (kensaku == -1) {
+            tt12 += ",0611";
+            for (i = 0; i < 5; i++) {
+                kensaku3 = namera[i].indexOf(name);
+                if (kensaku3 != -1) {
+                    nana2 = i + 1;
+                    nana = "se" + nana2 + "8";
+                    document.hanteisuru[nana].value += ",0611";
+                }
+            }
+        }
+    }
+
+    con[55] = kekka[13];
+}
+
 function g063() {
    
     gene = "063 人間の貪欲さを表した何か";
@@ -1288,6 +1772,66 @@ function g063() {
         }
     }
     con[3] = kekka[13];
+}
+
+function g070() {
+    gene = "070 Please kill me!";
+    sase = [[1, 1, 1, 1.5, 1.5], [0.5, 0.5, 1, 1, 1], [1.5, 1.5, 1.5, 2, 2], [0.5, 0.5, 0.5, 0.5, 0]];
+    rankk = 2;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (fanke == 1) {
+        text += "ファンブルによるダメージや情報開示などの影響を受けない\n";
+    }
+    if (sagyona == 3) {
+        text += "▼職員" + name + "のHPSPが10回復\n";
+    }
+
+    if (kurike == 1 && sagyona == 2) {
+        sibou = 0;
+    }
+
+    con[56] = kekka[13];
+}
+
+function g072() {
+    gene = "072 しゅうふくトッペ";
+    sase = [[1.5, 1.5, 1, 1, 1], [1, 1, 1, 1, 1], [2, 2, 2, 2, 1.5], [1, 1, 0.5, 0.5, 0.5]];
+    rankk = 3;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        kekka[13] -= 1;
+
+    }
+    if (sagyona==3) {
+        text += "カウンターが減少した\n";
+        kekka[13] -= 1;
+    }
+    if (kekka[13] <= 0) {
+        psni = 1;
+        text += "▼職員" + name + "は自殺性パニックに陥った\nこのパニックの鎮圧にはSP+15のダメージが必要\nカウンター0→2\n";
+        kekka[13] = 2;
+    }
+
+    con[41] = kekka[13];
 }
 
 function g091() {
@@ -1503,6 +2047,43 @@ function g106() {
     con[25] = kekka[13];
 }
 
+function g110() {
+    gene = "110 ［削除済］の悪夢";
+    sase = [[2, 2, 1, 0.5, 0.5], [0.5, 0.5, 0.5, 0, 0], [0, 0, 0, 0, 0], [1, 1, 0.5, 0.5, 0.5]];
+    rankk = 5;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+    
+    kensaku = kekka[12].indexOf('110');
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (seihi == 1) {
+    if (kekka[7] <= 3) {
+        pani = 1;
+        text += "▼職員" + name + "はパニックに陥った\n";
+    } else {
+            ransu = Math.floor(Math.random() * 5 + 1);
+            if (ransu == 1) {
+                text += "悲惨な殺人現場を目撃\n職員" + name + "のMPが40％減少した\n";
+            
+        }
+    }
+    }
+
+    if (kensaku != -1 && sagyona == 3) {
+        sibou = 0;
+        text += "カウンターが減少した\n部門内に大きな悲鳴が響き、同時に部門全体がIP-T-04-110の死体と血で染まった\n部門内の職員は1d4を振る\n1→MP25％減少　2→MP50％減少\n3→MP75％減少　4→MP100％減少\nカウンター0→1\n";
+    }
+    
+    con[46] = kekka[13];
+}
+
 function g118() {
     gene = "118 親愛なる貴方へ";
     sase = [[0, 0, 0.5, 0.5, 0.5], [0.5, 0.5, 1, 1, 1], [0, 0, 0, 0, 0], [2, 2, 2, 2, 2]];
@@ -1563,7 +2144,6 @@ function g118() {
         }
     con[15] = kekka[13];
 }
-
 
 function g125() {
     gene = "125 灼けつく金星";
@@ -1661,6 +2241,80 @@ function g192() {
     con[31] = kekka[13];
 }
 
+function g194() {
+    gene = "194 歌い去る夢";
+    sase = [[1.5, 1, 1, 0, 0], [2, 2, 2, 2, 2], [0, 0, 1, 1, 1.5], [1.5, 1.5, 1.5, 1.5, 1.5]];
+    rankk = 5;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (kekka[8] >= 4 || kekka[10] <= 2) {
+        if (kekka[10] >= 4) {
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 3) {
+                sibou = 0;
+                text += "▼職員" + name + "は電動ノコギリに自ら飛び込んだ\n30分間、5分おきに部門内の職員全員に5白ダメージ\nこの幻想体による死者が3名になるとカウンター0になり脱走する\n";
+            }
+        } else {
+            sibou = 0;
+            text += "▼職員" + name + "は電動ノコギリに自ら飛び込んだ\n30分間、5分おきに部門内の職員全員に5白ダメージ\nこの幻想体による死者が3名になるとカウンター0になり脱走する\n";
+        }
+
+    }
+
+    con[47] = kekka[13];
+}
+
+function g199() {
+    gene = "199 ギブミーレッドエンディング";
+    sase = [[1, 1, 1, 1, 1], [0.5, 0.5, 0.5, 0, 0], [1.5, 1.5, 2, 2, 2], [0.5, 0.5, 0, 0, 0]];
+    rankk = 4;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        kekka[13] -= 1;
+    }
+
+    if (sagyona == 3 && seihi == 1) {
+        text += "「出演者」が付与された\nこの職員の加護欄に「199」を記入\nHP+20SP-10\nパニックになると殺人性になる\nパニック中SP+20、赤近距離\n";
+        kensaku = kekka[12].indexOf('199');
+        if (kensaku == -1) {
+            tt12 += ",199";
+            for (i = 0; i < 5; i++) {
+                kensaku3 = namera[i].indexOf(name);
+                if (kensaku3 != -1) {
+                    nana2 = i + 1;
+                    nana = "se" + nana2 + "8";
+                    document.hanteisuru[nana].value += ",199";
+                }
+            }
+        }
+    }
+    if (kekka[13] == 0) {
+        pani = 1;
+        text += "▼職員" + name + "は殺人性パニックに陥った\nパニック中SP+20、赤近距離\nカウンター0→3\n";
+        kekka[13] = 3;
+    }
+
+    con[57] = kekka[13];
+}
+
 function g201() {
     gene = "201 柔らかい妖精";
     sase = [[1, 1, 1, 1.5, 1.5], [1, 1, 0.5, 0.5, 0.5], [0.5, 0.5,0, 0, 0], [2, 2, 2, 1.5, 1.5]];
@@ -1710,6 +2364,31 @@ function g201() {
     con[5] = kekka[13];
 }
 
+function g209() {
+    gene = "209 愛詰めの箱";
+    sase = [[1.5, 1, 1, 0.5, 0.5], [0, 0.5, 1, 1, 1], [0.5, 0.5, 1, 1, 1.5], [1, 1, 1.5, 1.5, 1.5]];
+    rankk = 3;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+    if (seihi == 0) {
+        text += "▼職員" + name + "のHPが10回復した\nカウンターが減少した\n";
+        kekka[13] -= 1;
+    }
+    if (kekka[13] == 0) {
+        text += "愛詰めの箱は誤作動を起こした\n15分毎に部門内の全ての幻想体のカウンターを1ずつ下げ、部門内の職員に10赤ダメージ\n全ての作業が「粉砕作業」に置き換わる\n粉砕作業では判定ツールを使用しない\n粉砕作業では部門内の職員からランダムに1名選ばれ死亡する。カウンターは全回復する\n";
+
+    }
+
+    con[51] = kekka[13];
+}
+
 function g214() {
     gene = "214 ちょっとおかしなショコラティエ";
     sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]];
@@ -1749,6 +2428,65 @@ function g214() {
     con[32] = kekka[13];
 }
 
+function g235() {
+    gene = "235 もこもこあひる";
+    sase = [[1, 1, 1, 0.5, 0.5], [1.5, 1.5, 1, 1, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5], [2, 2, 1.5, 1.5, 1.5]];
+    rankk = 4;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        kekka[13] -= 1;
+    }
+
+    if (kekka[13] == 0) {
+        text += "もこもこあひるは脱走した\nカウンター0→2\n";
+        kekka[13] = 2;
+    }
+
+    con[58] = kekka[13];
+}
+
+function g243() {
+    gene = "243 2人の思い出の場所";
+    sase = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
+    rankk = 1;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (sagyona == 2 && seihi == 1) {
+        text += "「思い出の欠片」追従\nこの職員の加護欄に「243」を記入\n任意のステータス+5\n";
+        kensaku = kekka[12].indexOf('243');
+        if (kensaku == -1) {
+            tt12 += ",243";
+            for (i = 0; i < 5; i++) {
+                kensaku3 = namera[i].indexOf(name);
+                if (kensaku3 != -1) {
+                    nana2 = i + 1;
+                    nana = "se" + nana2 + "8";
+                    document.hanteisuru[nana].value += ",243";
+                }
+            }
+        }
+    }
+
+    con[59] = kekka[13];
+}
 
 function g310() {
     gene = "310 氷飴";
@@ -1833,6 +2571,27 @@ function g330() {
     }
     
     con[18] = kekka[13];
+}
+
+function g354() {
+    gene = "354 賞金稼ぎの男";
+    sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]];
+    rankk = 4;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (irai == 1) {
+        text += "抑圧は依頼に置き換わっている\n対価：対象の危険度×3のPE-BOX、他部門の場合危険度×5\n指定した対象を全て撃破あるいは賞金稼ぎの男が倒れるまで続く\n鎮圧が20分以上経過、あるいは賞金稼ぎの男が倒れた場合カウンター減少\n0になると脱走\n";
+    }
+
+    con[60] = kekka[13];
 }
 
 function g361() {
@@ -1990,6 +2749,200 @@ function g371() {
     con[33] = kekka[13];
 }
 
+function g403() {
+    gene = "403 誘いの鏡";
+    sase = [[1, 1, 1, 0.5, 0.5], [1, 1, 1, 1, 1], [1, 1, 0.5, 0, 0], [2, 2, 2, 2, 2]];
+    rankk = 5;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+
+    kensaku = kekka[12].indexOf('403');
+    kensaku2 = kekka[12].indexOf('4031');
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (sagyona==1) {
+        pani = 1;
+        text += "▼職員" + name + "は自殺性パニックに陥った\n制限時間10分\n";
+        if (kekka[10] <= 3) {
+            pani = 1;
+            text += "カウンター減少\n";
+            kekka[13] -= 1;
+
+        }
+    } else {
+        if (kekka[10] <= 3) {
+            pani = 1;
+            text += "▼職員" + name + "はパニックに陥った\nカウンター減少\n";
+            kekka[13] -= 1;
+            
+        }
+    }
+    if (sagyona == 2) {
+        if (kensaku == -1) {
+            text += "作業職員の加護欄に403を記入\n";
+            tt12 += ",403";
+            for (i = 0; i < 5; i++) {
+                kensaku3 = namera[i].indexOf(name);
+                if (kensaku3 != -1) {
+                    nana2 = i + 1;
+                    nana = "se" + nana2 + "8";
+                    document.hanteisuru[nana].value += ",403";
+                }
+            }
+        } else {
+            text += "カウンター減少\n";
+            kekka[13] -= 1;
+        }
+    } else {
+        if (kensaku != -1) {
+            text += "作業職員の加護欄から403を消去\n";
+        } 
+    }
+
+    if (kekka[13] <= 0) {
+        text += "誘いの鏡は脱走した\nカウンター0→2\n";
+        kekka[13] = 2;
+    }
+
+    con[42] = kekka[13];
+}
+
+function g413() {
+    gene = "413 海月少女";
+    sase = [[1, 1, 0.5, 0.5, 0], [0.5, 0.5, 1.5, 2, 2], [1, 1, 1, 1.5, 1.5], [1.5, 1.5, 1.5, 1.5, 1.5]];
+    rankk = 3;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+    if (kekka[13] == 0) {
+        sibou = 0;
+        text += "海月少女は脱走した\nカウンター0→1\n";
+        kekka[13] = 1;
+    }
+    if (sagyona == 0) {
+        ransu = Math.floor(Math.random() * 3 + 1);
+        if (ransu == 2) {
+            text += "カウンターが減少した\n";
+            kekka[13] -= 1;
+        }
+    } else {
+        if (kekka[8] >= 5 || kekka[9] <= 2) {
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 2) {
+                text += "カウンターが減少した\n";
+                kekka[13] -= 1;
+            }
+        }
+    }
+
+    con[52] = kekka[13];
+}
+
+function g422() {
+    gene = "422 明るいだけの照明";
+    peti = 0;
+    kensaku = kekka[12].indexOf('422');
+    kensaku2 = kekka[12].indexOf('4221');
+    kensaku3 = kekka[12].indexOf('4222');
+    kensaku4 = kekka[12].indexOf('4223');
+
+
+    ransu = Math.floor(Math.random() * 4 + 1);
+
+    if (sagyona == 4) {
+        text = "HPSP15回復\n";
+
+        if (kensaku4 != -1) {
+            sibou = 0;
+            text += "加護欄から422系を消去\n";
+        } else {
+       if (kensaku3 != -1) {
+           if (ransu == 1) {
+               text += "この職員の次の作業は明るいだけの照明になる\n";
+           }
+            text += "使用職員の加護欄に4223を記入\n";
+            tt12 += ",4223";
+            for (i = 0; i < 5; i++) {
+                kensaku3 = namera[i].indexOf(name);
+                if (kensaku3 != -1) {
+                    nana2 = i + 1;
+                    nana = "se" + nana2 + "8";
+                    document.hanteisuru[nana].value += ",4223";
+                }
+           }
+        } else {
+            if (kensaku2 != -1) {
+                if (ransu == 1) {
+                    text += "この職員の次の作業は明るいだけの照明になる\n";
+                }
+                text += "使用職員の加護欄に4222を記入\n";
+                tt12 += ",4222";
+                for (i = 0; i < 5; i++) {
+                    kensaku3 = namera[i].indexOf(name);
+                    if (kensaku3 != -1) {
+                        nana2 = i + 1;
+                        nana = "se" + nana2 + "8";
+                        document.hanteisuru[nana].value += ",4222";
+                    }
+                }
+            } else {
+                if (kensaku == -1) {
+                    if (ransu == 1) {
+                        text += "この職員の次の作業は明るいだけの照明になる\n";
+                    }
+                    text += "使用職員の加護欄に422を記入\n";
+                    tt12 += ",422";
+                    for (i = 0; i < 5; i++) {
+                        kensaku3 = namera[i].indexOf(name);
+                        if (kensaku3 != -1) {
+                            nana2 = i + 1;
+                            nana = "se" + nana2 + "8";
+                            document.hanteisuru[nana].value += ",422";
+                        }
+                    }
+                } else {
+                        if (ransu == 1) {
+                            text += "この職員の次の作業は明るいだけの照明になる\n";
+                        }
+                    text += "使用職員の加護欄に4221を記入\n";
+                    tt12 += ",4221";
+                    for (i = 0; i < 5; i++) {
+                        kensaku3 = namera[i].indexOf(name);
+                        if (kensaku3 != -1) {
+                            nana2 = i + 1;
+                            nana = "se" + nana2 + "8";
+                            document.hanteisuru[nana].value += ",4221";
+                        }
+                    }
+                }
+
+            }
+
+        }
+        }
+
+
+ 
+
+
+    } else {
+        text += "ツール型の作業は「使用」です\n";
+    }
+}
+
 function g432() {
     gene = "432 温もりのこころ";
     peti = 0;
@@ -2005,6 +2958,81 @@ function g432() {
         
     }
     
+}
+
+
+function g451() {
+    gene = "451 季節の時の王";
+    sase = [[1, 1, 1, 1, 0.5], [1, 1, 0.5, 0, 0], [1, 1, 0.5, 0.5, 0], [2, 2, 2, 1.5, 1]];
+    rankk = 4;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+    ransu = Math.floor(Math.random() * 4 + 1);
+    if (ransu == 1) {
+        text = "赤の姿\n";
+    } else {
+        if (ransu == 2) {
+            text = "白の姿\n";
+        } else {
+            if (ransu == 3) {
+                text = "黒の姿\n";
+            } else {
+                if (ransu == 4) {
+                    text = "青の姿\n";
+                }
+            }
+        }
+    }
+    if (kekka[9] <= 3) {
+        text += "カウンターが減少した\n";
+        kekka[13] -= 1;
+    }
+
+    if (sagyona == 1 && seihi == 1) {
+        text += "加護を受け取った\n鎮圧時、最初の1度だけダメージを0にする\n再度洞察をするか死亡するまで加護は残る\nこの職員の加護欄に「451」を記入\n";
+        kensaku = kekka[12].indexOf('451');
+        if (kensaku == -1) {
+            tt12 += ",451";
+            for (i = 0; i < 5; i++) {
+                kensaku3 = namera[i].indexOf(name);
+                if (kensaku3 != -1) {
+                    nana2 = i + 1;
+                    nana = "se" + nana2 + "8";
+                    document.hanteisuru[nana].value += ",451";
+                }
+            }
+        }
+    }
+
+    if (kekka[13] == 0) {
+        text += "季節の時の王は脱走した\nカウンター0→3\n";
+        kekka[13] = 3;
+        ransu = Math.floor(Math.random() * 4 + 1);
+        if (ransu == 1) {
+            text += "脱走時赤の姿\n";
+        } else {
+            if (ransu == 2) {
+                text += "脱走時白の姿\n";
+            } else {
+                if (ransu == 3) {
+                    text += "脱走時黒の姿\n";
+                } else {
+                    if (ransu == 4) {
+                        text += "脱走時青の姿\n";
+                    }
+                }
+            }
+        }
+    }
+
+    con[61] = kekka[13];
 }
 
 function g464() {
@@ -2056,6 +3084,39 @@ function g521() {
         }
     }
     con[16] = kekka[13];
+}
+
+function g524() {
+    gene = "524 空っぽのストーブ";
+    peti = 0;
+
+    kensaku = kekka[12].indexOf('540');
+    if (sagyona == 4) {
+        text += "▼職員" + name + "は鉄の約束を得た\n鎮圧時のダメージ+15\nこのツールは返却可能\n部門内に1人のみ、返却するまで他の職員は手に入らない\nこの職員の加護欄に「524」を追加\n";
+        tt12 += ",524";
+        for (i = 0; i < 5; i++) {
+            kensaku3 = namera[i].indexOf(name);
+            if (kensaku3 != -1) {
+                nana2 = i + 1;
+                nana = "se" + nana2 + "8";
+                document.hanteisuru[nana].value += ",524";
+            }
+        }
+        if (kekka[8] == 3 || kekka[9] == 3 || kekka[10] == 3 || kekka[11] == 3) {
+            sibou = 0;
+            text = "職員"+name+"はストーブに引き込まれ、空っぽのストーブと共に消失した\n次の作業時には空っぽのストーブのみ戻ってくる\n";
+        }
+
+    } else {
+        if (sagyona == 5) {
+            text += "鉄の約束を返却した\n加護欄から「524」を手動で消去してください\n";
+        } else {
+text += "ツール型の作業は「使用」です\n";
+        }
+
+        
+    }
+
 }
 
 function g528() {
@@ -2398,6 +3459,37 @@ function g703() {
 
 }
 
+function g707() {
+    gene = "707 甘菓子人形狙撃兵";
+    sase = [[1.5, 1.5, 1.5, 2, 2], [2, 2, 2, 2, 2], [0.5, 0.5, 1, 1, 1], [0.5, 1, 0.5, 1, 0.5]];
+    rankk = 3;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (seihi == 0) {
+        ransu = Math.floor(Math.random() * 7 + 1);
+        if (ransu >= 5) {
+            text += "▼職員" + name + "は甘菓子人形狙撃兵にかじりついた\nHPSP20回復\nカウンターが減少した\n";
+            kekka[13] -= 1;
+
+        }
+    }
+
+    if (kekka[13] <= 0) {
+        text += "甘菓子人形狙撃兵は脱走した\nカウンター0→3\n";
+        kekka[13] = 3;
+    }
+
+    con[43] = kekka[13];
+}
+
 function g710() {
     gene = "710 過去を穿つ狙撃手";
     sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [0.5, 1, 1, 0.5, 0.5]];
@@ -2418,7 +3510,7 @@ function g710() {
     if (sagyona == 2) {
         text = "観測レベルが１の場合80黒ダメージ\nこの幻想体の愛着は依頼に置き換わっているので特殊能力等で強制的に愛着を選んだ場合を除き作業を決め直してください。\n";
     }
-    if (sagyona == 6) {
+    if (irai==1) {
         text += "依頼の対価は依頼職員に80黒ダメージ\n依頼前に発砲宣言をしていない場合は不発\n";
     }
     if (seihi == 0) {
@@ -2697,7 +3789,21 @@ function g829() {
     if (seihi == 1) {
         ransu = Math.floor(Math.random() * 3 + 1);
         if (ransu == 1) {
-            text = "職員"+name+"はながれぼしの欠片を付与された\nこの職員の加護欄に「829」を追加\n作業、鎮圧の出目+7\n";
+            text = "職員" + name + "はながれぼしの欠片を付与された\nこの職員の加護欄に「829」を追加\n作業、鎮圧の出目+7\n";
+
+            kensaku = kekka[12].indexOf('829');
+            if (kensaku == -1) {
+                tt12 += ",829";
+                for (i = 0; i < 5; i++) {
+                    kensaku3 = namera[i].indexOf(name);
+                    if (kensaku3 != -1) {
+                        nana2 = i + 1;
+                        nana = "se" + nana2 + "8";
+                        document.hanteisuru[nana].value += ",829";
+                    }
+                }
+            }
+            
         }
     }
 
@@ -2755,6 +3861,35 @@ text += "職員"+name+"と加護849の職員は最大HPの30％ダメージを�
 
     con[22] = kekka[13];
 
+}
+
+function g898() {
+    gene = "898 ƎΛO˥YOU";
+    sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]];
+    rankk = 4;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (irai == 1) {
+        text += "依頼　対価：PE-BOX5\n指定した部門内の全職員と脱走中の全ての幻想体にWAW相当の赤ダメージ\n";
+    } else {
+    if (sagyona == 2 && seihi == 1) {
+        text += "▼職員" + name + "のHPが5回復\n";
+    }
+    if (seihi == 0) {
+        text += "閃光弾が爆発し職員" + name + "は失明した\n30分間洞察作業自動失敗\n";
+    }
+    }
+
+
+    con[62] = kekka[13];
 }
 
 function g901() {
@@ -2855,6 +3990,216 @@ function g915() {
     con[14] = kekka[13];
 }
 
+function g920() {
+    gene = "920 刃金のイリュージョナー";
+    sase = [[0, 0, 0.5, 0.5, 0.5], [1.5, 1.5, 1.5, 2, 2], [0.5, 0.5, 1, 1, 1], [1, 1, 1, 1.5, 1.5]];
+    rankk = 3;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (kekka[10] >= 4) {
+        ransu = Math.floor(Math.random() * 6 + 1);
+        if (ransu == 1 || ransu == 2) {
+            text += "人体切断マジックショーを披露した\n";
+            sibou = 0;
+        } else {
+            text += "人体切断マジックショーを披露した\n職員" + name + "のHPSPが30回復\n";
+        }
+    } else {
+        if (seihi == 1) {
+            ransu = Math.floor(Math.random() * 6 + 1);
+            if (ransu == 1 || ransu == 2) {
+                text += "メンタルマジックを披露した\n職員" + name + "のSPが15回復\n";
+            }
+            if (ransu == 3 || ransu == 4) {
+                text += "コインマジックを披露した\n職員" + name + "の作業成功率が+3\n";
+            }
+            if (ransu == 5 || ransu == 6) {
+                text += "トランプマジックを披露した\n職員" + name + "の自制+5\n";
+            }
+        }
+        if (seihi == 0) {
+            ransu = Math.floor(Math.random() * 6 + 1);
+            if (ransu == 3) {
+                text += "人体切断マジックショーを披露した\n";
+                sibou = 0;
+            } else {
+                text += "人体切断マジックショーを披露した\n職員" + name + "のHPSPが30回復\n";
+            }
+        }
+    }
+
+
+
+    con[53] = kekka[13];
+}
+
+function g923() {
+    gene = "923 超自我";
+    sase = [[1.5, 1.5, 1.5, 1.5, 1.5], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [0.5, 0.5, 1, 1, 1]];
+    rankk = 5;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+    kurike = 0;
+
+
+    if (irai == 1) {
+        daideme1 = kekka[11];
+        daideme2 = 6;
+        daisu();
+        text += "決闘\n出目：" + daideme4 + "\n";
+        if (kekka[11] == 1) {
+            if (daideme4 >= 4) {
+                text += "救出成功\nギフト入手\n";
+            } else {
+                text += "救出失敗\n両者死亡\n職員" + name + "の肉体に獣が憑依し「エス」が脱走した(ALEPH)\n";
+            }
+        } else {
+            if (kekka[11] == 2) {
+                if (daideme4 >= 7) {
+                    text += "救出成功\nギフト入手\n";
+                } else {
+                    text += "救出失敗\n両者死亡\n職員" + name + "の肉体に獣が憑依し「エス」が脱走した(ALEPH)\n";
+                }
+            } else {
+                if (kekka[11] == 3) {
+                    if (daideme4 >= 10) {
+                        text += "救出成功\nギフト入手\n";
+                    } else {
+                        text += "救出失敗\n両者死亡\n職員" + name + "の肉体に獣が憑依し「エス」が脱走した(ALEPH)\n";
+                    }
+                } else {
+                    if (kekka[11] == 4) {
+                        if (daideme4 >= 13) {
+                            text += "救出成功\nギフト入手\n";
+                        } else {
+                            text += "救出失敗\n両者死亡\n職員" + name + "の肉体に獣が憑依し「エス」が脱走した(ALEPH)\n";
+                        }
+                    } else {
+                        if (kekka[11] == 5) {
+                            if (daideme4 >= 16) {
+                                text += "救出成功\nギフト入手\n";
+                            } else {
+                                text += "救出失敗\n両者死亡\n職員" + name + "の肉体に獣が憑依し「エス」が脱走した(ALEPH)\n";
+                            }
+                        } else {
+                            if (kekka[11] >= 6) {
+                                if (daideme4 >= 19) {
+                                    text += "救出成功\nギフト入手\n";
+                                } else {
+                                    text += "救出失敗\n両者死亡\n職員" + name + "の肉体に獣が憑依し「エス」が脱走した(ALEPH)\n";
+                                }
+                            } else {
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        if (seihi == 0) {
+            ransu = Math.floor(Math.random() * 2 + 1);
+            if (ransu == 2) {
+                text += "▼職員" + name + "は魅了され収容室に囚われた\nそのまま業務終了した場合は死亡する\n次の作業が全て決闘になる（特殊作業を選択する）\n";
+            }
+        }
+
+    }
+
+    con[63] = kekka[13];
+}
+
+function g971() {
+    gene = "971 ダンスパーティー";
+    sase = [[1, 1, 1, 1, 1], [0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [1.5, 1.5, 1, 1, 1]];
+    rankk = 5;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi = 1;
+    }
+
+
+    if (sagyona == 1) {
+        text += "▼職員" + name + "はチラシを受け取った。\nカウンターが減少した\nダンスパーティーは脱走した\nカウンター0→1\n職員は死んでいるため眷属にはならない\n";
+        sibou = 0;
+    }
+    if (sagyona == 0 || sagyona == 2) {
+        if (seihi == 1) {
+            text += "▼職員" + name + "はチラシを受け取った。\n職員がメインルームに戻った後ダンスパーティーは脱走する\n職員" + name + "は眷属になる\n";
+        }
+    }
+    
+    con[44] = kekka[13];
+}
+
+function g982() {
+    gene = "982 遼東之豕";
+    sase = [[0, 0, 0, 0, 0], [1, 1, 1, 1.5, 1.5], [0.5, 0.5, 1, 1, 1], [2, 2, 2, 2, 2]];
+    rankk = 2;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+
+    if (sagyona == 0) {
+        sibou = 0;
+        text += "職員" + name + "は捕食された\即死した場合と作業ダメージで死亡した場合、遼東之豕の腹が膨れ、次の作業での獲得PE-BOXが2倍になる\nこのPE-BOXの上限は24、発動したら腹は戻る\n#IPCo_982 のタグを用いて職員が死亡したことを報告する\n";
+    }
+
+    con[54] = kekka[13];
+}
+
+function g999() {
+    gene = "999 蝕みの魔王";
+    sase = [[1.5, 1.5, 1, 0.5, 0.5], [1, 1, 1, 1, 1], [1, 1, 0.5, 0.5, 0], [2, 2, 1.5, 1, 1]];
+    rankk = 5;
+    rank();
+
+    seikou = seiti * sase[sagyona][sagyose3];
+
+    if (kekka[4] < seikou) {
+        seihi = 0;
+    } else {
+        seihi += 1;
+    }
+    if (sagyona == 3 && seihi == 0) {
+        text += "カウンターが減少した\n2回連続だった場合眷属になる\n";
+        kekka[13] -= 1;
+    }
+
+
+    if (kekka[13] == 0) {
+        text += "蝕みの魔王は脱走した\nカウンター0→4\n";
+        kekka[13] = 4;
+    }
+    con[64] = kekka[13];
+}
+
 function g9999() {
 
     seikou = 6;
@@ -2877,3 +4222,4 @@ function g99999() {
 text = "無効";
     
 }
+
