@@ -38,6 +38,7 @@ window.onload = function onLoad() {
     syid = -1;
     sycon = [[[000, 0]], [[000, 0]], [[000, 0]], [[000, 0]], [[000, 0]]];
     syconk = [000];
+    sykari = 0;
 
     sycount();
 
@@ -96,6 +97,17 @@ window.onload = function onLoad() {
 
     sentakuti = [];
 
+}
+
+function syplus(sysy) {
+    sykari = syconk.indexOf(sysy);
+    if (sykari == -1) {
+        for (i = 0; i < 5; i++) {
+            kazoe = [sysy, 0];
+            sycon[i].push(kazoe);
+            syconk.push(sysy);
+        }
+    }
 }
 
 function sycount() {
