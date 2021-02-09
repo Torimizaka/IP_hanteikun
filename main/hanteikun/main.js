@@ -1,7 +1,7 @@
 
 window.onload = function onLoad() {
     target = document.getElementById("output");
-    target.innerHTML = "Ver1.7c 公式垢のプロフに書いてあるバージョンと異なる際は更新してください";
+    target.innerHTML = "Ver1.7o 公式垢のプロフに書いてあるバージョンと異なる際は更新してください";
     kuriti = [0, 6, 10, 15, 19, 23, 26];
     fanti = [0, 1, 2, 3, 4, 5, 6];
     tt1 = "000";
@@ -40,6 +40,8 @@ window.onload = function onLoad() {
     syconk = [000];
     sykari = 0;
 
+    gnid = [0,0,0,0,0,0];
+
     sycount();
 
     keiti = [[0, 0, 0, 0, 0], [1, 0, 0, 0, 0], [2, 0, 0, 0, 0], [3, 0, 0, 0, 0], [4, 0, 0, 0, 0]];
@@ -67,6 +69,39 @@ window.onload = function onLoad() {
     t0924 = 0;
     t0925 = [];
     t0926 = [];
+    t153 = -1;
+    t980 = 0;
+    t216 = [[0, 0], [0, 1], [0, 2], [0, 3]];
+    t2161 = [[0, 0], [0, 1], [0, 2], [0, 3]];
+    t2162 = [0, 0, 0, 0];
+    t696 = 0;
+    t902 = 0;
+    t826 = 0;
+    t877 = "";
+    t8772 = 0;
+    t603 = 0;
+    t6032 = "";
+    t228 = 0;
+    t2281 = 0;
+    t304 = 0;
+    t305 = 0;
+    t534 = 0;
+    t5341 = -1;
+    t535 = 0;
+    t709 = -1;
+    t152 = -1;
+    t886 = 0;
+    t8862 = "";
+    t8863 = 0;
+    t904 = 0;
+    t979 = 0;
+    t9792 = 0;
+    t151 = "";
+    t712 = 0;
+    t7122 = 0;
+    t7123 = "";
+    t7124 = 0;
+    t995 = 0;
 
     zenkai = [0, 0, 0, 0, 0];
 
@@ -77,19 +112,22 @@ window.onload = function onLoad() {
     gtD = ["008", 601, 666, 777, 972, 185, 335, 880, "010", "039", "064", 311, 360, 469, 990, "047", "089", 302, 369, 385, 409, 554, 570, 612, 801, 988, "034", 119, 609, 906];
     gtE = ["006", "016", "030", "062", 116, 155, 170, 188, 255, 299, 537, 555, 890, 907, 975, 976, "054", 246, 294, 437, 486, 650, 977, "088", "093", 100, 113];
     gtF = [312, 329, 628, 874, 683, 908, 140, 526, 530, 708, 839, "065", 161, 320, 525, 701, 804, 828, 966, "067", 173, 404, 532, "029", 452, 453, 809, 914, 918, 941, 604];
-    gtG = [721,964,"036","040","092",974];
+    gtG = [721,964,"036","040","092",974,215,264,423,887,916,212,499,"035",153,323,429,480,529,567,800,978,"094",217,378,417,536,802,917,980];
+    gtH = [216,502,720,963,467,696,718,767,772,803,259,959,333,826,228,304,305,709,152,303,444,731,886,904,933,979];
+    gtI = [128,223,425,712,922,995];
     gtTA = [432, 566, 703, 635, "020", 310, "007", "071", 540, "099"];
     gtTB = [422, "049", 524, "048", 102, 314, 905, 554, 541, 704];
-    gtTC = ["050","051",225,897,408,913,531,160,230,415];
+    gtTC = ["050", "051", 225, 897, 408, 913, 531, 160, 230, 415];
+    gtTD = [527,603,877,534,535,996,151];
 
     genra1 = [];
     genra2 = [];
     genra3 = [];
-    genra4 = ["001", "002","003","005","006","008","010","012", "013","016", "018","019", "021","022", "023","029","030", "031","032","033" ,"034","036","039","040","042","047","054","061","062", "063","064","065","067", "072","079","088","089", "091","092","093","095",100, 106,108,110,113,116, 118,119,124, 125,126,135,137,140, 142,155,161,170,173,185,188, 192,194,199, 201,209,213, 214,235,243,246,255,291,294,299,302,311,312, 317,320,329, 330,335,354,360, 361, 365,369, 371,385, 403,404,409,413,437,451,452,453, 464,469, 486,521,523,525,526, 528,530,532,537,555,570,571,581,601,604,609,610,612, 614, 620, 623,625,628,650,666,683,701,707,708, 710,721, 722, 725, 752,777,801,804,809, 810, 818, 821,828, 829,839, 849,874,880,888,890,898, 901, 903,906,907,908,914, 915,918,920,923,941,964,966,971,972,974,975,976,977,982,988,990,997,999];
-    genra5 = [007,"020","048","049","050","051", "071","099",102,160,225,230, 310,314,408,415, 422,432,524,531,  540,541,554, 566,  635, 703,704,897,905,913];
+    genra4 = ["001", "002","003","005","006","008","010","012", "013","016", "018","019", "021","022", "023","029","030", "031","032","033" ,"034","035","036","039","040","042","047","054","061","062", "063","064","065","067", "072","079","088","089", "091","092","093","094","095",100, 106,108,110,113,116, 118,119,124, 125,126,128,135,137,140, 142,152,153,155,161,170,173,185,188, 192,194,199, 201,209,212,213, 214,215,216,217,223,228,235,243,246,255,259,264,291,294,299,302,303,304,305,311,312, 317,320,323,329, 330,333,335,354,360, 361, 365,369, 371,378,385, 403,404,409,413,417,423,425,429,437,444,451,452,453, 464,467,469,480, 486,499,502,521,523,525,526, 528,529,530,532,536,537,555,567,570,571,581,601,604,609,610,612, 614, 620, 623,625,628,650,666,683,696,701,707,708,709, 710,712,718,720,721, 722, 725, 731,752,767,772,777,800,801,802,803,804,809, 810, 818, 821,826,828, 829,839, 849,874,880,886,887,888,890,898, 901,902, 903,904,906,907,908,914, 915,916,917,918,920,922,923,933,941,959,963,964,966,971,972,974,975,976,977,978,979,980,982,988,990,995,997,999];
+    genra5 = ["007","020","048","049","050","051", "071","099",102,151,160,225,230, 310,314,408,415, 422,432,524,527,531,534,535,  540,541,554, 566,603,  635, 703,704,877,897,905,913,996];
     genra6 = [];
     //      0          1           2             3            4         5           6           7          8            9           10          11          1 2         13           14         15         16         17            18           19          20          21        22          23           24          25           26          27          28          29         30          31          32          33          34          35          36          37          38           39          40          41        42            43          44          45          46         47          48          49          50          51         52        53             54          55          56         57         58           59           60          61          62         63           64         65          66          67          68          69           70          71         72           73          74         75          76           77         78          79           80         81           82         83            84        85          86          87          88          89          90           91          92         93          94         95          96        97             98            99          100         101          102         103        104        105          106         107         108         109         110         111         112        113          114          115         116         117         118         119        120          121        122         123         124       125            126         127         128        129         130         131         132         133          134        135          136          137        138        139         140         141        142          143          144        145          146        147             148      149         150         151           152       153         154        155          156          157          158      159          160          161          162        163         164       165          166          167        168         169         170          171          172     173           174        175            176       177        178          179         180        181          182        183         184        185           186         187         188         189        190           191         192      193        194         195       196        197       198     199        200           201         202         203        204         205          206       
-    con = [["001", 0], ["018", 2], ["031", 0], ["063", 0], ["125", 2], ["201", 1], ["317", 1], ["365", 0], ["464", 1], ["614", 2], ["710", 2], ["722", 2], ["752", 3], ["901", 0], ["915", 0], ["118", 0], ["521", 3], ["042", 1], ["330", 2], ["623", 0], ["019", 0], ["725", 2], ["849", 0], ["002", 2], ["021", 3], ["106", 3], ["361", 0], ["818", 3], ["023", 0], ["091", 3], ["142", 0], ["192", 0], ["214", 2], ["371", 2], ["528", 0], ["620", 1], ["810", 2], ["821", 3], ["829", 1], ["903", 3], ["013", 0], ["072", 2], ["403", 2], ["707", 3], ["971", 1], ["003", 3], ["110", 1], ["194", 1], ["005", 3], ["012", 4], ["022", 4], ["209", 2], ["413", 1], ["920", 0], ["982", 0], ["018", 2], ["061", 0], ["095", 0], ["199", 3], ["235", 2], ["243", 0], ["354", 2], ["451", 3], ["898", 0], ["923", 0], ["999", 4], ["032", 5], ["079", 0], ["108", 2], ["124", 0], ["137", 3], ["571", 3], ["581", 1], ["610", 4], ["126", 2], ["135", 2], ["291", 2], ["033", 3], ["213", 3], ["523", 3], ["625", 2], ["888", 3], ["997", 0], ["008", 3], ["601", 0], ["666", 0], ["777", 4], ["972", 0], ["185", 0], ["335", 2], ["880", 2], ["010", 0], ["039", 0], ["064", 5], ["311", 0], ["360", 2], ["469", 0], ["990", "?"], ["047", 2], ["089", 2], ["302", 2], ["369", 0], ["385", 3], ["409", 3], ["554", 3], ["570", 3], ["612", 3], ["801", 0], ["988", 3], ["034", 3], ["119", 0], ["609", 1], ["906", 1], ["006", 0], ["016", 4], ["030", 3], ["062", 3], ["116", 5], ["155", 3], ["170", 1], ["188", 1], ["255", 2], ["299", 0], ["537", 3], ["555", 0], ["890", 1], ["907", 0], ["975", 3], ["976", 3], ["054", 0], ["246", 0], ["294", 4], ["437", 0], ["486", 0], ["650", 3], ["977", 3], ["088", 2], ["093", 1], ["100", 0], ["113", 5], ["312", 3], ["329", 0], ["628", 0], ["874", 3], ["683", 3], ["908", 1], ["140", 1], ["526", 3], ["530", 5], ["708", 0], ["839", 2], ["432", 0], ["566", 0], ["703", 0], ["635", 0], ["020", 0], ["310", 0], ["099", 0], ["007", 0], ["071", 0], ["540", 0], ["422", 0], ["049", 0], ["524", 0], ["048", 0], ["102", 0], ["314", 0], ["905", 0], ["541", 0], ["704", 0], ["050", 0], ["051", 0], ["225", 0], ["897", 0], ["408", 0], ["913", 0], ["531", 0], ["065", 2], ["160", 0], ["161", 1], ["320", 2], ["525", 2], ["701", 3], ["804", 3], ["828", 0], ["966", 0], ["067", 2], ["173", 3], ["230", 0], ["404", 2], ["532", 1], ["029", 3], ["452", 3], ["453", 3], ["604", 0], ["809", 5], ["914", 0], ["918", 2], ["941", 0], ["415", 0], ["721", 2], ["964", 5], ["036", 0], ["040", 3], ["092", 0], ["974", 3]];
+    con = [["001", 0, "https://privatter.net/p/6703366"], ["018", 2, "https://privatter.net/p/6748615"], ["031", 0, "https://privatter.net/p/6703466"], ["063", 0, "https://privatter.net/p/6695438"], ["125", 2, "https://privatter.net/p/6703511"], ["201", 1, "https://privatter.net/p/6695568"], ["317", 1, "https://privatter.net/p/6702502"], ["365", 0, "https://privatter.net/p/6746799"], ["464", 1, "https://privatter.net/p/6745119"], ["614", 2, "https://privatter.net/p/6695815"], ["710", 2, "https://privatter.net/p/6744563"], ["722", 2, "https://privatter.net/p/6695983"], ["752", 3, "https://privatter.net/p/6744635"], ["901", 0, "https://privatter.net/p/6738147"], ["915", 0, "https://privatter.net/p/6696047"], ["118", 0, "https://privatter.net/p/6755338"], ["521", 3, "https://privatter.net/p/6755379"], ["042", 1, "https://privatter.net/p/6758917"], ["330", 2, "https://privatter.net/p/6762214"], ["623", 0, "https://privatter.net/p/6758874"], ["019", 0, "https://privatter.net/p/6766679"], ["725", 2, "https://privatter.net/p/6766770"], ["849", 0, "https://privatter.net/p/6766399"], ["002", 2, "https://privatter.net/p/6771383"], ["021", 3, "https://privatter.net/p/6771524"], ["106", 3, "https://privatter.net/p/6771635"], ["361", 0, "https://privatter.net/p/6771670"], ["818", 3, "https://privatter.net/p/6771782"], ["023", 0, "https://privatter.net/p/6778268"], ["091", 3, "https://privatter.net/p/6778286"], ["142", 0, "https://privatter.net/p/6778302"], ["192", 0, "https://privatter.net/p/6778314"], ["214", 2, "https://privatter.net/p/6778327"], ["371", 2, "https://privatter.net/p/6778343"], ["528", 0, "https://privatter.net/p/6778352"], ["620", 1, "https://privatter.net/p/6778375"], ["810", 2, "https://privatter.net/p/6778395"], ["821", 3, "https://privatter.net/p/6778448"], ["829", 1, "https://privatter.net/p/6778582"], ["903", 3, "https://privatter.net/p/6778632"], ["013", 0, "https://privatter.net/p/6782727"], ["072", 2, "https://privatter.net/p/6782754"], ["403", 2, "https://privatter.net/p/6782810"], ["707", 3, "https://privatter.net/p/6786497"], ["971", 1, "https://privatter.net/p/6786446"], ["003", 3, "https://privatter.net/p/6789998"], ["110", 1, "https://privatter.net/p/6790048"], ["194", 1, "https://privatter.net/p/6790092"], ["005", 3, "https://privatter.net/p/6798989"], ["012", 4, "https://privatter.net/p/6799118"], ["022", 4, "https://privatter.net/p/6799176"], ["209", 2, "https://privatter.net/p/6799263"], ["413", 1, "https://privatter.net/p/6799346"], ["920", 0, "https://privatter.net/p/6799416"], ["982", 0, "https://privatter.net/p/6799505"], ["9999", 2, "https://privatter.net/p/6748615"], ["061", 0, "kari"], ["095", 0, "kari"], ["199", 3, "kari"], ["235", 2, "kari"], ["243", 0, "kari"], ["354", 2, "kari"], ["451", 3, "kari"], ["898", 0, "kari"], ["923", 0, "kari"], ["999", 4, "kari"], ["032", 5, "kari"], ["079", 0, "kari"], ["108", 2, "kari"], ["124", 0, "kari"], ["137", 3, "kari"], ["571", 3, "kari"], ["581", 1, "kari"], ["610", 4, "kari"], ["126", 2, "kari"], ["135", 2, "kari"], ["291", 2, "kari"], ["033", 3, "kari"], ["213", 3, "kari"], ["523", 3, "kari"], ["625", 2, "kari"], ["888", 3, "kari"], ["997", 0, "kari"], ["008", 3, "kari"], ["601", 0, "kari"], ["666", 0, "kari"], ["777", 4, "kari"], ["972", 0, "kari"], ["185", 0, "kari"], ["335", 2, "kari"], ["880", 2, "kari"], ["010", 0, "kari"], ["039", 0, "kari"], ["064", 5, "kari"], ["311", 0, "kari"], ["360", 2, "kari"], ["469", 0, "kari"], ["990", "?", "kari"], ["047", 2, "kari"], ["089", 2, "kari"], ["302", 2, "kari"], ["369", 0, "kari"], ["385", 3, "kari"], ["409", 3, "kari"], ["554", 3, "kari"], ["570", 3, "kari"], ["612", 3, "kari"], ["801", 0, "kari"], ["988", 3, "kari"], ["034", 3, "kari"], ["119", 0, "kari"], ["609", 1, "kari"], ["906", 1, "kari"], ["006", 0, "kari"], ["016", 4, "kari"], ["030", 3, "kari"], ["062", 3, "kari"], ["116", 5, "kari"], ["155", 3, "kari"], ["170", 1, "kari"], ["188", 1, "kari"], ["255", 2, "kari"], ["299", 0, "kari"], ["537", 3, "kari"], ["555", 0, "kari"], ["890", 1, "kari"], ["907", 0, "kari"], ["975", 3, "kari"], ["976", 3, "kari"], ["054", 0, "kari"], ["246", 0, "kari"], ["294", 4, "kari"], ["437", 0, "kari"], ["486", 0, "kari"], ["650", 3, "kari"], ["977", 3, "kari"], ["088", 2, "kari"], ["093", 1, "kari"], ["100", 0, "kari"], ["113", 5, "kari"], ["312", 3, "kari"], ["329", 0, "kari"], ["628", 0, "kari"], ["874", 3, "kari"], ["683", 3, "kari"], ["908", 1, "kari"], ["140", 1, "kari"], ["526", 3, "kari"], ["530", 5, "kari"], ["708", 0, "kari"], ["839", 2, "kari"], ["432", 0, "kari"], ["566", 0, "kari"], ["703", 0, "kari"], ["635", 0, "kari"], ["020", 0, "kari"], ["310", 0, "kari"], ["099", 0, "kari"], ["007", 0, "kari"], ["071", 0, "kari"], ["540", 0, "kari"], ["422", 0, "kari"], ["049", 0, "kari"], ["524", 0, "kari"], ["048", 0, "kari"], ["102", 0, "kari"], ["314", 0, "kari"], ["905", 0, "kari"], ["541", 0, "kari"], ["704", 0, "kari"], ["050", 0, "kari"], ["051", 0, "kari"], ["225", 0, "kari"], ["897", 0, "kari"], ["408", 0, "kari"], ["913", 0, "kari"], ["531", 0, "kari"], ["065", 2, "kari"], ["160", 0, "kari"], ["161", 1, "kari"], ["320", 2, "kari"], ["525", 2, "kari"], ["701", 3, "kari"], ["804", 3, "kari"], ["828", 0, "kari"], ["966", 0, "kari"], ["067", 2, "kari"], ["173", 3, "kari"], ["230", 0, "kari"], ["404", 2, "kari"], ["532", 1, "kari"], ["029", 3, "kari"], ["452", 3, "kari"], ["453", 3, "kari"], ["604", 0, "kari"], ["809", 5, "kari"], ["914", 0, "kari"], ["918", 2, "kari"], ["941", 0, "kari"], ["415", 0, "kari"], ["721", 2, "kari"], ["964", 5, "kari"], ["036", 0, "kari"], ["040", 3, "kari"], ["092", 0, "kari"], ["974", 3, "kari"], ["215", 3, "https://privatter.net/p/6983390"], ["264", 3, "https://privatter.net/p/6983461"], ["423", 0, "https://privatter.net/p/6983502"], ["887", 2, "https://privatter.net/p/6983575"], ["916", 1, "https://privatter.net/p/6983642"], ["212", 0, "https://privatter.net/p/6986596"], ["499", 0, "https://privatter.net/p/6983930"], ["035", 0, "https://privatter.net/p/6990990"], ["153", 5, "https://privatter.net/p/6983692"], ["323", 5, "https://privatter.net/p/6992461"], ["429", 0, "https://privatter.net/p/6987429"], ["480", 3, "https://privatter.net/p/6994956"], ["529", 2, "https://privatter.net/p/6989966"], ["567", 2, "https://privatter.net/p/6993378"], ["800", 2, "https://privatter.net/p/6995043"], ["978", 0, "https://privatter.net/p/6995150"], ["094", 0, "https://privatter.net/p/6998708"], ["217", 2, "https://privatter.net/p/6994838"], ["378", 3, "https://privatter.net/p/6989284"], ["417", 2, "https://privatter.net/p/6994485"], ["527", 0, "https://privatter.net/p/6997663"], ["536", 3, "https://privatter.net/p/6997713"], ["802", 3, "https://privatter.net/p/6994890"], ["917", 2, "https://privatter.net/p/6998742"], ["980", 1, "https://privatter.net/p/6998793"], ["216", 5, "https://privatter.net/p/7002768"], ["502", 0, "https://privatter.net/p/7002974"], ["720", 2, "https://privatter.net/p/7003006"], ["963", 0, "https://privatter.net/p/7002115"], ["467", 4, "https://privatter.net/p/7013131"], ["696", 0, "https://privatter.net/p/7011051"], ["718", 2, "https://privatter.net/p/7013189"], ["767", 3, "https://privatter.net/p/7011558"], ["772", 1, "https://privatter.net/p/7013235"], ["803", 3, "https://privatter.net/p/7011786"], ["902", 0, "https://privatter.net/p/7013276"], ["259", 2, "https://privatter.net/p/7011507"], ["959", 3, "https://privatter.net/p/7011506"], ["333", 3, "https://privatter.net/p/7020799"], ["603", 0, "https://privatter.net/p/7020028"], ["826", 4, "https://privatter.net/p/7020422"], ["877", 0, "https://privatter.net/p/7020870"], ["228", 0, "https://privatter.net/p/7026403"], ["304", 3, "https://privatter.net/p/7028333"], ["305", 3, "https://privatter.net/p/6995786"], ["534", 0, "https://privatter.net/p/7022790"], ["535", 0, "https://privatter.net/p/7022697"], ["709", 4, "https://privatter.net/p/7013612"], ["152", 0, "https://privatter.net/p/7029879"], ["303", 3, "https://privatter.net/p/6986577"], ["444", 2, "https://privatter.net/p/7032510"], ["731", 2, "https://privatter.net/p/7029596"], ["886", 3, "https://privatter.net/p/7021856"], ["904", 3, "https://privatter.net/p/7028636"], ["933", 3, "https://privatter.net/p/7030278"], ["979", 0, "https://privatter.net/p/7028241"], ["996", 0, "https://privatter.net/p/7031786"], ["128", 3, "https://privatter.net/p/7021177"], ["151", 0, "https://privatter.net/p/7046298"], ["223", 0, "https://privatter.net/p/7045757"], ["425", 3, "https://privatter.net/p/7044858"], ["712", 0, "https://privatter.net/p/7046348"], ["922", 0, "https://privatter.net/p/7046375"], ["995", 1, "https://privatter.net/p/7046432"]];
 
     //リザルト計算用
     reco = 1;
@@ -133,6 +171,42 @@ function sycount() {
         kazoe = [036, 0];
         sycon[i].push(kazoe);
         syconk.push(036);
+        kazoe = [978, 0];
+        sycon[i].push(kazoe);
+        syconk.push(978);
+        kazoe = [696, 0];
+        sycon[i].push(kazoe);
+        syconk.push(696);
+        kazoe = [603, 0];
+        sycon[i].push(kazoe);
+        syconk.push(603);
+        kazoe = [877, 0];
+        sycon[i].push(kazoe);
+        syconk.push(877);
+        kazoe = [228, 0];
+        sycon[i].push(kazoe);
+        syconk.push(228);
+        kazoe = [534, 0];
+        sycon[i].push(kazoe);
+        syconk.push(534);
+        kazoe = [535, 0];
+        sycon[i].push(kazoe);
+        syconk.push(535);
+        kazoe = [709, 0];
+        sycon[i].push(kazoe);
+        syconk.push(709);
+        kazoe = [731, 0];
+        sycon[i].push(kazoe);
+        syconk.push(731);
+        kazoe = [886, 0];
+        sycon[i].push(kazoe);
+        syconk.push(886);
+        kazoe = [996, 0];
+        sycon[i].push(kazoe);
+        syconk.push(996);
+        kazoe = [223, 0];
+        sycon[i].push(kazoe);
+        syconk.push(223);
     }
 
 }
@@ -155,6 +229,10 @@ function sykasan(check, pura, tuika) {
         sycon[syid][syconc][1] = tuika;
         }
     }
+}
+
+function compareFunc(a, b) {
+    return b[0] - a[0];
 }
 
 function li_log() {
@@ -242,38 +320,62 @@ function counte() {
 
     }
 
-
-
-
+function link() {
+    conc = con.map(function (value, index) { return value[0]; });
+    conc2 = con.map(function (value, index) { return value[2]; });
+    conc3 = conc.indexOf(tt1);
+    lin = conc2[conc3];
+    if (lin != "kari") {
+        lintxt = "<a href=\"" + lin + "\" target=\"_blank\" rel=\"noopener noreferrer\">エンサイクロペディア（新規タブ）</a>";
+        target = document.getElementById("linklog");
+        target.innerHTML = lintxt;
+    } else {
+        lintxt = "";
+        target = document.getElementById("linklog");
+        target.innerHTML = lintxt;
+    }
+}
 
 function set1() {
     tt1 = document.hanteisuru['gen1'].value;
+    gnid[0] = tt1;
     counte();
+    link();
     textset();
 }
 function set2() {
     tt1 = document.hanteisuru['gen2'].value;
+    gnid[1] = tt1;
     counte();
+    link();
     textset();
 }
 function set3() {
     tt1 = document.hanteisuru['gen3'].value;
+    gnid[2] = tt1;
     counte();
+    link();
     textset();
 }
 function set4() {
     tt1 = document.hanteisuru['gen4'].value;
+    gnid[3] = tt1;
     counte();
+    link();
     textset();
 }
 function set5() {
     tt1 = document.hanteisuru['gen5'].value;
+    gnid[4] = tt1;
     counte();
+    link();
     textset();
 }
 function set6() {
     tt1 = document.hanteisuru['gen6'].value;
+    gnid[5] = tt1;
     counte();
+    link();
     textset();
 }
 function set7() {
@@ -401,16 +503,28 @@ function gatya() {
         genra3 = genra3.concat(gtG);
     }
     if (checkbox[7].checked) {
+        genra1 = genra1.concat(gtH);
+        genra3 = genra3.concat(gtH);
+    }
+    if (checkbox[8].checked) {
+        genra1 = genra1.concat(gtI);
+        genra3 = genra3.concat(gtI);
+    }
+    if (checkbox[9].checked) {
     genra3 = genra3.concat(gtTA);
     genra2 = genra2.concat(gtTA);
     }
-    if (checkbox[8].checked) {
+    if (checkbox[10].checked) {
         genra3 = genra3.concat(gtTB);
         genra2 = genra2.concat(gtTB);
     }
-    if (checkbox[9].checked) {
+    if (checkbox[11].checked) {
         genra3 = genra3.concat(gtTC);
         genra2 = genra2.concat(gtTC);
+    }
+    if (checkbox[12].checked) {
+        genra3 = genra3.concat(gtTD);
+        genra2 = genra2.concat(gtTD);
     }
     
 
@@ -418,9 +532,11 @@ function gatya() {
     var arr2 = [];
     randam = 0;
     check = "";
-var select = document.getElementById("gen1");
+    var select = document.getElementById("gen1");
+
     randam = Math.floor(Math.random() * genra1.length);
     check = genra1[randam];
+    gnid[0] = genra1[randam];
     arr.push(check);
     kensa = genra4.indexOf(genra1[randam]);
     select.options[kensa].selected = true;
@@ -432,6 +548,7 @@ var select = document.getElementById("gen1");
         if (! arr.includes(genra1[randam])) {
             check = genra1[randam];
             arr.push(check);
+            gnid[1] = genra1[randam];
             kensa = genra4.indexOf(genra1[randam]);
             select.options[kensa].selected = true;
             break;
@@ -444,6 +561,7 @@ var select = document.getElementById("gen1");
         if (!arr.includes(genra1[randam])) {
             check = genra1[randam];
             arr.push(check);
+            gnid[2] = genra1[randam];
             kensa = genra4.indexOf(genra1[randam]);
             select.options[kensa].selected = true;
             break;
@@ -456,6 +574,7 @@ var select = document.getElementById("gen1");
         if (!arr.includes(genra1[randam])) {
             check = genra1[randam];
             arr.push(check);
+            gnid[3] = genra1[randam];
             kensa = genra4.indexOf(genra1[randam]);
             select.options[kensa].selected = true;
             break;
@@ -468,6 +587,7 @@ var select = document.getElementById("gen1");
         if (!arr2.includes(genra2[randam])) {
             check = genra2[randam];
             arr2.push(check);
+            gnid[4] = genra2[randam];
             kensa = genra5.indexOf(genra2[randam]);
             select.options[kensa].selected = true;
 
@@ -479,9 +599,6 @@ function gatya2() {
     mara =  document.hanteisuru['gen6'].value;
     ddd = 5;
     ddd2 = 1;
-    if (mara == 432 || mara == 566 || mara == 703 || mara == 635 || mara == 020 || mara == 310 || mara == 099) {
-        ddd = 4;
-    }
     ddd2 = Math.floor(Math.random() * ddd)+1 ;
     if (ddd2 == 5) {
         ddd2 = 6;
@@ -832,6 +949,43 @@ function keisantyu10() {
     document.tinatusuru10['hanketu'].value = battle;
 
 }
+
+function dataire() {
+    kekka = document.hanteisuru['kekka'].value.split(/\n/);
+    kazu = kekka.length;
+
+    for (var i = 0; i < kazu; ++i) {
+        tete1 = kekka[i].split(/\s\s+/).join('');
+        tete = tete1.split(':');
+        if (i >= 1 || i == 3 || i == 5 || i == 6 || i == 12) {
+            if (tete[1] == "EX" || tete[1] == "ex") {
+                tete[1] = 6;
+            }
+            kekka[i] = tete[1];
+        } else {
+            if (tete[1] == "EX" || tete[1] == "ex") {
+                tete[1] = 6;
+            }
+            kekka[i] = parseInt(tete[1]);
+        }
+
+    }
+    tt12 = kekka[12];
+    kagoti = kekka[12].split(/,/);
+    kekka[12] = kagoti;
+    deme = kekka[4];
+
+    for (var i = 0; i < kazu; ++i) {
+        if (kekka[i] == null) {
+            if (i >= 2) {
+                alert(i + 1 + "行目入力エラー");
+            }
+        } else {
+        }
+    }
+
+}
+
 function hanteityu() {
     irai=0;
     rankk = 1;
@@ -842,9 +996,7 @@ function hanteityu() {
     sitxt = "";
     seitxt = "";
     sibou = 1;
-    kekka = document.hanteisuru['kekka'].value.split(/\n/);
     bahu = parseInt(document.hanteisuru['bahu'].value);
-    kazu = kekka.length;
     text = "";
     sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]];
     sagyona = 0;
@@ -880,42 +1032,20 @@ function hanteityu() {
     kari3 = 0;
     kari4 = 0;
     katit = "";
+    katit2 = "";
+    karihako=[];
     deme = 0;
     nemax = 5;
     sykekka = 0;
     babb = 0;
+    dassou = 0;
+    kake = 0;
+    kake2 = 0;
+    kake3 = "";
 
     rogcount = rog.length + 1;
 
-    for (var i = 0; i < kazu; ++i) {
-        tete1 = kekka[i].split(/\s\s+/).join('');
-        tete = tete1.split(':');
-        if (i >= 1 || i == 3 || i == 5 || i == 6 || i == 12) {
-            if (tete[1] == "EX"|| tete[1]=="ex") {
-                tete[1] = 6;
-            }
-            kekka[i] = tete[1];
-        } else {
-            if (tete[1] == "EX" || tete[1]== "ex" ) {
-                tete[1] = 6;
-            }
-            kekka[i] = parseInt(tete[1]);
-        }
-
-    }
-    tt12 = kekka[12];
-    kagoti = kekka[12].split(/,/);
-    kekka[12] = kagoti;
-    deme = kekka[4];
-
-    for (var i = 0; i < kazu; ++i) {
-        if (kekka[i] == null) {
-            if (i >= 2) {
-                alert(i + 1 + "行目入力エラー");
-            }
-        } else {
-        }
-    }
+    dataire();
 
 
     if (kekka[3] == "本能") {
@@ -953,11 +1083,11 @@ function hanteityu() {
 
     kurike = 0;
     fanke = 0;
+    gift = 0;
 
     for (var i = 1; i < 7; ++i) {
         if (kekka[10] == i) {
             if (kekka[4] >= kuriti[i]) {
-                kuritxt = "クリティカル、ギフト入手\n";
                 kurike = 1;
             }
             if (kekka[4] == fanti[i]) {
@@ -979,10 +1109,12 @@ function hanteityu() {
     tt10 = kekka[11];
     tt11 = kekka[13];
 
+    
     babb = Number(bahu);
+
     if (babb >= 14) {
         babb = 13;
-    }
+    }　
     peti = Number(kekka[4]) + babb;
     kekka[4] = peti;
     if (kekka[4] <= 0) {
@@ -998,8 +1130,20 @@ function hanteityu() {
 
     name = kekka[5];
 
+    gene = conc[conc3]+" ";
 
-
+    kensaku467 = kekka[12].indexOf('467');
+    if (kensaku467 != -1) {
+        if (kekka[9] >= kekka[10]) {
+            kari = kekka[9] * 2;
+        } else {
+            kari = kekka[10] * 2;
+        }
+        text += "職員" + name + "の最大SPが" + kari + "減少した\n";
+    }
+    if (t152 == syid && kekka[2] != 152) {
+        text = "職員" + name + "は小さな貴方の為の可愛い虫籠以外に作業できない\n";
+    } else {
     namae = "g";
     namae += kekka[2];
     hantei = namae;
@@ -1008,11 +1152,54 @@ function hanteityu() {
     f = new Function(strngCall);
     f();
 
+        if (kurike == 1) {
+            if (gift == 0) {
+                kuritxt = "クリティカル、ギフト入手\n";
+            } else {
+                kuritxt = "クリティカル\n";
+            }
+        }
+
+    }
+    if (irai == 1) {
+        if (kekka[2] != "033") {
+        peti = 0;
+        }
+        keikenti = 0;
+    }
+
+    kensaku904 = kekka[12].indexOf('904');
+    if (kensaku904 != -1 && kekka[2] == "904") {
+        keikenti = keikenti * 2;
+    }
+
     if (t0922 == 1) {
         peti += t0923;
     } else {
         if (kekka[2] == "092") {
             peti += t0923;
+        }
+    }
+
+    kensaku720 = kekka[12].indexOf('720');
+    if (kensaku720 != -1 && kekka[2] != 720) {
+        text += "職員" + name + "は溶けた\n";
+        sibou = 0;
+    }
+
+    kensaku035 = kekka[12].indexOf('035');
+    if (kensaku035 != -1 && seihi == 0) {
+        text += "▼職員" + name + "はパニックに陥った\n" + gene + "は脱走した\n";
+        pani = 1;
+        dassou = 1;
+    }
+
+    kensaku = kekka[12].indexOf('826');
+    if (sibou != 0) {
+        if (kensaku != -1 && seihi == 0 && kekka[2] != "826") {
+            pani = 1;
+            text += "灯籠から哀悼者の涙が流れ込む\n";
+            text += "▼職員" + name + "はシャットダウン性パニックに陥った\n";
         }
     }
 
@@ -1030,6 +1217,7 @@ function hanteityu() {
             text += "入学届が退学届へと変化した\n▼職員" + name + "は徘徊性パニックに陥った\n加護欄から「914」を消去\n";
             pani = 1;
             sykasan(914, 3, 0);
+            kagokesi('914');
         }
     }
 
@@ -1041,6 +1229,15 @@ function hanteityu() {
             
         }
 
+    }
+
+    kensaku094 = kekka[12].indexOf('094');
+    if (kensaku094 != -1 && kekka[2] != "094") {
+        ransu = Math.floor(Math.random() * 10 + 1);
+        if (ransu <= 4) {
+            text += "処刑執行日の放送が流れた\n";
+            sibou = 0;
+        }
     }
 
     sykensaku(036);
@@ -1056,8 +1253,14 @@ if (sykekka >= 2 &&kekka[2]!="036") {
 
     } 
 
+    kensaku499 = kekka[12].indexOf('499');
+    if (kensaku499 != -1 && sagyona == 2) {
+        text += "▼職員" + name + "はチーズに変化した\n脱走時情報は魅惑のチーズのエンサイクロペディア参照\n";
+        sibou = 0;
+    }
+
     //173 終止符のクラゲ 海鮮への作業成功でカウンター回復　140 828
-    if (kekka[2] == 140 || kekka[2] == 828) {
+    if (kekka[2] == 140 || kekka[2] == 828 || kekka[2] == 215 || kekka[2] == 467 || kekka[2] == 826) {
         if (seihi == 1) {
             if (con[187][1] <=2) {
             text += "終止符のクラゲのカウンターが1増加した\n";
@@ -1093,6 +1296,23 @@ if (sykekka >= 2 &&kekka[2]!="036") {
         }
     }
 
+    kensaku696 = kekka[12].indexOf('696');
+    if (kensaku696 != -1 && kekka[2] != 696) {
+        sykasan(696, 0, 1);
+        sykensaku(696);
+        if (sykekka == 3) {
+            text += "職員" + name + "の首がもげた\n";
+            sibou = 0;
+            t696 = 1;
+        }
+    }
+
+    kensaku902 = kekka[12].indexOf('902');
+    if (kensaku902 != -1) {
+        text += "職員" + name + "はこの日は蘇生できない\n";
+        sibou = 0;
+    }
+
     kensaku093 = kekka[12].indexOf('093');
     kensaku0931 = kekka[12].indexOf('1913');
 
@@ -1101,16 +1321,34 @@ if (sykekka >= 2 &&kekka[2]!="036") {
         if (kensaku093 != -1 && sibou !== 0) {
             text += "▼狐の声が聞こえる。\n『はぁ？アンタはおれのモノや。" + name + "。』\n";
             text += "百火は脱走した。加護093を持った職員は即座に殺人性パニックとなる。\n";
+            dassou = 1;
 
         } else {
             if (kensaku093 != -1 && sibou == 0) {
                 text += "▼狐の声が聞こえる。\n『なぁ、誰が" + name + "を殺したん？』\n";
                 text += "百火は脱走した。093系統の加護を消去してください。\n";
-
+                dassou = 1;
+                kagokesi('093');
+                kagokesi('0931');
+                kagokesi('0932');
+                kagokesi('0933');
             }
 
         }
     }
+
+    kensaku152 = kekka[12].indexOf('152');
+    if (kensaku152 != -1 && kekka[2] != "152" && seihi == 1) {
+        kagokesi('152');
+        sagyobahu(+2);
+        text += "マーキング「152」が消えた\n";
+    }
+    kensaku1522 = kekka[12].indexOf('1522');
+    if (kensaku1522 != -1 && kekka[2] != "152" && seihi == 1) {
+        kagokesi('1522');
+        text += "マーキング「1522」が消えた\n";
+    }
+
 
     if (kekka[2] != 093 && sagyona !== 2) {
 
@@ -1118,6 +1356,9 @@ if (sykekka >= 2 &&kekka[2]!="036") {
         if (kensaku0933 != -1) {
             text += "▼狐の声が聞こえる。\n『" + name + "、おれのとこに帰ってこい。』\n";
             text += "百火は脱走した。加護093を持った職員は即座に殺人性パニックとなる。\n加護0931,0933を削除。\n";
+            dassou = 1;
+            kagokesi('0931');
+            kagokesi('0933');
 
         } else {
 
@@ -1141,7 +1382,11 @@ if (sykekka >= 2 &&kekka[2]!="036") {
                     if (kensaku093 != -1 && sibou == 0) {
                         text += "▼狐の声が聞こえる。\n『誰に殺された、" + name + "……』\n";
                         text += "百火は脱走した。093系統の加護を消去してください。\n";
-
+                        dassou = 1;
+                        kagokesi('093');
+                        kagokesi('0931');
+                        kagokesi('0932');
+                        kagokesi('0933');
                     }
                 }
             }
@@ -1153,6 +1398,7 @@ if (sykekka >= 2 &&kekka[2]!="036") {
         if (pani == 1) {
             text += "▼狐の声が聞こえる。\n『かわいそうに。今迎えに行くからなぁ、" + name + "。』\n";
             text += "百火は脱走した。職員" + name + "のパニックは殺人性となる。\n";
+            dassou = 1;
 
         }
     }
@@ -1180,6 +1426,7 @@ if (sykekka >= 2 &&kekka[2]!="036") {
             sibou = 0;
         } else {
             text += "手動で100の加護を消去して下さい。\n";
+            kagokesi('100');
 
         }
     }
@@ -1192,6 +1439,7 @@ if (sykekka >= 2 &&kekka[2]!="036") {
             sibou = 0;
         } else {
             text += "手動で1001の加護を消去して下さい。\n";
+            kagokesi('1001');
 
         }
     }
@@ -1277,6 +1525,7 @@ if (sykekka >= 2 &&kekka[2]!="036") {
         con[97] -= 1;
         if (con[97] <= 0) {
             text += "あなたのナンバーワンは脱走した\nあなたのナンバーワンのカウンター0→2\n";
+            dassou = 1;
             con[97] = 2;
         }
     }
@@ -1284,12 +1533,14 @@ if (sykekka >= 2 &&kekka[2]!="036") {
     if (kensaku12 != -1 && pani == 1) {
         
         text += "部門内の加護829職員は全員星巡りとなり、飛び立つ流星が脱走した\n星巡りは鎮圧後死亡する\n";
+        dassou = 1;
     }
 
     kensaku908 = kekka[12].indexOf('908');
     if (kensaku908 != -1) {
         if (sibou == 0 || pani == 1) {
             text += "輝血の燈籠流しが脱走した\n部門内全職員の908加護が消える\n";
+            dassou = 1;
         }
     }
 
@@ -1300,6 +1551,70 @@ if (sykekka >= 2 &&kekka[2]!="036") {
         seitxt = "作業成功\n";
 
     }
+
+    if (seihi == 0) {
+        
+        jougen = seiti;
+        if (pale == 0) {
+            dame = jougen - kekka[4];
+            if (irai == 1 || sagyona==4) {
+                dame = 0;
+            }
+            if (dame >= 1) {
+                dametxt = "\n" + dame + "ダメージ";
+                if (kekka[2] == "003") {
+                    dametxt = "1ダメージ";
+                }
+            }
+        } else {
+            dame = (rankk - kekka[4]) * 5;
+            if (dame >= 1) {
+dametxt = "\n" + dame + "%ダメージ";
+            }
+            
+        }
+
+        if (kekka[2] == 979 && sagyona == 1) {
+            dame = 0;
+            dametxt = "";
+        }
+
+        if (kekka[2] == 110 ||kekka[2]==216) {
+            dametxt = "";
+            dame = 0;
+        }
+        kensaku536 = kekka[12].indexOf('5362');
+        if (kensaku536 != -1 && dame >= 1) {
+            sibou=0;
+        }
+        
+    }
+
+    kensaku534 = kekka[12].indexOf('534');
+    if (kensaku534 != -1 && kekka[2] != "534") {
+        if (t5341 != -1) {
+            sykasan(534, 0, 1);
+            sykensaku(534);
+            if (sykekka >= 2 ) {
+                sykensaku(535);
+                if (sykekka == 0) {
+                    sibou = 0;
+                    sykasan(534, 3, 0);
+                } else {
+                    if (sibou == 1) {
+                        text += "サルベージの作業により得たものを失った\n";
+                        sykasan(535, 3, 0);
+                        sykasan(534, 3, 0);
+
+                    }
+                }
+            }
+        }
+        if (sibou == 0) {
+            t5341 = 1;
+        }
+    }
+
     if (sibou == 0) {
         sitxt = "▼職員" + name + "は死んでいる。\n";
         tt12 = "";
@@ -1316,37 +1631,10 @@ if (sykekka >= 2 &&kekka[2]!="036") {
         sitxt = "生還\n";
 
     }
- if (sagyona == 4 || sagyona == 5) {
+    if (sagyona == 4 || sagyona == 5) {
         seitxt = "";
-        
+
     } 
-    
-
-    if (seihi == 0) {
-        
-        jougen = seiti;
-        if (pale == 0) {
-            dame = jougen - kekka[4];
-            if (dame >= 1) {
-                dametxt = "\n" + dame + "ダメージ";
-                if (kekka[2] == "003") {
-                    dametxt = "1ダメージ";
-                }
-            }
-        } else {
-            dame = (rankk - kekka[4]) * 5;
-            if (dame >= 1) {
-dametxt = "\n" + dame + "%ダメージ";
-            }
-            
-        }
-
-        if (kekka[2] == 110) {
-            dametxt = "";
-        }
-
-        
-    }
     keitxt = 0;
     if (seihi == 1) {
         keitxt = keina + keikenti;
@@ -1372,12 +1660,14 @@ dametxt = "\n" + dame + "%ダメージ";
     kensaku9762 = kekka[12].indexOf('9762');
     if (kensaku9762 != -1 && kekka[2] != "976") {
         text += "加護欄から「9762」を消去する（手動）\n";
+        kagokesi('9762');
     }
 
     kensaku976 = kekka[12].indexOf('976');
     kensaku9752 = kekka[12].indexOf('9752');
     if (kensaku9752 != -1 && kensaku976 == -1 && kekka[2] != "975") {
         text += "加護欄から「9752」を消去する（手動）\n";
+        kagokesi('9752');
 
     }
 
@@ -1439,8 +1729,319 @@ dametxt = "\n" + dame + "%ダメージ";
     }
     if (con[181][1] <= 0) {
         text += "赤い鳥は脱走した\nカウンター0→2\n";
+        dassou = 1;
         con[181][1] = 2;
     }
+
+
+    kensaku303 = kekka[12].indexOf('303');
+    if (kensaku303 != -1) {
+        if (kekka[2] == "303" && dassou == 1) {
+
+        } else {
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 1) {
+                text += "ランダムな未感染職員1名が「感染者」となる\n感染者の加護欄に「3032」を追加\n";
+                conc = con.map(function (value, index) { return value[0]; });
+                conc2 = con.map(function (value, index) { return value[1]; });
+                conc4 = conc.indexOf('303');
+                kari = conc2[conc4];
+                text += "\nメルトフレンズのカウンターが減少した\n";
+                kari -= 1;
+                if (kari <= 0) {
+                    text += "メルトフレンズは脱走した\n「仲間の証」を持つ職員は「溶けた親友」、「感染者」の全ての職員は「溶けた友達」に変異する\nカウンター0→3\n";
+                    text += "『さあ、一緒に外へ行こう！友達作りに！』\n";
+                    dassou = 1;
+                    kari = 3;
+                }
+                con[conc4][1] = kari;
+                if (kekka[2] == "303") {
+                    nefi = kari;
+                }
+            }
+        }
+
+    }
+
+    sykensaku(886);
+    if (sykekka != 0 && t8863 == 0) {
+        console.log(sykekka);
+        if (sykekka == 43) {
+            text += "\n職員" + name + "は指令を達成できなかった\n";
+            console.log('4');
+            sykasan(886, 3, 0);
+            kari = 1;
+            kagokesi('8864');
+            t886 = 0;
+            t8862 = "";
+        }
+        if (sagyona != 4 || sagyona != 5 || irai != 1) {
+            if (sykekka == 1 || sykekka == 2 || sykekka == 3 || sykekka == 4 || sykekka == 5 || sykekka == 6 || sykekka == 7 || sykekka == 8 || sykekka == 9) {
+                if (seihi == 1) {
+                    if (sykekka == 1) {
+                        text += "\n職員" + name + "は指令を達成した\n";
+                        kagokesi('8861');
+                        console.log('1-1');
+                            sykasan(886, 3, 0);
+                    } 
+                    if (sykekka == 3) {
+                        sykasan(886, 3, 4);
+                    } else {
+                        if (sykekka == 4) {
+                            text += "\n職員" + name + "は指令を達成した\n";
+                            kagokesi('8861');
+                            console.log('1-2');
+                                sykasan(886, 3, 0);
+                        } 
+                    }
+                    if (sykekka == 6) {
+                        sykasan(886, 3, 7);
+                    } else {
+                        if (sykekka == 7) {
+                            sykasan(886, 3, 8);
+                        } else {
+                            if (sykekka == 8) {
+                                text += "\n職員" + name + "は指令を達成した\n";
+                                kagokesi('8861');
+                                console.log('1-3');
+                                    sykasan(886, 3, 0);
+                            } 
+                        }
+                    }
+                } else {
+                    text += "\n職員" + name + "は指令を達成できなかった\n";
+                    kagokesi('8861');
+                    console.log('1-no');
+                    sykasan(886, 3, 0);
+                    kari = 1;
+                }
+
+            }
+            if (sykekka == 10 || sykekka == 11 || sykekka == 12 || sykekka == 13 || sykekka == 14 || sykekka == 15 || sykekka == 16 || sykekka == 17 || sykekka == 18) {
+                if (sagyona == 0) {
+                    if (sykekka == 10) {
+                        text += "\n職員" + name + "は指令を達成した\n";
+                        kagokesi('8862');
+                        console.log('2a-1');
+                            sykasan(886, 3, 0);
+                    } 
+                    
+                    if (sykekka == 12) {
+                        sykasan(886, 3, 13);
+                    } else {
+                        if (sykekka == 13) {
+                            text += "\n職員" + name + "は指令を達成した\n";
+                            kagokesi('8862');
+                            console.log('2a-2');
+                                sykasan(886, 3, 0);
+                        } 
+                        
+                    }
+                    if (sykekka == 15) {
+                        sykasan(886, 3, 16);
+                    } else {
+                        if (sykekka == 16) {
+                            sykasan(886, 3, 17);
+                        } else {
+                            if (sykekka == 17) {
+                                text += "\n職員" + name + "は指令を達成した\n";
+                                kagokesi('8862');
+                                console.log('2a-3');
+                                    sykasan(886, 3, 0);
+                            } 
+                            
+                        }
+                    }
+                } else {
+                    text += "\n職員" + name + "は指令を達成できなかった\n";
+                    kagokesi('8862');
+                    console.log('2a-no');
+                    sykasan(886, 3, 0);
+                    kari = 1;
+                }
+
+            }
+
+            if (sykekka == 19 || sykekka == 20 || sykekka == 21 || sykekka == 22 || sykekka == 23 || sykekka == 24 || sykekka == 25 || sykekka == 26 || sykekka == 27) {
+                if (sagyona == 1) {
+                    if (sykekka == 19) {
+                        text += "\n職員" + name + "は指令を達成した\n";
+                        kagokesi('8862');
+                        console.log('2b-1');
+                            sykasan(886, 3, 0);
+                    
+                    }
+                    if (sykekka == 21) {
+                        sykasan(886, 3, 22);
+                    } else {
+                        if (sykekka == 22) {
+                            text += "\n職員" + name + "は指令を達成した\n";
+                            kagokesi('8862');
+                            console.log('2b-2');
+                                sykasan(886, 3, 0);
+                        
+                        }
+                    }
+                    if (sykekka == 24) {
+                        sykasan(886, 3, 25);
+                    } else {
+                        if (sykekka == 25) {
+                            sykasan(886, 3, 26);
+                        } else {
+                            if (sykekka == 26) {
+                                text += "\n職員" + name + "は指令を達成した\n";
+                                kagokesi('8862');
+                                console.log('2b-3');
+                                    sykasan(886, 3, 0);
+                             
+                            }
+                        }
+                    }
+                } else {
+                    text += "\n職員" + name + "は指令を達成できなかった\n";
+                    kagokesi('8862');
+                    console.log('2b-no');
+                    sykasan(886, 3, 0);
+                    kari = 1;
+                }
+
+            }
+            if (sykekka == 28 || sykekka == 29 || sykekka == 30 || sykekka == 31 || sykekka == 32 || sykekka == 33 || sykekka == 34 || sykekka == 35 || sykekka == 36) {
+                if (sagyona == 2) {
+                    if (sykekka == 28) {
+                        text += "\n職員" + name + "は指令を達成した\n";
+                        kagokesi('8862');
+                        console.log('2c-1');
+                            sykasan(886, 3, 0);
+                     
+                    }
+                    if (sykekka == 30) {
+                        sykasan(886, 3, 31);
+                    } else {
+                        if (sykekka == 31) {
+                            text += "\n職員" + name + "は指令を達成した\n";
+                            kagokesi('8862');
+                            console.log('2c-2');
+                                sykasan(886, 3, 0);
+                        } 
+                        
+                    }
+                    if (sykekka == 33) {
+                        sykasan(886, 3, 34);
+                    } else {
+                        if (sykekka == 34) {
+                            sykasan(886, 3, 35);
+                        } else {
+                            if (sykekka == 35) {
+                                text += "\n職員" + name + "は指令を達成した\n";
+                                kagokesi('8862');
+                                console.log('2c-3');
+                                    sykasan(886, 3, 0);
+                            } 
+                            
+                        }
+                    }
+                } else {
+                    text += "\n職員" + name + "は指令を達成できなかった\n";
+                    kagokesi('8862');
+                    console.log('2c-no');
+                    sykasan(886, 3, 0);
+                    kari = 1;
+                }
+
+            }
+            if (sykekka == 34 || sykekka == 35 || sykekka == 36 || sykekka == 37 || sykekka == 38 || sykekka == 39 || sykekka == 40 || sykekka == 41 || sykekka == 42) {
+                if (sagyona == 3) {
+                    if (sykekka == 34) {
+                        text += "\n職員" + name + "は指令を達成した\n";
+                        kagokesi('8862');
+                        console.log('2d-1');
+                            sykasan(886, 3, 0);
+                     
+                    }
+                    if (sykekka == 36) {
+                        sykasan(886, 3, 37);
+                    } else {
+                        if (sykekka == 37) {
+                            text += "\n職員" + name + "は指令を達成した\n";
+                            kagokesi('8862');
+                            console.log('2d-2');
+                                sykasan(886, 3, 0);
+                         
+                        }
+                    }
+                    if (sykekka == 39) {
+                        sykasan(886, 3, 40);
+                    } else {
+                        if (sykekka == 40) {
+                            sykasan(886, 3, 41);
+                        } else {
+                            if (sykekka == 41) {
+                                text += "\n職員" + name + "は指令を達成した\n";
+                                kagokesi('8862');
+                                console.log('2d-3');
+                                    sykasan(886, 3, 0);
+                            } 
+                            
+                        }
+                    }
+                } else {
+                    text += "\n職員" + name + "は指令を達成できなかった\n";
+                    kagokesi('8862');
+                    console.log('2c-no');
+                    sykasan(886, 3, 0);
+                    kari = 1;
+                }
+
+            }
+        }
+            if (kari == 1) {
+                conc = con.map(function (value, index) { return value[0]; });
+                conc2 = con.map(function (value, index) { return value[1]; });
+                conc4 = conc.indexOf('886');
+                kari = conc2[conc4];
+                text += "\nツギハギの司令塔のカウンターが減少した\n";
+                kari -= 1;
+                if (kari <= 0) {
+                    text += "ツギハギの司令塔は脱走した\n\nカウンター0→3\n";
+                    dassou = 1;
+                    kari = 3;
+                }
+                con[conc4][1] = kari;
+                if (kekka[2] == "886") {
+                    nefi = kari;
+                }
+            }
+    }
+
+    //脱走反応
+
+    kensaku917 = gnid.indexOf('917');
+    if (kensaku917 != -1 && dassou == 1 && kekka[2]!=971) {
+        text += "灰被りの少女は脱走した\n";
+        dassou = 1;
+    }
+    if (kensaku917 != -1 && sibou == 0 &&dassou==0) {
+        conc = con.map(function (value, index) { return value[0]; });
+        conc2 = con.map(function (value, index) { return value[1]; });
+        conc4 = conc.indexOf('917');
+        kari = conc2[conc4];
+        text += "\n灰被りの少女のカウンターが減少した\n";
+        kari -= 1;
+        if (kari <= 0) {
+            text += "灰被りの少女は脱走した\nカウンター0→2\n";
+            dassou = 1;
+            kari = 2;
+        }
+        con[conc4][1] = kari;
+    }
+
+    kensaku995 = gnid.indexOf('995');
+    if (kensaku995 !=-1 &&dassou == 1 && kekka[2] == 385) {
+        text += "作られし世界の神は脱走した\n";
+        dassou = 1;
+    }
+
     //最終的なカウンターを記録、表示
     kekka[13] = nefi;
     con[conc3][1] = nefi;
@@ -1492,8 +2093,13 @@ dametxt = "\n" + dame + "%ダメージ";
         }
     }
 
+    kensaku228 = kekka[12].indexOf('228');
+    if (kensaku228 != -1 && sibou==0) {
+            sykasan(228, 3, 0);
+    }
+    t8863 = 0;
     //テキスト生成
-    twetext = conc[conc3]+"\n"+ gene + " "+tire+"\n" + name + "　" + kekka[3] + "\n\n" + seitxt + kuritxt + text + sitxt + dametxt + "\n獲得PE-BOX：" + peti + "\n獲得経験値　" + keitxt ;
+    twetext =  gene + " "+tire+"\n" + name + "　" + kekka[3] + "\n\n" + seitxt + kuritxt + text + sitxt + dametxt + "\n獲得PE-BOX：" + peti + "\n獲得経験値　" + keitxt ;
     document.hanteisuru['del'].value = twetext;
     li_log();
      sagyo_ZZZ = parseInt(document.rizalt['sagyo_Z'].value);
@@ -1551,6 +2157,29 @@ function kagohuyo() {
             document.hanteisuru[nana].value = tt12;
         }
     }
+
+    kensaku228 = kekka[12].indexOf('228');
+    if (kensaku228 != -1 && kekka[2]!="228") {
+        sykasan(228, 0, 1);
+        sykensaku(228);
+        if (sykekka >= 3) {
+            text += "職員" + name + "は「ラプラスの悪魔」へと変貌した\n";
+            sibou = 0;
+            sykasan(228, 3, 0);
+        }
+    }
+}
+
+function sagyobahu(ti) {
+    tt13 = tt13 + ti;
+    for (i = 0; i < 5; i++) {
+        kensakuk = namera[i].indexOf(name);
+        if (kensakuk != -1) {
+            nana2 = i + 1;
+            nana = "se" + nana2 + "9";
+            document.hanteisuru[nana].value = tt13;
+        }
+    }
 }
 
 function seihihan() {
@@ -1561,6 +2190,10 @@ function seihihan() {
         if (kekka[2] == "092") {
             seikou -= t0923;
         }
+    }
+    if (t304 == 1) {
+        seikou = seikou * 1.5;
+        t304 = 0;
     }
 
     if (kekka[4] < seikou) {
@@ -1573,10 +2206,96 @@ function seihihan() {
         if (kekka[2] != 213 && seihi == 1) {
             sibou = 0;
             text += "作業自動失敗\n加護欄から「213」を消去\n";
+            kagokesi('213');
             seihi = 0;
         }
     }
 
+    kensaku731 = kekka[12].indexOf('731');
+    kensaku7312 = kekka[12].indexOf('7312');
+    if (kensaku731 != -1 || kensaku7312 != -1) {
+        if (seihi == 1) {
+            seihi = 0;
+            sykasan(731, 0, 1);
+            sykensaku(731);
+            if (sykekka >= 2) {
+                sibou = 0;
+                sykasan(731, 3, 0);
+            }
+        } else {
+            seihi = 1;
+        }
+    }
+   
+}
+
+function kagoche(id, puls) {
+    //加護持ちかどうか職員全員から調べてkensaku2に返す
+    //id＝幻想体ID　puls＝欲しい結果　0か1か　0＝加護無し　1＝加護持ち
+    ch = [];
+    chke = [];
+    for (i = 0; i < 5; i++) {
+        kari = i + 1;
+        idid = "se" + kari + "8";
+        ch[i] = document.hanteisuru[idid].value.split(/,/);
+        kensaku = ch[i].indexOf(id);
+        if (puls == 0) {
+            if (kensaku == -1) {
+                chke.push('1');
+            }
+        } else {
+            if (kensaku != -1) {
+                chke.push('1');
+            }
+        }
+    }
+    kensakuC = chke.indexOf('1');
+}
+
+function kagokesi(ked) {
+    if (ked == "299") {
+        kake = kekka[12].length - 1;
+    } else {
+    kake = kekka[12].indexOf(ked);
+    }
+
+    if (kake != -1) {
+        kekka[12].splice(kake, 1);
+        kake2 = syid + 1;
+        kake3 = "se" + kake2 + "8";
+        document.hanteisuru[kake3].value = kekka[12];
+        for (i = 1; i < 9; i++) {
+            kake3 = "se" + kake2 + i;
+            if (i == 1) {
+                tt4 = document.hanteisuru[kake3].value;
+            }
+            if (i == 2) {
+                tt5 = document.hanteisuru[kake3].value;
+            }
+            if (i == 3) {
+                tt6 = document.hanteisuru[kake3].value;
+            }
+            if (i == 4) {
+                tt7 = document.hanteisuru[kake3].value;
+            }
+            if (i == 5) {
+                tt8 = document.hanteisuru[kake3].value;
+            }
+            if (i == 6) {
+                tt9 = document.hanteisuru[kake3].value;
+            }
+            if (i == 7) {
+                tt10 = document.hanteisuru[kake3].value;
+            }
+            if (i == 8) {
+                tt12 = document.hanteisuru[kake3].value;
+            }
+            if (i == 9) {
+                tt13 = document.hanteisuru[kake3].value;
+            }
+        }
+        textset();
+    }
 }
 
 function g001() {
@@ -1590,11 +2309,11 @@ function g001() {
         daideme1 = 2;
         daideme2 = 6;
         daisu();
-        text = "SP" + daideme4 + "回復\n";
+        text += "SP" + daideme4 + "回復\n";
     }
 
     if (peti <= 0) {
-        text = "職員の自制-5\n";
+        text += "職員の自制-5\n";
     }
 }
 
@@ -1617,6 +2336,7 @@ function g002() {
     }
     if (nefi <= 0) {
         text += "狂人の抜け殻は脱走した。\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -1657,6 +2377,8 @@ function g005() {
 
     if (sagyona == 2) {
         text += "保護作業に置き換わっているため作業成否、経験値、PE-BOX、ダメージ無効\n作業職員1名を30分保護\n全耐性強いになる（元から強い以上の耐性はそのまま）\n保護職員は鎮圧時2回攻撃可能\n保護職員が死亡・パニックになると太陽の後悔は脱走する\n";
+        peti = 0;
+        keikenti = 0;
     } else {
         if (seihi == 0) {
             text += "カウンターが減少した\n";
@@ -1664,6 +2386,7 @@ function g005() {
 
             if (nefi <= 0) {
                 text += "太陽の後悔は脱走した\nカウンター0→3\n";
+                dassou = 1;
                 nefi = 3;
             }
         }
@@ -1730,8 +2453,8 @@ function g007() {
                     kensaku5 = eee.indexOf('007');
                     if (kensaku5 != -1 && kensaku4 != -1) {
                         if (kensaku == -1 && kensaku2 == -1) {
-                            text = "加護0071職員は死亡した\n";
-
+                            text += "加護0071職員は死亡した\n";
+                            sibou = 0;
                         }
                     } else {
                         text += "職員" + name + "のステータスが加護007職員と同じになるまでバフデバフが付与された\n職員" + name + "の加護欄に「0071」を記入\n";
@@ -1759,7 +2482,7 @@ function g007() {
     }
 
     } else {
-        text = "ツール型の作業は「使用」か「返却」です\n";
+        text += "ツール型の作業は「使用」か「返却」です\n";
 
     }
 
@@ -1774,7 +2497,7 @@ function g008() {
     seihihan();
 
     if (nefi <= 0) {
-        text = "SP8ダメージ\n同部門に狂人の抜け殻がいる場合は狂人の抜け殻が脱走する\nカウンター0→3\n";
+        text += "SP8ダメージ\n同部門に狂人の抜け殻がいる場合は狂人の抜け殻が脱走する\nカウンター0→3\n";
         nefi = 3;
     }
 
@@ -1835,6 +2558,7 @@ function g012() {
 
         if (nefi <= 0) {
             text += "私のティザーは脱走した\nカウンター0→4\n";
+            dassou = 1;
             nefi = 4;
         }
     }
@@ -1928,13 +2652,14 @@ function g016() {
         nefi -= 1;
     }
     if (sagyona == 1) {
-        text = "この作業は依頼に置き換わっています\n";
+        text += "この作業は依頼に置き換わっています\n";
     }
 
 
     }
     if (nefi <= 0) {
         text += "虚ろの正義は脱走した\nカウンター0→4\n";
+        dassou = 1;
         nefi = 4;
     }
 
@@ -1998,7 +2723,7 @@ function g020() {
         }
 
     } else {
-        text = "ツール型の作業は「使用」か「返却」です\n";
+        text += "ツール型の作業は「使用」か「返却」です\n";
 
     }
 
@@ -2021,6 +2746,7 @@ function g021() {
         text += "カウンター減少\n";
         if (nefi == 1) {
             text += "旭は脱走した。\n";
+            dassou = 1;
         }
         nefi -= 1;
     }
@@ -2057,6 +2783,7 @@ function g022() {
 
     if (nefi <= 0) {
         text += "灯の保護は脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -2078,7 +2805,7 @@ function g023() {
         daisu();
         text += "▼職員" + name + "のHPが" + daideme4 + "回復した\n";
         if (kurike == 1) {
-            text = "▼職員" + name + "のHPが全回復した\n";
+            text += "▼職員" + name + "のHPが全回復した\n";
         }
     } else {
         pani = 1;
@@ -2116,6 +2843,7 @@ function g029() {
 
     if (nefi <= 0) {
         text += "紛い縋る傀儡の像は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -2140,6 +2868,7 @@ function g030() {
     if (nefi <= 0) {
         sibou = 0;
         text += "終焉の歌唄いは脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 }
@@ -2161,7 +2890,7 @@ function g031() {
     }
 
     if (kekka[10] >= 2 && sagyona == 1) {
-        text = "中の人物が消失する。\nこれ以降この部門の職員は加護の欄に「031」と記入して作業する\n";
+        text += "中の人物が消失する。\nこれ以降この部門の職員は加護の欄に「031」と記入して作業する\n";
         if (kensaku == -1) {
             tt12 += ",031";
             document.hanteisuru['se18'].value += ",031";
@@ -2175,7 +2904,7 @@ function g031() {
 
     if (kensaku != -1 && sagyona == 1) {
         sibou = 0;
-        text = "これ以降この部門の職員は加護の欄から031を消去する\n";
+        text += "これ以降この部門の職員は加護の欄から031を消去する\n";
     }
 }
 
@@ -2236,6 +2965,7 @@ function g032() {
     if (nefi <= 0) {
         text += "八重の檻は脱走した\nカウンター0→5\n";
         nefi = 5;
+        dassou = 1;
     }
     if (kensaku != -1 && kensaku2 != -1) {
         text += "カウンターが1増加した\n";
@@ -2251,6 +2981,7 @@ function g033() {
     rankk = 5;
     rank();
     seihihan();
+    nemax = 3;
 
     if (irai == 1) {
         text += "奏者のHPSPの50％を失う\n部門内の任意の職員の任意のステータスを+30\nカウンター減少\n3回目の演奏は確定で0になる\n";
@@ -2273,6 +3004,7 @@ function g033() {
     }
     if (nefi <= 0) {
         text += "『トルネンブラ』は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 }
@@ -2300,6 +3032,29 @@ function g034() {
     }
 }
 
+function g035() {
+    gene += "導き灯すカンテラ";
+    sase = [[2, 2, 1.5, 1.5, 1.5], [1, 1, 0.5, 0.5, 0], [1, 1, 1, 0.5, 0.5], [0.5, 0.5, 0.5, 1, 1]];
+    rankk = 3;
+    rank();
+    seihihan();
+
+    if (kurike == 1) {
+        text += "職員" + name + "の作業成功率+2（重複不可）\n";
+    }
+    if (seihi == 0) {
+        text += "作業終了毎に慎重-5（他の幻想体の作業含む）\n死亡するまで続く\n";
+    }
+    if (seihi == 1 && sagyona == 1) {
+        kensaku = kekka[12].indexOf('035');
+        if (kensaku == -1) {
+            text += "職員" + name + "はカンテラを受け取った\n任意のタイミングで自分のSPを30回復（一人1回、死亡時リセット）\n";
+            kagohuti = "035";
+            kagohuyo();
+        }
+    }
+}
+
 function g036() {
     gene = "036 凶兆の発芽";
     sase = [[2, 1.5, 1.5, 0.5, 0], [2, 1, 1, 0.5, 0.5], [2, 1, 0.5, 0.5, 0.5], [2, 2, 2, 1.5, 1.5]];
@@ -2309,6 +3064,7 @@ function g036() {
 
     sykensaku(036);
     kensaku = kekka[12].indexOf('036');
+    
 
     if (sykekka >= 2) {
         if (seihi == 0) {
@@ -2406,6 +3162,7 @@ function g040() {
     }
     if (nefi <= 0) {
         text += "果てなきワンダーランドは脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -2428,9 +3185,10 @@ function g042() {
     if (kensaku == -1) {
         if (kensaku2 != -1) {
             sibou = 0;
-            text = "▼職員" + name + "はIP-T-05-042-1となり、脱走した。\n";
+            text += "▼職員" + name + "はIP-T-05-042-1となり、脱走した。\n";
+            dassou = 1;
         } else {
-            text = "職員" + name + "の加護欄に「042」を記入\n職員" + name + "以外の部門内職員全員の加護欄に「0421」を記入\n042と0421は蘇生後も残る、翌日には消える\n";
+            text += "職員" + name + "の加護欄に「042」を記入\n職員" + name + "以外の部門内職員全員の加護欄に「0421」を記入\n042と0421は蘇生後も残る、翌日には消える\n";
 
             tt12 += ",042";
             for (i = 0; i < 5; i++) {
@@ -2482,6 +3240,7 @@ function g047() {
     }
     if (nefi <= 0) {
         text += "あなたのナンバーワンは脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -2511,22 +3270,22 @@ function g049() {
     if (sagyona == 4) {
         ransu = Math.floor(Math.random() * 6 + 1);
         if (ransu == 1) {
-            text = "何かの箱を手に入れた\n全ステータス+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+            text += "何かの箱を手に入れた\n全ステータス+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
         }
         if (ransu == 2) {
-            text = "何かの果実を手に入れた\n本能+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+            text += "何かの果実を手に入れた\n本能+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
         }
         if (ransu == 3) {
-            text = "小さな花を手に入れた\n洞察+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+            text += "小さな花を手に入れた\n洞察+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
         }
         if (ransu == 4) {
-            text = "綺麗な石を手に入れた\n自制+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+            text += "綺麗な石を手に入れた\n自制+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
         }
         if (ransu == 5) {
-            text = "何かの羽根を手に入れた\n正義+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+            text += "何かの羽根を手に入れた\n正義+10\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
         }
         if (ransu == 6) {
-            text = "何かの目玉を手に入れた\n全ステータス-25\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
+            text += "何かの目玉を手に入れた\n全ステータス-25\n同じ効果のバフ、デバフは重複しない\n1日で効果が消滅する\n";
         }
     } else {
         text += "ツール型の作業は「使用」です\n";
@@ -2602,7 +3361,7 @@ function g051() {
                 if (ransu == 1) {
                     sibou = 0;
                 } else {
-                    text = "何も起きなかった\n";
+                    text += "何も起きなかった\n";
                 }
             }
         }
@@ -2619,7 +3378,7 @@ function g051() {
                 if (ransu == 1) {
                     sibou = 0;
                 } else {
-                    text = "何も起きなかった\n";
+                    text += "何も起きなかった\n";
                 }
             }
         }
@@ -2636,7 +3395,7 @@ function g051() {
                 if (ransu == 1) {
                     sibou = 0;
                 } else {
-                    text = "何も起きなかった\n";
+                    text += "何も起きなかった\n";
                 }
             }
         }
@@ -2653,7 +3412,7 @@ function g051() {
                 if (ransu == 1) {
                     sibou = 0;
                 } else {
-                    text = "何も起きなかった\n";
+                    text += "何も起きなかった\n";
                 }
             }
         }
@@ -2809,6 +3568,7 @@ function g062() {
     }
     if (nefi <= 0) {
         text += "項垂れ柳は脱走した\nカウンター0→" + nemax + "\n";
+        dassou = 1;
         nefi = nemax;
     }
 
@@ -2921,10 +3681,12 @@ function g065() {
     //脱走
     if (nefi <= 0) {
         text += "タマは脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     } else {
         if (sagyona == 3) {
             text += "タマは脱走した\n";
+            dassou = 1;
 
         }
     }
@@ -3076,6 +3838,41 @@ function g095() {
 
 }
 
+function g094() {
+    gene += "伯爵夫人";
+    sase = [[1, 1.5, 1.5, 1, 0], [1, 1.5, 1, 1.5, 1.5], [1, 1, 1.5, 1, 2], [1.5, 1.5, 1.5, 2, 2]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    ransu = Math.floor(Math.random() * 4 + 1);
+    if (ransu == 1) {
+        text += "赤属性\n";
+    } else {
+        if (ransu == 2) {
+            text += "白属性\n";
+        } else {
+            if (ransu == 3) {
+                text += "黒属性\n";
+            } else {
+                if (ransu == 4) {
+                    text += "青属性\n";
+                    pale = 1;
+                }
+            }
+        }
+    }
+    if (seihi == 0) {
+        text += "伯爵夫人は血の伯爵夫人へと変化した\n";
+        kensaku = kekka[12].indexOf('094');
+        if (kensaku == -1) {
+            kagohuti = "094";
+            kagohuyo();
+        }
+    }
+
+}
+
 function g072() {
     gene = "072 しゅうふくトッペ";
     sulo = 41;
@@ -3119,6 +3916,7 @@ function g089() {
     }
     if (nefi <= 0) {
         text += "ランダムに一人職員が選ばれ、収容室に向かい死亡する\n留め具を千切り復讐せよは脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -3143,7 +3941,7 @@ function g091() {
     }
 
     if (sagyona == 2) {
-        text = "カウンターが0になった\n";
+        text += "カウンターが0になった\n";
         nefi = 0;
     }
 
@@ -3192,7 +3990,7 @@ function g071() {
     kensaku4 = kekka[12].indexOf('0713');
 
     if (sagyona == 4) {
-        text = "職員" + name + "は性転換した。\nHPSPの上限+10\n二回目以降はHPSP上昇のみ\n";
+        text += "職員" + name + "は性転換した。\nHPSPの上限+10\n二回目以降はHPSP上昇のみ\n";
 
         if (kensaku4 != -1) {
             sibou = 0;
@@ -3327,6 +4125,7 @@ function g088() {
     }
     if (nefi <= 0) {
         text += "Null-Void-Whiteは脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -3398,7 +4197,7 @@ function g099() {
         }
 
     } else {
-        text = "ツール型の作業は「使用」か「返却」です\n";
+        text += "ツール型の作業は「使用」か「返却」です\n";
 
     }
 
@@ -3414,7 +4213,7 @@ function g100() {
 
     ransu = Math.floor(Math.random() * 3 + 1);
     if (ransu == 1) {
-        text = "RED\n";
+        text += "RED\n";
         if (ransu == 1 && seihi == 1) {
             text += "HPが20回復した。\n"
         }
@@ -3423,7 +4222,7 @@ function g100() {
         }
     } else {
         if (ransu == 2) {
-            text = "BLACK\n";
+            text += "BLACK\n";
             if (ransu == 2 && seihi == 1) {
                 text += "HP/SPが10回復した。\n"
             }
@@ -3433,7 +4232,7 @@ function g100() {
 
         } else {
             if (ransu == 3) {
-                text = "PALE\n";
+                text += "PALE\n";
                 if (ransu == 3 && seihi == 1) {
                     text += "最大HPの半分が回復した。\n"
                 }
@@ -3534,6 +4333,7 @@ function g108() {
     }
     if (nefi <= 0) {
         text += "月白戦闘鬼姫は脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -3604,6 +4404,7 @@ function g113() {
     }
     if (nefi <= 0) {
         text += "死命の男爵『ゲーテ』は脱走した\nカウンター0→5\n";
+        dassou = 1;
         nefi = 5;
     }
 
@@ -3657,6 +4458,7 @@ function g116() {
         }
         if (nefi <= 0) {
             text += "災厄のバベルは脱走した\nカウンター0→5\n";
+            dassou = 1;
             nefi = 5;
         }
         c116 = con116.length;
@@ -3743,6 +4545,7 @@ function g119() {
     if (sibou == 0) {
 
         text += "環獄は脱走した\n";
+        dassou = 1;
     }
 }
 
@@ -3760,7 +4563,7 @@ function g124() {
         daideme1 = 1;
         daideme2 = 6;
         daisu();
-        text = "職員" + name + "のHP" + daideme4 + "+1回復\n";
+        text += "職員" + name + "のHP" + daideme4 + "+1回復\n";
     }
 
     ransu = Math.floor(Math.random() * 3 + 1);
@@ -3790,6 +4593,7 @@ function g125() {
         ransu = Math.floor(Math.random() * 6 + 1);
         if (ransu == 6) {
             text += "灼けつく金星は脱走した。\n";
+            dassou = 1;
         }
     }
 
@@ -3809,6 +4613,7 @@ function g126() {
    
 
     seihihan();
+    nemax = 2;
 
     if (seihi == 0) {
         text += "カウンターが減少した\n";
@@ -3824,6 +4629,32 @@ function g126() {
         nefi = 2;
     }
 
+}
+
+function g128() {
+    gene += "惑わす火星";
+    sase = [[1, 1, 0.5, 0.5, 2], [1.5, 1.5, 1, 1, 0], [1, 1, 0.5, 0.5, 2], [1.5, 1.5, 1, 1, 0]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    if (sagyona == 0 || sagyona == 2) {
+        if (seihi == 0) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    } else {
+        if (sagyona == 1 || sagyona == 3) {
+            if (seihi == 1) {
+                text += "カウンターが減少した\n";
+                nefi -= 1;
+            }
+        }
+    }
+    if (nefi <= 0) {
+        text += "アイハイの花が3体出現したした\nカウンター0→3\n";
+        nefi = 3;
+    }
 }
 
 function g135() {
@@ -3895,9 +4726,13 @@ function g135() {
         if (kensaku != -1) {
 
             text += "135系の加護を手動で消去してください\n";
+            kagokesi('135');
+            kagokesi('1351');
         } else {
             if (kensaku2 != -1)
                 text += "135系の加護を手動で消去してください\n";
+            kagokesi('135');
+            kagokesi('1351');
         }
     }
     //ここまで//            
@@ -3940,6 +4775,7 @@ function g137() {
     }
     if (nefi <= 0) {
         text += "漆黒の戦術人形は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -3980,6 +4816,7 @@ function g140() {
     }
     if (nefi <= 0) {
         text += "明日鳴り歌劇団は脱走した\nカウンター0→1\n";
+        dassou = 1;
         nefi = 1;
     }
 
@@ -3997,7 +4834,7 @@ function g142() {
 
     if (sagyona == 1 && seihi == 1) {
         sibou = 0;
-        text = "収容室内の扉が全て開いた\n";
+        text += "収容室内の扉が全て開いた\n";
     }
 
     if (sagyona == 0 && kurike == 1) {
@@ -4011,6 +4848,106 @@ function g142() {
         text += "飴玉を貰った\n▼職員" + name + "のHPが" + tet1 + "回復し、SPが" + daideme4 + "減少した\n";
     }
 
+}
+
+function g151() {
+    gene += "名前のない歌";
+    peti = 0;
+
+    if (sagyona == 4) {
+        kagoche("151", 1);
+        if (kensakuC == -1) {
+            kensaku = kekka[12].indexOf('151');
+            if (kensaku == -1) {
+                text += "職員" + name + "の後ろに「もう一人の自分」がついてきた\n職員のHPの半分の分までダメージを肩代わりする\n肩代わり分を消費するか45分経過で消える\n消えた際には加護欄から「151」を消す\n即死、即パニックは防げない\n";
+                kagohuti = "151";
+                kagohuyo();
+                t151 = name;
+            }
+        }
+    } else {
+        text += "ツール型の作業は「使用」です\n";
+    }
+
+}
+
+function g152() {
+    gene += "小さな貴方の為の可愛い虫籠";
+    sase = [[0, 0, 0.5, 0.5, 0.5], [2, 2, 1.5, 1.5, 1.5], [0, 0, 0.5, 0.5, 0.5], [0, 0.5, 2, 2, 2]];
+    rankk = 3;
+    rank();
+    seihihan();
+
+    if (t152 != -1) {
+        if (t152 != syid) {
+            text += "職員" + name + "はこの幻想体に作業できない\n";
+            peti = 0;
+            keikenti = 0;
+        }
+    } else {
+        kensaku = kekka[12].indexOf('152');
+        kensaku2 = kekka[12].indexOf('1522');
+        if (kensaku == -1 && kensaku==-1) {
+            if (seihi == 1) {
+                text += "作業成功値-2のデバフ\n他の職員にマーキングが付くとマーキング「152」とデバフが消える\n";
+                kagohuti = "152";
+                kagohuyo();
+                sagyobahu(-2);
+            }
+        } else {
+            if (kensaku2 != -1) {
+                text += "デバフがなくなり作業成功値+5のバフになる\nこれ以降職員" + name + "はこの幻想体にしか作業できない\n1日の終わりに死亡する\nまた、他の職員はこの幻想体に作業出来なくなる\n";
+                kagokesi('1522');
+                kagohuti = "1523";
+                kagohuyo();
+                sagyobahu(+7);
+                t152 = syid;
+            } else {
+                if (kensaku != -1) {
+                text += "さらに作業成功値-2のデバフ\nマーキングが消えてもデバフは残る\n";
+                kagokesi('152');
+                kagohuti = "1522";
+                kagohuyo();
+                sagyobahu(-2);
+
+                }
+            }
+        }
+    }
+}
+
+function g153() {
+    gene += "世界";
+    sase = [[1, 1.5, 1, 1.5, 1], [1, 1, 1.5, 0.5, 0], [1, 1, 1, 1, 0], [2, 2, 2, 2, 2]];
+    rankk = 5;
+    rank();
+    seihihan();
+    pale = 1;
+
+    kagoche("153", 1);
+    if (kensakuC == -1) {
+        kensaku = kekka[12].indexOf('153');
+        if (kensaku == -1) {
+            text += "職員" + name + "に印がついた\n全ステ+10、作業成功率+5\n\n印職員が20分以内に世界へ作業しなかった場合はカウンターが減少（手動入力）\n\n";
+            kagohuti = "153";
+            kagohuyo();
+        }
+    } else {
+        kensaku = kekka[12].indexOf('153');
+        if (kensaku == -1) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        text += "世界は脱走した\nカウンター0→5\n";
+        dassou = 1;
+        nefi = 5;
+    }
 }
 
 function g155() {
@@ -4028,6 +4965,7 @@ function g155() {
 
     if (nefi <= 0) {
         text += "JOSHUA:2は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 }
@@ -4100,6 +5038,8 @@ function g161() {
     } else {
         if (sagyona == 2) {
             text += "生贄作業に置き換わっている\n";
+            peti = 0;
+            keikenti = 0;
         } else {
             if (kekka[8] >= 5 && seihi == 1) {
                 text += "カウンターが減少した\n";
@@ -4137,6 +5077,7 @@ function g173() {
     }
     if (nefi <= 0) {
         text += "終止符のクラゲは脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -4198,6 +5139,7 @@ function g188() {
     }
     if (nefi <= 0) {
         text += "絨毯脱走した\nカウンター0→1\n";
+        dassou = 1;
         nefi = 1;
     }
 }
@@ -4214,7 +5156,7 @@ function g192() {
     daideme1 = 1;
     daideme2 = 4;
     daisu();
-    text = "「最高に幸福な晩餐を！」のEGO、ギフトいずれかを装備している場合HPSP" + daideme4 + "回復\n";
+    text += "「最高に幸福な晩餐を！」のEGO、ギフトいずれかを装備している場合HPSP" + daideme4 + "回復\n";
     if (seihi == 0) {
         if (sagyona == 0 || sagyona == 2) {
             sibou = 0;
@@ -4325,7 +5267,8 @@ function g201() {
         text += karit + "の作業に" + ransu + "のバフ\n柔らかい妖精脱走までの猶予リセット\n";
     }
     if (sagyona == 3) {
-        text = "柔らかい妖精は脱走した。\n";
+        text += "柔らかい妖精は脱走した。\n";
+        dassou = 1;
         text += "カウンター0→1\n";
     }
 
@@ -4349,6 +5292,31 @@ function g209() {
 
     }
 
+}
+
+function g212() {
+    gene += "墜ちた十字架";
+    sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 1, 1]];
+    rankk = 4;
+    rank();
+    seihihan();
+    pale = 1;
+
+    if (irai == 1) {
+        daideme1 = 2;
+        daideme2 = 100;
+        daisu();
+        kari = daideme4;
+        daideme1 = 2;
+        daideme2 = 100;
+        daisu();
+        kari2 = daideme4;
+        text += "職員" + name + "は自らの足を吊るし台に括り付けた\n" + kari + "白ダメ、" + kari2 + "青ダメ\nパニックになると死亡\n耐えきったらギフト入手、職員" + name + "のHPSP全回復\nこれで死亡した場合部門内全職員の全ステータス-25\n部門内全職員+オフィサー1名からランダムに選出し死亡させることでデバフを解除可能、ただし蘇生は出来なくなる\n";
+    } else {
+        if (sagyona == 1) {
+            text += "この作業は「試練」に置き換わっています\n特殊作業から選択可\n";
+        }
+    }
 }
 
 function g213() {
@@ -4413,6 +5381,7 @@ function g213() {
 
     if (nefi <= 0) {
         text += "囚われの氷王女は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -4442,6 +5411,7 @@ function g214() {
             nefi -= 1;
             if (nefi <= 0) {
                 text += "ちょっとおかしなショコラティエは脱走した\nカウンター0→2\n";
+                dassou = 1;
                 nefi = 2;
             }
         }
@@ -4451,6 +5421,290 @@ function g214() {
         sibou = 0;
     }
 
+}
+
+function g215() {
+    gene += "冬霜に溺れた街";
+    sase = [[1.5, 1.5, 1.5, 1.5, 1.5], [1, 1, 1, 1, 1], [0.5, 0.5, 0.5, 0, 0], [1.5, 1, 1, 0.5, 0.5]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    nemax = 3;
+
+    if (kekka[10] <= 3) {
+        sibou = 0;
+    }
+
+    if (sagyona == 1) {
+        text += "職員" + name + "の自制-10\n3回まで重複する\nカウンターが1増加した\n";
+        nefi += 1;
+    }
+    if (sagyona == 2 || sagyona == 3) {
+        text += "職員" + name + "の勇気慎重+5\n3回まで重複する\nカウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        text += "冬霜に溺れた街の特殊能力が発動\nエンサイクロペディアの脱走情報参照\n";
+        dassou = 1;
+        nefi = 0;
+    }
+}
+
+function g216() {
+    gene += "ただ一つの原石と砥材";
+    sase = [[1.5, 1.5, 1.5, 1.5, 1.5], [1.5, 1.5, 1.5, 1.5, 1.5], [1.5, 1.5, 1.5, 1.5, 1.5], [1.5, 1.5, 1.5, 1.5, 1.5]];
+    g2162();
+    rankk = 4;
+    rank();
+    seihihan();
+    if (sagyona == 0) {
+        t216[0][0] += 1;
+    }
+    if (sagyona == 1) {
+        t216[1][0] += 1;
+    }
+    if (sagyona == 2) {
+        t216[2][0] += 1;
+    }
+    if (sagyona == 3) {
+        t216[3][0] += 1;
+    }
+
+    if (sagyona == 0 && t2162[0] == 1) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (sagyona == 1 && t2162[1] == 1) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (sagyona == 2 && t2162[2] == 1) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (sagyona == 3 && t2162[3] == 1) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+
+    if (nefi <= 0) {
+        text += "作品は脱走した\nカウンター0→5\n";
+        dassou = 1;
+        nefi = 5;
+        g2163();
+        t216 = [[0, 0], [0, 1], [0, 2], [0, 3]];
+    }
+
+}
+
+function g2162() {
+    t2161 = [[0, 0], [0, 1], [0, 2], [0, 3]];
+    t2162 = [0, 0, 0, 0];
+    t2161[0][0] = parseInt(kekka[8]);
+    t2161[1][0] = parseInt(kekka[9]);
+    t2161[2][0] = parseInt(kekka[10]);
+    t2161[3][0] = parseInt(kekka[11]);
+    t2161.sort(compareFunc);
+    if (t2161[0][0] == t2161[1][0] && t2161[1][0] == t2161[2][0] && t2161[2][0] == t2161[3][0]) {
+        sase = [[0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5]];
+        t2162 = [1, 1, 1, 1];
+    } else {
+        if (t2161[0][0] == t2161[1][0] && t2161[1][0] == t2161[2][0]) {
+            if (t2161[3][1] == 0) {
+                sase = [[1.5, 1.5, 1.5, 1.5, 1.5], [0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5]];
+                t2162 = [0, 1, 1, 1];
+            } else {
+                if (t2161[3][1] == 1) {
+                    sase = [[0.5, 0.5, 0.5, 0.5, 0.5], [1.5, 1.5, 1.5, 1.5, 1.5], [0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5]];
+                    t2162 = [1, 0, 1, 1];
+                } else {
+                    if (t2161[3][1] == 2) {
+                        sase = [[0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5], [1.5, 1.5, 1.5, 1.5, 1.5], [0.5, 0.5, 0.5, 0.5, 0.5]];
+                        t2162 = [1, 1, 0, 1];
+                    } else {
+                        if (t2161[3][1] == 3) {
+                            sase = [[0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5], [1.5, 1.5, 1.5, 1.5, 1.5]];
+                            t2162 = [1, 1, 1, 0];
+                        }
+                    }
+                }
+            }
+        } else {
+            if (t2161[0][0] == t2161[1][0]) {
+                if (t2161[0][1] == 0) {
+                    sase[0] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                    t2162[0] = 1;
+                } else {
+                    if (t2161[0][1] == 1) {
+                        sase[1] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                        t2162[1] = 1;
+                    } else {
+                        if (t2161[0][1] == 2) {
+                            sase[2] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                            t2162[2] = 1;
+                        } else {
+                            if (t2161[0][1] == 3) {
+                                sase[3] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                                t2162[3] = 1;
+                            }
+                        }
+                    }
+                }
+                if (t2161[1][1] == 0) {
+                    sase[0] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                    t2162[0] = 1;
+                } else {
+                    if (t2161[1][1] == 1) {
+                        sase[1] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                        t2162[1] = 1;
+                    } else {
+                        if (t2161[1][1] == 2) {
+                            sase[2] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                            t2162[2] = 1;
+                        } else {
+                            if (t2161[1][1] == 3) {
+                                sase[3] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                                t2162[3] = 1;
+                            }
+                        }
+                    }
+                }
+            } else {
+                if (t2161[0][1] == 0) {
+                    sase[0] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                    t2162[0] = 1;
+                } else {
+                    if (t2161[0][1] == 1) {
+                        sase[1] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                        t2162[1] = 1;
+                    } else {
+                        if (t2161[0][1] == 2) {
+                            sase[2] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                            t2162[2] = 1;
+                        } else {
+                            if (t2161[0][1] == 3) {
+                                sase[3] = [0.5, 0.5, 0.5, 0.5, 0.5];
+                                t2162[3] = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+function g2163() {
+    t216.sort(compareFunc);
+    if (t216[0][0] == t216[1][0] && t216[1][0] == t216[2][0] && t216[2][0] == t216[3][0]) {
+        ransu = Math.floor(Math.random() * 4 + 1);
+        if (ransu == 1) {
+            kari = t216[0][1];
+        }
+        if (ransu == 2) {
+            kari = t216[1][1];
+        }
+        if (ransu == 3) {
+            kari = t216[2][1];
+        }
+        if (ransu == 4) {
+            kari = t216[3][1];
+        }
+    } else {
+        if (t216[0][0] == t216[1][0] && t216[1][0] == t216[2][0]) {
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 1) {
+                kari = t216[0][1];
+            }
+            if (ransu == 2) {
+                kari = t216[1][1];
+            }
+            if (ransu == 3) {
+                kari = t216[2][1];
+            }
+        } else {
+            if (t216[0][0] == t216[1][0]) {
+                ransu = Math.floor(Math.random() * 2 + 1);
+                if (ransu == 1) {
+                    kari = t216[0][1];
+                }
+                if (ransu == 1) {
+                    kari = t216[1][1];
+                }
+            } else {
+                kari = t216[0][1];
+            }
+        }
+    }
+    if (kari == 0) {
+        text += "本能パターン赤属性\n";
+    }
+    if (kari == 1) {
+        text += "洞察パターン白属性\n";
+    }
+    if (kari == 2) {
+        text += "愛着パターン黒属性\n";
+    }
+    if (kari == 3) {
+        text += "抑圧パターン青属性\n";
+    }
+}
+
+function g217() {
+    gene += "塔暮らしの少女";
+    sase = [[1, 1, 1, 0.5, 0.5], [0.5, 0.5, 0, 0, 0], [1.5, 1.5, 1, 1, 1], [2, 2, 2, 2, 2]];
+    rankk = 4;
+    rank();
+    seihihan();
+    kensaku = kekka[12].indexOf('217');
+    if (seihi == 1 && sagyona == 1) {
+        text += "職員" + name + "はラプンツェルを食べた\n";
+        if (kensaku == -1) {
+            text += "HP上限+20、作業成功率、与ダメ+3\n重複しない、死亡するまで続く\n";
+            kagohuti = "217";
+            kagohuyo();
+        } else {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+    if (nefi <= 0) {
+        text += "塔暮らしの少女は脱走した\nカウンター0→2\n";
+        dassou = 1;
+        nefi = 2;
+    }
+}
+
+function g223() {
+    gene += "単純な禁句";
+    sase = [[1, 1, 0.5, 0, 0], [0.5, 0.5, 0.5, 0.5, 0], [1.5, 1.5, 1.5, 2, 2], [1, 1, 1, 1, 1]];
+    rankk = 2;
+    rank();
+    seihihan();
+    kensaku = kekka[12].indexOf('223');
+    if (sykekka == 2) {
+        text += "▼職員" + name + "は徘徊性パニックに陥った\n";
+        pani = 1;
+        sykasan(223, 3, 0);
+    } else {
+        if (sagyona == 3) {
+            sykasan(223, 0, 1);
+            sykensaku(223);
+            if (sykekka == 1) {
+                kensaku = kekka[12].indexOf('223');
+                if (kensaku == -1) {
+                    kagohuti = "223";
+                    kagohuyo();
+                }
+            } else {
+                if (sykekka == 2) {
+                    ransu = Math.floor(Math.random() * 6 + 1);
+                    text += "職員" + name + "に" + ransu + "白ダメージ\n";
+                }
+            }
+        }
+    }
 }
 
 function g225() {
@@ -4476,6 +5730,45 @@ function g225() {
         }
     } else {
         text += "ツール型の作業は「使用」です\n";
+    }
+
+}
+
+function g228() {
+    gene += "フラスコの月";
+    sase = [[2, 2, 2, 2, 2], [1, 1, 1, 1, 1], [2, 1.5, 1.5, 1, 1], [1.5, 1.5, 1.5, 1.5, 1]];
+    rankk = 5;
+    rank();
+    seihihan();
+    t2281 = 0;
+    kensaku = kekka[12].indexOf('228');
+    if (kensaku != -1) {
+        t2281 = 1;
+    }
+    text += "職員" + name + "にかかっていた他幻想体やツールによる加護や効果を全て失う\n";
+    tt12 = "";
+    for (i = 0; i < 5; i++) {
+        kensakuk = namera[i].indexOf(name);
+        if (kensakuk != -1) {
+            nana2 = i + 1;
+            nana = "se" + nana2 + "8";
+            document.hanteisuru[nana].value = tt12;
+        }
+    }
+    if (t2281 == 1) {
+        tt12 += ",228";
+        kari = syid + 1;
+        nana = "se" + kari + "8";
+        document.hanteisuru[nana].value = tt12;
+    }
+    kagoche("228", 1);
+    if (kensakuC == -1) {
+        text += "職員" + name + "は標的となった\nツールの効果を得られない\n";
+        t228 = 1;
+        if (kensaku == -1) {
+            kagohuti = "228";
+            kagohuyo();
+        }
     }
 
 }
@@ -4556,6 +5849,7 @@ function g235() {
 
     if (nefi <= 0) {
         text += "もこもこあひるは脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -4633,9 +5927,77 @@ function g255() {
 
     if (nefi <= 0) {
         text += "わんぱくかいじゅうは脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
+}
+
+function g259() {
+    gene += "黒き門番";
+    sase = [[2, 2, 2, 2, 2], [1.5, 1.5, 1.5, 1.5, 1.5], [2, 2, 2, 2, 2], [0.5, 0.5, 1, 1, 1]];
+    rankk = 4;
+    rank();
+    seihihan();
+    nemax = 2;
+
+    if (irai == 1) {
+        text += "職員をランダムに1名決定し、死亡させる\nカウンターが1増加する\n「お前が代わりの者か。或いは、堕ちる覚悟を決めたか？いずれにせよ、罪人のお前に抵抗の余地はない。来い、地獄へ」\n";
+        nefi += 1;
+    } else {
+        if (kekka[11] <= 2) {
+            text += "恐怖ダメージSP75％\nパニックになるとカウンター減少\n";
+        } else {
+            if (kekka[11] == 3) {
+                text += "恐怖ダメージSP25％\nパニックになるとカウンター減少\n";
+            }
+        }
+        if (sagyona == 3 && seihi == 0) {
+            ransu = Math.floor(Math.random() * 2 + 1);
+            if (ransu == 1) {
+                text += "カウンターが減少した\n";
+                nefi -= 1;
+            }
+        }
+        if (sagyona == 2) {
+            text += "この作業は生贄作業に置き換わっている\n";
+            peti = 0;
+            keikenti = 0;
+        }
+    }
+    if (nefi <= 0) {
+        text += "黒き門番は脱走した\nカウンター0→2\n";
+        sibou = 0;
+        nefi = 2;
+    }
+
+}
+
+function g264() {
+    gene += "渦巻く木星";
+    sase = [[2, 2, 1, 1.5, 1.5], [2, 2, 0.5, 0.5, 0.5], [2, 2, 1, 1, 0.5], [2, 2, 1.5, 1.5, 1.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    if (seihi == 0) {
+        kensaku = kekka[12].indexOf('264');
+        if (kensaku == -1) {
+            text += "職員" + name + "に「精霊の加護」が付与された\n鎮圧時与ダメ+5\n";
+            kagohuti = "264";
+            kagohuyo();
+        }
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (kekka[7] <= 2) {
+        sibou = 0;
+    }
+    if (nefi <= 0) {
+        text += "渦巻く木星は脱走した\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
+    }
 }
 
 function g291() {
@@ -4692,6 +6054,7 @@ function g294() {
     if (nefi <= 0) {
         sibou = 0;
         text += "イカロスの火葬は脱走した\nカウンター0→4\n";
+        dassou = 1;
         nefi = 4;
     }
 
@@ -4713,10 +6076,14 @@ function g299() {
     if (kensaku != -1) {
         if (kekka[12].length >= 2) {
             text += "職員" + name + "の加護をひとつ受け取った\n加護欄の右に並んでいるものから順に手動で消去する\n";
+            kagokesi('299');
+            
         }
     } else {
         if (kekka[12].length >= 1) {
             text += "職員" + name + "の加護をひとつ受け取った\n加護欄の右に並んでいるものから順に手動で消去する\n";
+            kagokesi('299');
+            
         }
     }
     if (kekka[8] >= 6 || kekka[9] >= 6 || kekka[10] >= 6 || kekka[11] >= 6) {
@@ -4760,6 +6127,7 @@ function g302() {
 
     if (nefi <= 0) {
         text += "朱殷は脱走した。\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
         daideme1 = 1;
         daideme2 = 80;
@@ -4768,6 +6136,136 @@ function g302() {
         text += "部門内に青藍が収容されている場合、青藍も同時に脱走する。\n青藍は部門にいる職員を1人選び憑依し脱走、憑依された職員は死亡する。\n";
     }
 
+}
+
+function g303() {
+    gene += "メルトフレンズ";
+    sase = [[1, 1, 1, 0.5, 0.5], [1.5, 1, 1, 1, 1], [0, 0, 0, 0, 0], [2, 2, 1.5, 1.5, 1.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+    kensaku = kekka[12].indexOf('303');
+    kensaku2 = kekka[12].indexOf('3032');
+    if (sagyona != 3 && kensaku2 == -1) {
+        if (kensaku == -1) {
+            text += "職員" + name + "は「仲間の証」を手に入れた\n自制+25、2時間毎にHPSP30回復、鎮圧時移動ターン+1\n";
+            kagohuti = "303";
+            kagohuyo();
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 1) {
+                text += "『はい、これあげる！お友達の証だよ！』\n";
+            }
+            if (ransu == 2) {
+                text += "『これ持ってって！きっと役立つから！』\n";
+            }
+            if (ransu == 3) {
+                text += "『お話ありがと！』\n";
+            }
+        }
+    }
+    if (sagyona == 1 && seihi == 1) {
+        if (kensaku != -1) {
+            text += "「仲間の証」が解除された\n「303」を消去\n";
+            kagokesi('303');
+            ransu = Math.floor(Math.random() * 2 + 1);
+            if (ransu == 1) {
+                text += "『捨てちゃうの？』\n";
+            }
+            if (ransu == 2) {
+                text += "『そんなに嫌だった？』\n";
+            }
+        }
+        if (kensaku2 != -1) {
+            text += "「感染者」が解除された\n「3032」を消去\n";
+            kagokesi('3032');
+            ransu = Math.floor(Math.random() * 2 + 1);
+            if (ransu == 1) {
+                text += "『捨てちゃうの？』\n";
+            }
+            if (ransu == 2) {
+                text += "『そんなに嫌だった？』\n";
+            }
+        }
+    }
+    if (sagyona == 3 && seihi == 0) {
+        ransu = Math.floor(Math.random() * 3 + 1);
+        if (ransu == 1) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+    if (nefi <= 0) {
+        text += "メルトフレンズは脱走した\nIP-O-01-303-Aは「溶けた親友」、IP-O-01-303-Bは「溶けた友達」に変異する\nカウンター0→3\n";
+        text += "『さあ、一緒に外へ行こう！友達作りに！』\n";
+        dassou = 1;
+        kari = 3;
+    }
+}
+
+function g304() {
+    gene += "機械兵器フルトゥナ";
+    sase = [[1, 1, 1, 1.5, 1.5], [1, 1, 1, 0.5, 0.5], [2, 2, 2, 2, 2], [0, 0, 0.5, 0.5, 0.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    if (kekka[9] <= 2 || kekka[10] <= 2) {
+        sibou = 0;
+        text += "カウンターが減少した\n次の作業時成功率1段階減少\n";
+        nefi -= 1;
+        t304 = 1;
+    } else {
+        text += "作業で死亡した場合カウンター減少し、次の作業時成功率1段階減少\n";
+    }
+    if (kekka[8] >= 4 || kekka[11] >= 4) {
+        if (seihi == 0) {
+            daideme1 = 5;
+            daideme2 = 4;
+            daisu();
+            text += daideme4 + "赤ダメージ\n";
+        }
+    }
+    if (nefi <= 0) {
+        text += "機械兵器フルトゥナは脱走した\nカウンター0→3\n";
+        nefi = 3;
+    }
+}
+
+function g305() {
+    gene += "蛇蝎のヴィクター";
+    sase = [[0, 0, 0, 0, 0], [2, 2, 1.5, 1.5, 1.5], [1, 1, 1, 1, 1], [1.5, 1.5, 1, 1, 1.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    if (sagyona == 0) {
+        sibou = 0;
+        text += "部門内職員に最大SP10％の恐怖ダメージ\n";
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+        t305 += 1;
+    }
+    ransu = Math.floor(Math.random() * 3 + 1);
+    if (ransu == 1 && sagyona == 2 && seihi == 0) {
+        sibou = 0;
+        text += "部門内職員に最大SP10％の恐怖ダメージ\n";
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+        t305 += 1;
+    }
+    if (ransu == 1 && sagyona == 3 && seihi == 0) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        text += "蛇蝎のヴィクターは脱走した\n";
+        nefi = 3;
+        if (t305 >= 1) {
+            text += t305 + "体の「蛇蝎の落とし子」を産み出した\n";
+        }
+        text += "カウンター0→3\n";
+        t305 = 0;
+    }
 }
 
 function g310() {
@@ -4781,12 +6279,12 @@ function g310() {
             text += "▼職員" + name + "は徘徊性パニックに陥った\n";
 
         } else {
-            text = "▼職員" + name + "のSPが5回復した。\n";
+            text += "▼職員" + name + "のSPが5回復した。\n";
         }
 
 
     } else {
-        text = "ツール型の作業は「使用」か「返却」です\n";
+        text += "ツール型の作業は「使用」か「返却」です\n";
 
     }
 
@@ -4835,6 +6333,7 @@ function g312() {
     }
     if (nefi <= 0) {
         text += "焚け残りは脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -4851,6 +6350,7 @@ function g314() {
     } else {
         if (sagyona == 5) {
             text += "返却した\n加護欄から「314」を消去\n";
+            kagokesi('314');
         }
         text += "ツール型の作業は「使用」です\n";
     }
@@ -4886,7 +6386,7 @@ function g320() {
     seihihan();
 
     if (sagyona == 0) {
-        text = "この作業は生贄作業に置き換わっています\n";
+        text += "この作業は生贄作業に置き換わっています\n";
     }
 
     if (irai == 1) {
@@ -4930,10 +6430,10 @@ function g320() {
     if (nefi <= 0) {
         ransu = Math.floor(Math.random() * 2 + 1);
         if (ransu == 1) {
-            text = "「ぼくを哀れんでよ、可哀そうでしょう、ねえ」\n";
+            text += "「ぼくを哀れんでよ、可哀そうでしょう、ねえ」\n";
         } else {
             if (ransu == 2) {
-                text = "「お腹が空いちゃった。ぼくお外に出てくるから代わりになっててよ」\n";
+                text += "「お腹が空いちゃった。ぼくお外に出てくるから代わりになっててよ」\n";
             }
         }
     }
@@ -4941,9 +6441,41 @@ function g320() {
 
     if (nefi <= 0) {
         text += "逆さのアザゼルは脱走した\nカウンター0→2\n";
+        dassou = 1;
         sibou = 0;
         nefi = 2;
     }
+}
+
+function g323() {
+    gene += "剣";
+    sase = [[1, 1, 1, 0.5, 0.5], [1.5, 1.5, 2, 2, 2], [2, 2, 2, 2, 2], [1, 1, 0.5, 0.5, 0.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+    pale = 1;
+
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+        ransu = Math.floor(Math.random() * 3 + 1);
+        if (ransu == 1) {
+            pani = 1;
+            text += "▼職員" + name + "はパニックに陥った\n";
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 3) {
+                pani = 1;
+                text += "職員" + name + "は【盲目状態】になった\nステータス初期値になり、パニックのランクも1になる（1日限り）\n20時以降に盲目は治り、20時以降だった場合は盲目にならない\n";
+            }
+        }
+    }
+
+    if (nefi <= 0) {
+        text += "剣は脱走した\nカウンター0→5\n";
+        dassou = 1;
+        nefi = 5;
+    }
+
 }
 
 function g329() {
@@ -4980,6 +6512,7 @@ function g330() {
         if (nefi == 1) {
             sibou = 0;
             text += "最高に幸福な晩餐を！は脱走した\n";
+            dassou = 1;
         }
         nefi -= 1;
         if (nefi <= 0) {
@@ -4996,6 +6529,40 @@ function g330() {
 
 }
 
+function g333() {
+    gene += "月夜の人形劇";
+    sase = [[1.5, 1, 1, 1, 1], [0.5, 1, 1, 1.5, 1.5], [0.5, 0.5, 0.5, 0.5, 0.5], [2, 2, 2, 2, 2]];
+    rankk = 3;
+    rank();
+    seihihan();
+
+    if (nefi <= 0) {
+        if (kekka[8] <= 2) {
+            sibou = 0;
+        }
+        daideme1 = kekka[7];
+        daideme2 = 2;
+        daisu();
+        text += "赤" + daideme4 + "ダメージ\n生存した場合はこの日勇気ランク+1カウンター0→3\n";
+        nefi = 3;
+    }
+    if (irai == 1) {
+        text += "職員" + name + "のSP15回復\n";
+        if (deme <= 5) {
+            sibou = 0;
+        }
+    } else {
+        if (sagyona == 2) {
+            text += "この作業は「人形劇」に置き代わっている\n特殊作業\n";
+        }
+        if (seihi == 0 || sagyona == 3) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+
+}
+
 function g335() {
     gene = "335 艶然なる三日月";
     sulo = 88;
@@ -5004,6 +6571,7 @@ function g335() {
     rank();
     seihihan();
     if (kekka[10] <= 4) {
+        dassou = 1;
         text += "▼職員" + name + "は魅了され刀を手にした（脱走）\n鎮圧完了時、HPSPが最大値の50％減少した状態で生還\nHPかSPが半分以下の状態で脱走していた場合は死亡する\n";
     }
     if (sagyona == 1 || seihi == 1) {
@@ -5030,6 +6598,8 @@ function g354() {
 
     if (irai == 1) {
         text += "抑圧は依頼に置き換わっている\n対価：対象の危険度×3のPE-BOX、他部門の場合危険度×5\n指定した対象を全て撃破あるいは賞金稼ぎの男が倒れるまで続く\n鎮圧が20分以上経過、あるいは賞金稼ぎの男が倒れた場合カウンター減少\n0になると脱走\n";
+        peti = 0;
+        keikenti = 0;
     }
 
 }
@@ -5083,6 +6653,7 @@ function g360() {
 
     if (nefi <= 0) {
         text += "伝染鳩は脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 }
@@ -5113,7 +6684,8 @@ function g361() {
         }
     }
     if (seihi == 0 && kensaku != -1) {
-        text = "加護欄から「361」を消去\n";
+        text += "加護欄から「361」を消去\n";
+        kagokesi('361');
     }
 
 }
@@ -5140,12 +6712,16 @@ function g365() {
             daideme1 = 1;
             daideme2 = 6;
             daisu();
-            text = "▼職員" + name + "のSPが" + daideme4 + "回復した\n";
+            text += "▼職員" + name + "のSPが" + daideme4 + "回復した\n";
         }
 
         if (kensaku4 != -1) {
             sibou = 0;
             text += "365系の加護を全て消去\n";
+            kagokesi('365');
+            kagokesi('3651');
+            kagokesi('3652');
+            kagokesi('3653');
         } else {
             if (kensaku3 != -1) {
                 text += "この部門内で加護欄に3653を記入\n";
@@ -5190,15 +6766,19 @@ function g365() {
     } else {
         if (kensaku != -1) {
             text += "加護欄から365を消去\n";
+            kagokesi('365');
         }
         if (kensaku2 != -1) {
             text += "加護欄から3651を消去\n";
+            kagokesi('3651');
         }
         if (kensaku3 != -1) {
             text += "加護欄から3652を消去\n";
+            kagokesi('3652');
         }
         if (kensaku4 != -1) {
             text += "加護欄から3653を消去\n";
+            kagokesi('3653');
         }
 
 
@@ -5245,10 +6825,32 @@ function g371() {
         nefi -= 1;
         if (nefi <= 0) {
             text += "恒は脱走した\nカウンター0→2\n";
+            dassou = 1;
             nefi = 2;
         }
     }
 
+}
+
+function g378() {
+    gene += "優雅灯";
+    sase = [[0, 0, 0, 0.5, 0.5], [1.5, 1.5, 1.5, 2, 2], [0, 0.5, 0.5, 1, 1.5], [0.5, 0.5, 1, 1, 1]];
+    rankk = 4;
+    rank();
+    seihihan();
+    if (kekka[9] <= 3 || kekka[10] <= 3) {
+        sibou = 0;
+        seihi = 0;
+    }
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        text += "優雅灯は脱走した\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
+    }
 }
 
 function g385() {
@@ -5276,6 +6878,7 @@ function g385() {
     }
     if (nefi <= 0) {
         text += "カテドラルの後継者は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 }
@@ -5331,11 +6934,13 @@ function g403() {
     } else {
         if (kensaku != -1) {
             text += "作業職員の加護欄から403を消去\n";
+            kagokesi('403');
         }
     }
 
     if (nefi <= 0) {
         text += "誘いの鏡は脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -5395,6 +7000,7 @@ function g409() {
 
     if (nefi <= 0) {
         text += "青藍は職員に憑依した。青藍は脱走した。同部門に朱殷が収容されている場合、朱殷も誘発脱走した。\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
         sibou = 0;
 
@@ -5414,6 +7020,7 @@ function g413() {
     if (nefi <= 0) {
         sibou = 0;
         text += "海月少女は脱走した\nカウンター0→1\n";
+        dassou = 1;
         nefi = 1;
     }
     if (sagyona == 0) {
@@ -5467,6 +7074,33 @@ function g415() {
 
 }
 
+function g417() {
+    gene += "茨裂く少女";
+    sase = [[2, 2, 2, 2, 1.5], [0, 0, 0, 0, 0.5], [0.5, 1, 1, 1, 1], [1.5, 1.5, 1, 1, 2]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    if (irai == 1) {
+        if (kekka[11] >= 5) {
+            text += "救出成功\n囚われていた職員はギフトを入手\n";
+            kurike = 0;
+            fanke = 0;
+        } else {
+            text += "茨裂く少女は囚われていた職員を抱えたまま脱走した\n";
+        }
+    } else {
+        if (seihi == 0 && sagyona == 0) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+        if (nefi <= 0) {
+            text += "職員" + name + "は囚われた\n特殊作業で救出可能\nカウンター0→2\n";
+            nefi = 2;
+        }
+    }
+}
+
 function g422() {
     gene = "422 明るいだけの照明";
     peti = 0;
@@ -5479,7 +7113,7 @@ function g422() {
     ransu = Math.floor(Math.random() * 4 + 1);
 
     if (sagyona == 4) {
-        text = "HPSP15回復\n";
+        text += "HPSP15回復\n";
 
         if (kensaku4 != -1) {
             sibou = 0;
@@ -5549,14 +7183,73 @@ function g422() {
 
             }
         }
-
-
-
-
-
     } else {
         text += "ツール型の作業は「使用」です\n";
     }
+}
+
+function g423() {
+    gene += "(株)プシュケーエネルゲイア";
+    sase = [[1, 1, 1, 1, 1], [1, 1, 1, 0.5, 0.5], [0.5, 0.5, 0, 0, 0], [0.5, 0.5, 1, 1, 1]];
+    rankk = 1;
+    rank();
+    seihihan();
+
+    kari = kekka[10] * 2;
+    if (deme <= kari) {
+        text += "ギフト入手\n";
+    }
+    if (kurike == 1) {
+        kuritxt = "クリティカル\n";
+        sibou = 0;
+    }
+}
+
+function g425() {
+    gene += "想い馳せる太陽";
+    sase = [[0.5, 0.5, 0.5, 0.5, 0.5], [0, 0, 0, 0, 0], [1.5, 1.5, 1.5, 1.5, 1.5], [2, 1.5, 0, 0, 0]];
+    rankk = 2;
+    rank();
+    seihihan();
+    nemax = 3;
+    if (sagyona == 1) {
+        text += "カウンターが1増加した\n";
+        nefi += 1;
+    } else {
+        if (seihi == 0 || sagyona == 3) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+    if (seihi == 1 && kekka[7] <= 2) {
+        kensaku = kekka[12].indexOf('425');
+        if (kensaku == -1) {
+            text += "職員" + name + "の作業成功率+3\n重複しない、1日限り\n死亡時消失\n";
+            kagohuti = "425";
+            kagohuyo();
+        }
+    }
+    if (nefi <= 0) {
+        text += "想い馳せる太陽は脱走した\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
+    }
+}
+
+function g429() {
+    gene += "与奪する地球";
+    sase = [[2, 0, 0, 0, 0], [0, 2, 2, 2, 2], [2, 1, 1, 1, 1], [2, 1, 1, 1, 1]];
+    rankk = 1;
+    rank();
+    seihihan();
+
+    if (kurike == 1) {
+        text += "職員" + name + "の装備しているギフト全ての効果が2倍になる（マイナスも2倍になる）\nただし倍化するのはステータス変動に限る\n";
+    }
+    if (fanke == 1) {
+        text += "職員" + name + "の保有ずる全てのギフトが消滅した\n";
+    }
+
 }
 
 function g432() {
@@ -5564,14 +7257,14 @@ function g432() {
     peti = 0;
 
     if (sagyona == 4) {
-        text = "勇気と正義が２倍\n自制慎重が勇気正義より低いなら勇気正義+30\nこのツールは任意のタイミングで返却が可能\n";
+        text += "勇気と正義が２倍\n自制慎重が勇気正義より低いなら勇気正義+30\nこのツールは任意のタイミングで返却が可能\n";
 
     } else {
         if (sagyona == 5) {
-            text = "作業または鎮圧をしていない場合自殺性以外のパニック\n";
+            text += "作業または鎮圧をしていない場合自殺性以外のパニック\n";
 
         } else {
-            text = "ツール型の作業は「使用」か「返却」です\n";
+            text += "ツール型の作業は「使用」か「返却」です\n";
         }
 
     }
@@ -5596,6 +7289,38 @@ function g437() {
 
 }
 
+function g444() {
+    gene += "巡り廻って灰になる";
+    sase = [[2, 1.5, 1, 1, 1], [2, 1.5, 1, 1, 1], [2, 1.5, 1, 1, 1], [2, 1.5, 1, 1, 1]];
+    rankk = 5;
+    rank();
+    seihihan();
+    pale = 1;
+
+    if (kurike == 1) {
+        text += "カウンターが全回復した\n";
+        nefi = 2;
+    } else {
+        if (fanke == 1) {
+            text += "カウンターが即座に0になった\n";
+            nefi = 0;
+        } else {
+            if (seihi == 1) {
+                text += "カウンターが1増加した\n";
+                nefi += 1;
+            } else {
+                text += "カウンターが減少した\n";
+                nefi -= 1;
+            }
+        }
+    }
+
+    if (nefi <= 0) {
+        text += "巡り廻って灰になるは脱走した\nカウンター0→2\n";
+        nefi = 2;
+    }
+}
+
 function g451() {
     gene = "451 季節の時の王";
     sulo = 61;
@@ -5608,16 +7333,16 @@ function g451() {
     seihihan();
     ransu = Math.floor(Math.random() * 4 + 1);
     if (ransu == 1) {
-        text = "赤の姿\n";
+        text += "赤の姿\n";
     } else {
         if (ransu == 2) {
-            text = "白の姿\n";
+            text += "白の姿\n";
         } else {
             if (ransu == 3) {
-                text = "黒の姿\n";
+                text += "黒の姿\n";
             } else {
                 if (ransu == 4) {
-                    text = "青の姿\n";
+                    text += "青の姿\n";
                 }
             }
         }
@@ -5645,6 +7370,7 @@ function g451() {
 
     if (nefi <= 0) {
         text += "季節の時の王は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
         ransu = Math.floor(Math.random() * 4 + 1);
         if (ransu == 1) {
@@ -5672,9 +7398,11 @@ function g452() {
     rankk = 4;
     rank();
     seihihan();
+    nemax = 3;
     kensaku2 = kekka[12].indexOf('453');
     if (kensaku2 != -1) {
         text += "職員" + name + "の「否定の呪い」が消えた\n加護欄から「453」を消去\nカウンターが1増加した\n";
+        kagokesi('453');
         nefi += 1;
     }
 
@@ -5698,6 +7426,7 @@ function g452() {
     if (nefi <= 0) {
         text += "イエスマンは脱走した\nカウンター0→3\n「肯定の加護」を持つ職員全員がパニック\nパニックの種類に応じて強化される（部門ダメージは発生しない）\n殺人性→与ダメ2倍\n自殺性→制限時間10分、恐怖ダメージ1ランク上昇\n徘徊性→白ダメージ2倍、10分で移動\nｼｬｯﾄﾀﾞｳﾝ→1度の脱走数2体\n";
         nefi = 3;
+        dassou = 1;
     }
 }
 
@@ -5707,9 +7436,11 @@ function g453() {
     rankk = 4;
     rank();
     seihihan();
+    nemax = 3;
     kensaku2 = kekka[12].indexOf('452');
     if (kensaku2 != -1) {
         text += "職員" + name + "の「肯定の加護」が消えた\n加護欄から「452」を消去\nカウンターが1増加した\n";
+        kagokesi('452');
         nefi += 1;
     }
     kensaku = kekka[12].indexOf('453');
@@ -5737,22 +7468,8 @@ function g453() {
     if (nefi <= 0) {
         text += "ノーマンは脱走した\nカウンター0→3\n「否定の呪い」を持つ職員全員の全ステ-20\n1日の終わりまで継続\n";
         nefi = 3;
+        dassou = 1;
     }
-}
-
-function g486() {
-    gene = "486 熾展翅";
-    sase = [[2, 1.5, 1, 0.5, 0], [0, 0.5, 1, 1.5, 2], [1, 1, 1, 1, 1], [2, 0, 1, 0.5, 1.5]];
-    rankk = 5;
-    rank();
-    seihihan();
-
-
-    if (sagyona == 2 || seihi == 0) {
-        pani = 1;
-        text += "▼職員" + name + "はパニックに陥った\n";
-    }
-
 }
 
 function g464() {
@@ -5762,15 +7479,47 @@ function g464() {
 
     rankk = 2;
     rank();
-   
+
 
 
     seihihan();
 
     if (sagyona == 3) {
         text += "蛹の紳士は脱走した。\n";
+        dassou = 1;
     }
 
+}
+
+function g467() {
+    gene += "虚空";
+    sase = [[1.5, 1.5, 1.5, 1, 1], [0, 0, 0, 0, 0], [2, 1.5, 1, 0.5, 0], [2, 2, 2, 2, 2]];
+    rankk = 5;
+    rank();
+    seihihan();
+    nemax = 4;
+
+    if (fanke == 1) {
+        sibou = 0;
+    }
+    if (sagyona == 1) {
+        text += "カウンターが1増加した\n";
+        nefi += 1;
+        kensaku = kekka[12].indexOf('467');
+        if (kensaku == -1) {
+            text += "職員" + name + "は「虚空の瞳」を獲得した\n最大SPが0になると徘徊性パニックに陥り、死亡でしか鎮圧できない\n";
+            kagohuti = "467";
+            kagohuyo();
+        }
+    }
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        text += "部門内全職員の最大SPが52減少\nカウンター0→4\n";
+        nefi = 4;
+    }
 }
 
 function g469() {
@@ -5797,6 +7546,76 @@ function g469() {
     }
 }
 
+function g480() {
+    gene += "大衆の血を浴びる者";
+    sase = [[1.5, 1.5, 1, 0.5, 0], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2], [2, 2, 1, 1, 1.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    if (sagyona == 0 && seihi == 1) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (kurike == 1) {
+        text += "部門内のランダムな職員が魅了された\n解除できなかった場合死亡する\n";
+    }
+    if (nefi <= 0) {
+        text += "大衆の血を浴びる者は脱走した\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
+    }
+}
+
+function g486() {
+    gene = "486 熾展翅";
+    sase = [[2, 1.5, 1, 0.5, 0], [0, 0.5, 1, 1.5, 2], [1, 1, 1, 1, 1], [2, 0, 1, 0.5, 1.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+
+    if (sagyona == 2 || seihi == 0) {
+        pani = 1;
+        text += "▼職員" + name + "はパニックに陥った\n";
+    }
+
+}
+
+function g499() {
+    gene += "魅惑のチーズ";
+    sase = [[0, 1, 1, 1, 1], [0.5, 0.5, 1, 1.5, 1.5], [0, 0, 0, 0, 0], [2, 2, 2, 2, 2]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    kensaku = kekka[12].indexOf('499');
+    if (kensaku == -1) {
+        text += "職員" + name + "はチーズの加護を受けた\n本能・愛着成功率+5\n90分経過、パニック、死亡で解除される\n";
+        kagohuti = "499";
+        kagohuyo();
+    }
+}
+
+function g502() {
+    gene += "骨羽根の天使";
+    sase = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
+    rankk = 1;
+    rank();
+    seihihan();
+    if (sagyona == 0 && seihi == 1) {
+        ransu = Math.floor(Math.random() * 6 + 1);
+        text += "職員" + name + "のHPが" + ransu + "回復した\n";
+    }
+    if (kurike == 1) {
+        text += "職員" + name + "は加護を貰った\n任意のステータス+5\n2分後に消失\n";
+        kensaku = kekka[12].indexOf('502');
+        if (kensaku == -1) {
+            kagohuti = "502";
+            kagohuyo();
+        }
+    }
+}
 
 function g521() {
     gene = "521 はらぺこな田舎者";
@@ -5810,9 +7629,10 @@ function g521() {
     seihihan();
 
     if (sagyona == 3) {
-        text = "カウンターが減少した\n";
+        text += "カウンターが減少した\n";
         if (nefi == 1) {
             text += "はらぺこな田舎者は脱走した。\n";
+            dassou = 1;
         }
         nefi -= 1;
         if (nefi <= 0) {
@@ -5846,6 +7666,7 @@ function g523() {
 
     if (nefi <= 0) {
         text += "ありふれた野草は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -5854,9 +7675,12 @@ function g523() {
 function g524() {
     gene = "524 空っぽのストーブ";
     peti = 0;
-
+    kensaku2 = kekka[12].indexOf('527');
     kensaku = kekka[12].indexOf('540');
     if (sagyona == 4) {
+        if (kensaku2 != -1) {
+            sibou = 0;
+        } else {
         text += "▼職員" + name + "は鉄の約束を得た\n鎮圧時のダメージ+15\nこのツールは返却可能\n部門内に1人のみ、返却するまで他の職員は手に入らない\nこの職員の加護欄に「524」を追加\n";
         tt12 += ",524";
         for (i = 0; i < 5; i++) {
@@ -5867,14 +7691,17 @@ function g524() {
                 document.hanteisuru[nana].value += ",524";
             }
         }
+        }
+
         if (kekka[8] == 3 || kekka[9] == 3 || kekka[10] == 3 || kekka[11] == 3) {
             sibou = 0;
-            text = "職員" + name + "はストーブに引き込まれ、空っぽのストーブと共に消失した\n次の作業時には空っぽのストーブのみ戻ってくる\n";
+            text += "職員" + name + "はストーブに引き込まれ、空っぽのストーブと共に消失した\n次の作業時には空っぽのストーブのみ戻ってくる\n";
         }
 
     } else {
         if (sagyona == 5) {
             text += "鉄の約束を返却した\n加護欄から「524」を手動で消去してください\n";
+            kagokesi('524');
         } else {
             text += "ツール型の作業は「使用」です\n";
         }
@@ -5929,8 +7756,40 @@ function g526() {
 
     if (nefi <= 0) {
         text += "災禍の火種は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
+}
+
+function g527() {
+    gene += "偽りの価値";
+    peti = 0;
+    kensaku = kekka[12].indexOf('527');
+    if (sagyona == 4) {
+        kagoche("527", 1);
+        if (kensakuC == -1) {
+            kensaku = kekka[12].indexOf('524');
+            if (kensaku != -1) {
+                sibou = 0;
+            } else {
+                text += "職員" + name + "は「注目」の付与を受けた\n鎮圧時同部門の他の職員のダメージを全て受け、ランダムな職員が選ばれる能力では無条件に選ばれる\n返却可能\n";
+                kagohuti = "527";
+                kagohuyo();
+            }
+        }
+    } else {
+        if (sagyona == 5) {
+            if (kensaku != -1) {
+                text += "返却した\n加護欄から「527」を消去する\n";
+                kagokesi('527');
+            } else {
+                text += "ツール型の作業は「使用」です\n";
+            }
+        } else {
+            text += "ツール型の作業は「使用」です\n";
+        }
+    }
+
 }
 
 function g528() {
@@ -5950,10 +7809,34 @@ function g528() {
             text += "▼職員" + name + "に野狐が憑いた\n作業成功率-5\n作業開始時にHPが減っていた場合死亡\nパニックになった際殺人性になる\nすでに狐が憑いている場合、成功率とパニックはこちらに上書きされる\n";
         }
         if (ransu == 2) {
-            text = "▼職員" + name + "に善狐が憑いた\n作業成功率+5\n加護全て消失\nパニックになった際自殺性になる\nすでに狐が憑いている場合、成功率とパニックはこちらに上書きされる\n";
+            text += "▼職員" + name + "に善狐が憑いた\n作業成功率+5\n加護全て消失\nパニックになった際自殺性になる\nすでに狐が憑いている場合、成功率とパニックはこちらに上書きされる\n";
         }
     }
 
+}
+
+function g529() {
+    gene += "虚空の記憶";
+    sase = [[2, 2, 2, 1, 0.5], [0, 1, 2, 1.5, 0], [2, 0, 1, 0, 1.5], [1.5, 0.5, 0, 2, 1]];
+    rankk = 5;
+    rank();
+    seihihan();
+    pale = 1;
+
+    if (sagyona != 0 && kurike == 1) {
+        ransu = Math.floor(Math.random() * 50 + 1);
+        text += "部門内全職員にSP" + ransu + "ダメージ\nカウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (sagyona != 0 && fanke == 1) {
+        ransu = Math.floor(Math.random() * 3 + 1);
+        text += "ランダムな職員" + ransu + "名が死亡する\n";
+    }
+    if (nefi <= 0) {
+        text += "虚空の記憶は脱走した\nカウンター0→2\n";
+        dassou = 1;
+        nefi = 2;
+    }
 }
 
 function g530() {
@@ -6023,10 +7906,192 @@ function g532() {
     }
     if (nefi <= 0) {
         text += "獲物を待つ鳥は脱走した\nカウンター0→1\n";
+        dassou = 1;
         nefi = 1;
     }
 }
 
+function g534() {
+    gene += "失せもの探しの磁針";
+    peti = 0;
+    ransu = Math.floor(Math.random() * 3 + 1);
+    if (sagyona == 4) {
+        if (t534 == 1) {
+            text += "職員" + name + "と磁針を持っていた職員全員が死亡する\n";
+            sibou = 0;
+            t534 = 0;
+        } else {
+            text += "職員" + name + "は「磁針」を得た\n返却可能\n鎮圧時、1回のみ移動ターン-1（試練、眷属の鎮圧では不可）\n";
+            kensaku = kekka[12].indexOf('534');
+            if (kensaku == -1) {
+                kagohuti = "534";
+                kagohuyo();
+            }
+            if (ransu == 1) {
+                text += "失せもの探しの磁針は壊れた\n";
+                t534 = 1;
+            }
+        }
+
+    } else {
+        if (sagyona == 5) {
+            sykasan(534, 3, 0);
+            if (t534 == 1) {
+                text += "職員" + name + "と磁針を持っていた職員全員が死亡する\n";
+                sibou = 0;
+                t534 = 0;
+            } else {
+                text += "磁針を返却した\n";
+                kagokesi('534');
+                if (ransu == 1) {
+                    text += "失せもの探しの磁針は壊れた\n";
+                    t534 = 1;
+                }
+            }
+
+        } else {
+            text += "ツール型の作業は「使用」です\n";
+
+        }
+    }
+
+}
+
+function g535() {
+    gene += "サルベージ";
+    peti = 0;
+    if (sagyona == 4) {
+        ransu = Math.floor(Math.random() * 100 + 1);
+    text += ransu + "\n";
+        if (ransu == 1) {
+            text += "誰かの骸を引き上げてしまった\n職員" + name + "と現在判定くんに登録されている職員は死亡\n本日中、蘇生時の侵食値 + 1\n";
+            sibou = 0;
+            sykensaku(535);
+            if (sykekka == 1) {
+                text += "特殊ギフトを入手\n";
+            } else {
+                text += "このツールで別の物品を得ていた場合後から引き上げた物と入れ替え、効果を上書きする。\n";
+            }
+            sykasan(535, 3, 1);
+
+        } else {
+            if (ransu == 10 || ransu == 20) {
+                text += "動物の船首像が引き上げられた\n勇気+25、自制-25\n";
+                sykensaku(535);
+                if (sykekka == 2) {
+                    text += "特殊ギフトを入手\n";
+                } else {
+                    text += "このツールで別の物品を得ていた場合後から引き上げた物と入れ替え、効果を上書きする。\n";
+                }
+                sykasan(535, 3, 2);
+            } else {
+                if (ransu == 30 || ransu == 40) {
+                    text += "藻に塗れた操舵輪が引き上げられた\n慎重+25、勇気-25\n";
+                    sykensaku(535);
+                    if (sykekka == 3) {
+                        text += "特殊ギフトを入手\n";
+                    } else {
+                        text += "このツールで別の物品を得ていた場合後から引き上げた物と入れ替え、効果を上書きする。\n";
+                    }
+                    sykasan(535, 3, 3);
+                } else {
+                    if (ransu == 50 || ransu == 60) {
+                        text += "錆びついた金属塊が引き上げられた\n自制+25、正義-25\n";
+                        sykensaku(535);
+                        if (sykekka == 4) {
+                            text += "特殊ギフトを入手\n";
+                        } else {
+                            text += "このツールで別の物品を得ていた場合後から引き上げた物と入れ替え、効果を上書きする。\n";
+                        }
+                        sykasan(535, 3, 4);
+                    } else {
+                        if (ransu == 70 || ransu == 80) {
+                            text += "焦げた海賊旗が引き上げられた\n正義+25、慎重-25\n";
+                            sykensaku(535);
+                            if (sykekka == 5) {
+                                text += "特殊ギフトを入手\n";
+                            } else {
+                                text += "このツールで別の物品を得ていた場合後から引き上げた物と入れ替え、効果を上書きする。\n";
+                            }
+                            sykasan(535, 3, 5);
+                        } else {
+                            if (ransu == 90) {
+                                text += "磁針の無い羅針盤が引き上げられた\n全ステ-25\nIP-O-05-534の付与がある場合侵食ゲージ-1\n";
+                                sykensaku(535);
+                                if (sykekka == 6) {
+                                    text += "特殊ギフトを入手\n";
+                                } else {
+                                    text += "このツールで別の物品を得ていた場合後から引き上げた物と入れ替え、効果を上書きする。\n";
+                                }
+                                sykasan(535, 3, 6);
+                            } else {
+                                if (ransu == 100) {
+                                    text += "なんと、宝石の付いた王冠を引き上げた！\n全ステ+25\n職員" + name + "は本日中、蘇生時の侵食値-1\n";
+                                    sykensaku(535);
+                                    if (sykekka == 7) {
+                                        text += "特殊ギフトを入手\n";
+                                    } else {
+                                        text += "このツールで別の物品を得ていた場合後から引き上げた物と入れ替え、効果を上書きする。\n";
+                                    }
+                                    sykasan(535, 3, 7);
+                                } else {
+                                    text += "何も引き上げられなかった\n";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        text += "ツール型の作業は「使用」です\n";
+    }
+
+}
+
+
+function g536() {
+    gene += "人工運";
+    sase = [[1, 1, 1, 1, 1], [2, 2, 1.5, 1.5, 2], [1, 1, 1, 0.5, 0.5], [2, 2, 2, 2, 2]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    if (sagyona == 1 || sagyona == 2) {
+        ransu = Math.floor(Math.random() * 6 + 1);
+        if (ransu == 3) {
+            text += "職員" + name + "は「仁厚の翠玉」を得た\n";
+            kensaku = kekka[12].indexOf('536');
+            if (kensaku == -1) {
+                kagohuti = "536";
+                kagohuyo();
+            }
+        }
+        if (ransu == 1) {
+            text += "職員" + name + "は「翠の不運」を得た\n";
+            kensaku = kekka[12].indexOf('5362');
+            if (kensaku == -1) {
+                kagohuti = "5362";
+                kagohuyo();
+            }
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+        if (ransu == 6) {
+            text += "職員" + name + "は「翠の幸運」を得た\n1度だけ作業時の即死を回避できる\n発動時に翠の幸運は消える\n";
+            kensaku = kekka[12].indexOf('5361');
+            if (kensaku == -1) {
+                kagohuti = "5361";
+                kagohuyo();
+            }
+        }
+    }
+    if (nefi <= 0) {
+        text += "人工運は脱走した\n加護「536」を所持している職員は眷属になる\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
+    }
+}
 
 function g537() {
     gene = "537 神の番人";
@@ -6047,6 +8112,7 @@ function g537() {
     }
     if (nefi <= 0) {
         text += "神の番人は脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 }
@@ -6067,7 +8133,7 @@ function g540() {
 
         } else {
             if (kensaku == -1) {
-                text = "部門内に限り再挑戦システムが起動\n今日獲得したギフト、装備、エネルギーが初期化\n職員の死亡と浸食ゲージ（本日分）も初期化\nこの幻想体による死亡分の浸食ゲージはリセットされない\n";
+                text += "部門内に限り再挑戦システムが起動\n今日獲得したギフト、装備、エネルギーが初期化\n職員の死亡と浸食ゲージ（本日分）も初期化\nこの幻想体による死亡分の浸食ゲージはリセットされない\n";
                 text += "部門内の加護欄に540を記入\n";
                 tt12 += ",540";
                 document.hanteisuru['se18'].value += ",540";
@@ -6076,7 +8142,7 @@ function g540() {
                 document.hanteisuru['se48'].value += ",540";
                 document.hanteisuru['se58'].value += ",540";
             } else {
-                text = "部門内に限り再挑戦システムが起動\n今日獲得したギフト、装備、エネルギーが初期化\n職員の死亡と浸食ゲージ（本日分）も初期化\nこの幻想体による死亡分の浸食ゲージはリセットされない\n";
+                text += "部門内に限り再挑戦システムが起動\n今日獲得したギフト、装備、エネルギーが初期化\n職員の死亡と浸食ゲージ（本日分）も初期化\nこの幻想体による死亡分の浸食ゲージはリセットされない\n";
                 text += "部門内の加護欄に5401を記入\n";
                 tt12 += ",5401";
                 document.hanteisuru['se18'].value += ",5401";
@@ -6234,13 +8300,60 @@ function g566() {
             }
         }
         if (kekka[4] >= 5) {
-            text = "▼職員" + name + "はパニックに陥った。\n";
+            text += "▼職員" + name + "はパニックに陥った。\n";
             pani = 1;
 
         }
     } else {
         text += "ツール型の作業は「使用」です\n";
     }
+
+}
+
+function g567() {
+    gene += "Perlin noise(you,me);";
+    sase = [[0, 0, 0.5, 1, 1], [1, 1, 1.5, 1.5, 2], [0, 0.5, 0.5, 0.5, 0.5], [2, 2, 2, 2, 2]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    //初心者回復
+
+    if (kekka[7] <= 3) {
+        daideme1 = 1;
+        daideme2 = 30;
+        daisu();
+        text += "職員" + name + "のHP、SPが" + daideme4 + "回復した。\n";
+        text += "「ドウイタシマシテ。」\n";
+
+    } else {
+
+        //ランク4以上本能でカウンター減る
+
+        if (kekka[7] >= 4 && sagyona == 0) {
+            text += "「ソンナニ　セカサナイ！」\n";
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+
+    //抑圧でカウンターゼロ
+
+    if (sagyona == 3) {
+        text += "「ヤメナサイ！マッタク、モウイイデス！」\n";
+        text += "カウンターが即座に0になった\n";
+        nefi = 0;
+    }
+
+
+    //カウンター処理
+    if (nefi <= 0) {
+        text += "「アナタヲ　サガシニイキマス！」\n";
+        text += "「カシオペイア」は脱走したnカウンター0→2\n";
+        dassou = 1;
+        nefi = 2;
+    }
+
 
 }
 
@@ -6288,6 +8401,7 @@ function g570() {
     //脱走処理
     if (nefi <= 0) {
         text += "想別花は脱走したnカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 }
@@ -6310,6 +8424,10 @@ function g571() {
 
     if (kensaku1 != -1 && kensaku2 != -1 && kensaku3 != -1 && kensaku4 != -1) {
         text += "カウンターが全回復した\n5711,5712,5713,5714を消去\n";
+        kagokesi('5711');
+        kagokesi('5712');
+        kagokesi('5713');
+        kagokesi('5714');
         nefi = 3;
     } else {
         if (kurike == 1) {
@@ -6447,6 +8565,59 @@ function g601() {
 
 }
 
+function g603() {
+    gene += "静寂";
+    peti = 0;
+
+    if (sagyona == 4) {
+        if (t603 == 1) {
+            text += "職員" + t6032 + "は死亡した\n";
+            t6032 = "";
+            t603 = 0;
+        }
+        sykasan(603, 0, 1);
+        daideme1 = 2;
+        daideme2 = 10;
+        daisu();
+        text += "職員" + name + "のSPが" + daideme4 + "回復した\n";
+        sykensaku(603);
+        if (sykekka >= 2) {
+            if (kekka[7] <= 2) {
+                sibou = 0;
+            }
+            if (kekka[7] >= 4) {
+                ransu = Math.floor(Math.random() * 10 + 1);
+                if (ransu >= 7) {
+                    text += "職員" + name + "はその場に蹲った\n特殊作業で救出可能\n";
+                    t6032 = name;
+                    t603 = 1;
+                }
+            }
+        }
+
+    } else {
+        if (irai == 1) {
+            t603 = 0;
+            daideme1 = kekka[10];
+            daideme2 = 6;
+            daisu();
+            text += "出目：" + daideme4+"\n";
+            if (daideme4 >= 14) {
+                text += "救出成功\n職員" + t6032 + "はギフトを入手\n";
+                t6032 = "";
+            } else {
+                text += "救出失敗\n▼職員" + t6032 + "は死んでいる。\n";
+                t6032 = "";
+                sibou = 0;
+            }
+        } else {
+            text += "ツール型の作業は「使用」です\n";
+        }
+
+    }
+
+}
+
 function g604() {
     gene = "604 Une lumière qui sauve le cœur";
     sase = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]];
@@ -6493,10 +8664,12 @@ function g609() {
     kensaku = kekka[12].indexOf('906');
     if (kensaku != -1) {
         text += "潜伏する者は脱走した\n";
+        dassou = 1;
     }
 
     if (nefi <= 0) {
         text += "潜伏する者は脱走した\nカウンター0→1\n";
+        dassou = 1;
         nefi = 1;
     }
 
@@ -6519,6 +8692,7 @@ function g610() {
 
     if (nefi <= 0) {
         text += "ファイアーフィッシュは脱走した\nカウンター0→4\n";
+        dassou = 1;
         nefi = 4;
     }
 }
@@ -6562,14 +8736,14 @@ function g614() {
     seihihan();
 
     if (kekka[6] == "男" || kekka[6] == "男性") {
-        text = "▼職員" + name + "は魔人となりました。直ちに鎮圧してください。\n";
+        text += "▼職員" + name + "は魔人となりました。直ちに鎮圧してください。\n";
     } else {
         if (kekka[6] == "女" || kekka[6] == "女性") {
-            text = "";
+            text += "";
         } else {
             ransu = Math.floor(Math.random() * 2 + 1);
             if (ransu == 2) {
-                text = "▼職員" + name + "は魔人となりました。直ちに鎮圧してください。\n";
+                text += "▼職員" + name + "は魔人となりました。直ちに鎮圧してください。\n";
             }
 
         }
@@ -6624,6 +8798,7 @@ function g620() {
             text += "▼職員" + name + "は壁から抜けなくなった\n抜けられるまで行動不能\n職員は(正義)d6を振りIP-O-05-620は3d6を振る。相手より出目が高いと脱出\n失敗した場合30分後に再挑戦可能\n";
         } else {
             text += "▼職員" + name + "は壁から抜けなくなった\nカウンターが減少した\nIP-O-05-620は脱走した\nカウンタ－0→1\n";
+            dassou = 1;
             sibou = 0;
         }
     }
@@ -6641,18 +8816,18 @@ function g623() {
    
     seihihan();
     if (seihi == 0) {
-        text = "作業ダメージに追加で赤2ダメージ\n";
+        text += "作業ダメージに追加で赤2ダメージ\n";
         if (sagyona == 1) {
-            text = "作業ダメージに追加で赤5ダメージ\n";
+            text += "作業ダメージに追加で赤5ダメージ\n";
             if (kurike == 1) {
-                text = "作業ダメージに追加で赤6ダメージ\n";
+                text += "作業ダメージに追加で赤6ダメージ\n";
             }
         }
     } else {
         if (sagyona == 1) {
-            text = "作業ダメージに追加で赤3ダメージ\n";
+            text += "作業ダメージに追加で赤3ダメージ\n";
             if (kurike == 1) {
-                text = "作業ダメージに追加で赤6ダメージ\n";
+                text += "作業ダメージに追加で赤6ダメージ\n";
             }
         }
     }
@@ -6665,6 +8840,7 @@ function g625() {
     rankk = 5;
     rank();
     seihihan();
+    nemax = 2;
 
     if (seihi == 0) {
         text += "カウンターが減少した\n";
@@ -6676,6 +8852,7 @@ function g625() {
     }
     if (nefi <= 0) {
         text += "天の孔は脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -6709,12 +8886,13 @@ function g635() {
     kensaku3 = kekka[12].indexOf('6352');
 
     if (sagyona == 4) {
-        text = "使用者の最大HPの半分の値の分、使用者のHPSP回復\nHPが満タンだった場合は死亡する\n";
+        text += "使用者の最大HPの半分の値の分、使用者のHPSP回復\nHPが満タンだった場合は死亡する\n";
 
 
         if (kensaku3 != -1) {
             sibou = 0;
             text += "加護欄から6352を消去\n";
+            kagokesi('6352');
         } else {
             if (kensaku2 != -1) {
                 text += "使用職員の加護欄に6352を記入\n";
@@ -6794,6 +8972,7 @@ function g650() {
     }
     if (nefi <= 0) {
         text += "プラニダーナは脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 }
@@ -6819,7 +8998,8 @@ function g666() {
         }
     } else {
         if (seihi == 1) {
-        text += "『ささやかな願い』と『夜天の導き』は相殺され、対消滅した\n加護欄から「601」を消去する\n";
+            text += "『ささやかな願い』と『夜天の導き』は相殺され、対消滅した\n加護欄から「601」を消去する\n";
+            kagokesi('601');
 
             
 
@@ -6850,9 +9030,32 @@ function g683() {
 
     if (nefi <= 0) {
         text += "古びた刀は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
+}
+
+function g696() {
+    gene += "らんだ";
+    sase = [[1, 1, 1, 0.5, 0.5], [1.5, 1.5, 2, 2, 2], [0.5, 0.5, 0.5, 0.5, 0.5], [1.5, 1.5, 1.5, 2, 2]];
+    rankk = 2;
+    rank();
+    seihihan();
+
+    if (t696 == 1) {
+        text += "白10ダメージ\n";
+        t696 = 0;
+    }
+    sykasan(696, 3, 0);
+    if (seihi == 1) {
+        kensaku = kekka[12].indexOf('696');
+        text += "職員" + name + "は加護を受け取った\n作業成功率+5\n";
+        if (kensaku == -1) {
+            kagohuti = "696";
+            kagohuyo();
+        }
+    }
 }
 
 function g701() {
@@ -6868,6 +9071,8 @@ function g701() {
         } else {
             if (sagyona == 0) {
                 text += "依頼作業に置き換わっている\n";
+                peti = 0;
+                keikenti = 0;
             }
         }
     }
@@ -6879,7 +9084,7 @@ function g703() {
     peti = 0;
 
     if (sagyona == 4) {
-        text = "任意のステータス1つ選択\n";
+        text += "任意のステータス1つ選択\n";
         ransu = Math.floor(Math.random() * 30 + 1);
         if (ransu <= 28) {
             ransu = Math.floor(Math.random() * 20 + 1);
@@ -6958,6 +9163,7 @@ function g707() {
 
     if (nefi <= 0) {
         text += "甘菓子人形狙撃兵は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -6972,7 +9178,7 @@ function g708() {
     kensaku = kekka[12].indexOf('708');
     if (kensaku == -1) {
 
-        if (seihi == 1 || kensaku == -1) {
+        if (seihi == 1 && kensaku == -1) {
             text += "職員" + name + "は「朽ちた欠片」を得た\n作業時ダイス+1\n";
             t708 = tt12;
             kagohuti = "708";
@@ -6984,6 +9190,77 @@ function g708() {
 
 
 
+    }
+}
+
+function g709() {
+    gene += "戦創の覇車";
+    sase = [[2, 2, 1, 1, 0.5], [2, 1.5, 2, 1.5, 0.5], [1.5, 1.5, 1.5, 1.5, 0.5], [1, 1, 1, 1, 0.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+    nemax = 4;
+    if (irai == 1 || t709 != -1) {
+        irai = 1;
+        peti = 0;
+        keikenti = 0;
+        kekka[3] = "特殊";
+        if (t709 != syid) {
+            text += "職員" + name + "は勝負を挑まれた職員ではない\n";
+        } else {
+            t709 = -1;
+            ransu = Math.floor(Math.random() * 100 + 1);
+            kari = ransu;
+            ransu = Math.floor(Math.random() * 100 + 1);
+            kari2 = ransu;
+            text += "職員出目：" + kari + "　相手出目：" + kari2 + "\n";
+            if (kari >= kari2 + 1) {
+                text += "職員" + name + "は勝利した\nギフトを入手\nカウンターが1増加した\n";
+                nefi += 1;
+            } else {
+                ransu = Math.floor(Math.random() * 100 + 1);
+                kari = ransu;
+                ransu = Math.floor(Math.random() * 100 + 1);
+                kari2 = ransu;
+                text += "2回目：職員出目：" + kari + "　相手出目：" + kari2 + "\n";
+                if (kari >= kari2 + 1) {
+                    text += "職員" + name + "は勝利した\nギフトを入手\nカウンターが1増加した\n";
+                    nefi += 1;
+                } else {
+                    ransu = Math.floor(Math.random() * 100 + 1);
+                    kari = ransu;
+                    ransu = Math.floor(Math.random() * 100 + 1);
+                    kari2 = ransu;
+                    text += "3回目：職員出目：" + kari + "　相手出目：" + kari2 + "\n";
+                    if (kari >= kari2 + 1) {
+                        text += "職員" + name + "は勝利した\nギフトを入手\nカウンターが1増加した\n";
+                        nefi += 1;
+                    } else {
+                        text += "職員" + name + "は敗北した\nカウンターが減少した\n";
+                        nefi -= 1;
+                        sibou = 0;
+                    }
+                }
+            }
+        }
+    } else {
+        if (kurike == 1 || fanke == 1) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+        if (seihi == 1) {
+            sykasan(709, 0, 1);
+            sykensaku(709);
+            if (sykekka >= 2) {
+                text += "職員" + name + "は勝負を挑まれた\n次の作業が強制的に特殊作業になる\n";
+                t709 = syid;
+                sykasan(709, 3, 0);
+            }
+        }
+    }
+    if (nefi <= 0) {
+        text += "戦創の覇車は脱走した\nカウンター0→4\n";
+        nefi = 4;
     }
 }
 
@@ -7008,7 +9285,9 @@ function g710() {
         nefi -= 1;
     }
     if (sagyona == 2) {
-        text = "観測レベルが１の場合80黒ダメージ\nこの幻想体の愛着は依頼に置き換わっているので特殊能力等で強制的に愛着を選んだ場合を除き作業を決め直してください。\n";
+        text += "観測レベルが１の場合80黒ダメージ\nこの幻想体の愛着は依頼に置き換わっているので特殊能力等で強制的に愛着を選んだ場合を除き作業を決め直してください。\n";
+        peti = 0;
+        keikenti = 0;
     }
 
     }
@@ -7017,6 +9296,162 @@ function g710() {
             text += "カウンター0→2\n";
             nefi = 2;
         }
+}
+
+function g712() {
+    gene += "毒蜘蛛蛇";
+    sase = [[1, 1.5, 2, 1, 1.5], [1.5, 1.5, 1, 2, 0.5], [1, 0.5, 0.5, 0, 0], [1.5, 2, 2, 1, 1]];
+    rankk = 4;
+    rank();
+    seihihan();
+    gift = 1;
+    if (irai == 1 || t7124 == 1) {
+        irai = 1;
+        kekka[3] = "特殊";
+        ransu = Math.floor(Math.random() * 6 + 1);
+        text += "出目：" + ransu + "\n";
+        if (ransu >= 5) {
+            text += "救出成功\nギフト入手\n";
+            t7124 = 0;
+            t712 += 1;
+            if (t712 == 3) {
+                text += "\nEGO取得\n\n";
+            }
+        } else {
+            text += "救出失敗\n";
+            t7122 += 1;
+            if (t7122 >= 3) {
+                text += "▼職員" + t7123 + "は死んでいる\n職員" + name + "に10赤ダメージ\n";
+                t7122 = 0;
+                t7124 = 0;
+            }
+        }
+    } else {
+        if (sagyona == 2) {
+            ransu = Math.floor(Math.random() * 100 + 1);
+            if (ransu <= 30) {
+                text += "職員" + name + "は囚われた\n次の作業は全て救出となる\n";
+                t7122 = 0;
+                t7123 = name;
+                t7124 = 1;
+            }
+        }
+    }
+}
+
+function g718() {
+    gene += "悔いる青山羊";
+    sase = [[0, 0, 1, 2, 2], [0.5, 0.5, 1.5, 2, 2], [2, 2, 0.5, 0.5, 2], [0, 0.5, 1, 1, 1]];
+    rankk = 4;
+    rank();
+    seihihan();
+    if (irai == 1) {
+        ransu = Math.floor(Math.random() * 4 + 1);
+        if (ransu == 1) {
+            katit = "勇気";
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 1) {
+                katit2 = "洞察";
+            }
+            if (ransu == 2) {
+                katit2 = "自制";
+            }
+            if (ransu == 3) {
+                katit2 = "正義";
+            }
+        }
+        if (ransu == 2) {
+            katit = "洞察";
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 1) {
+                katit2 = "勇気";
+            }
+            if (ransu == 2) {
+                katit2 = "自制";
+            }
+            if (ransu == 3) {
+                katit2 = "正義";
+            }
+        }
+        if (ransu == 3) {
+            katit = "自制";
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 1) {
+                katit2 = "勇気";
+            }
+            if (ransu == 2) {
+                katit2 = "洞察";
+            }
+            if (ransu == 3) {
+                katit2 = "正義";
+            }
+        }
+        if (ransu == 4) {
+            katit = "正義";
+            ransu = Math.floor(Math.random() * 3 + 1);
+            if (ransu == 1) {
+                katit2 = "勇気";
+            }
+            if (ransu == 2) {
+                katit2 = "洞察";
+            }
+            if (ransu == 3) {
+                katit2 = "自制";
+            }
+        }
+        ransu = Math.floor(Math.random() * 2 + 1);
+        if (ransu == 1) {
+            text += "悔いる青山羊が同行した\n職員" + name + "の作業成功率+3\n鎮圧時ダメージ30まで肩代わり\n4d6の援護攻撃\n肩代わり分を消費するか1時間経過で同行は終わる\n同行中の職員が死亡するとカウンター減少\n同行時は他の職員は同行が行えない\n\n対価として依頼職員の" + katit + "が初期値になる\n";
+        }
+        if (ransu == 2) {
+            text += "悔いる青山羊が同行した\n職員" + name + "の作業成功率+3\n鎮圧時ダメージ30まで肩代わり\n4d6の援護攻撃\n肩代わり分を消費するか1時間経過で同行は終わる\n同行中の職員が死亡するとカウンター減少\n同行時は他の職員は同行が行えない\n\n対価として依頼職員の" + katit + katit2 + "が初期値になる\n";
+        }
+    } else {
+        if (kekka[7] >= 5) {
+            ransu = Math.floor(Math.random() * 50 + 1);
+            text += "赤" + ransu + "ダメージ\n";
+        }
+        if (sagyona == 3) {
+            text += "この作業は同行作業に置き換わっている\nただし誰かに同行中の場合は通常の作業になる\n";
+        }
+        if (seihi == 0) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+    if (nefi <= 0) {
+        text += "悔いる青山羊は脱走した\n部門内の最もランクの高い職員1名が死亡する\nカウンター0→2\n";
+        nefi = 2;
+    }
+}
+
+function g720() {
+    gene += "偽装影";
+    sase = [[1.5, 1.5, 1, 1, 1], [2, 1.5, 1.5, 1, 0.5], [2, 2, 1, 1, 1], [1.5, 1, 1, 0.5, 1]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    if (seihi == 1) {
+        kensaku = kekka[12].indexOf('720');
+        if (kensaku == -1) {
+            kagohuti = "720";
+            kagohuyo();
+        }
+    }
+    if (kekka[7] <= 3 && seihi == 0) {
+        sibou = 0;
+    }
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        text += "偽装影は脱走した\nカウンター0→2\n";
+        nefi = 2;
+        dassou = 1;
+        sibou = 0;
+    }
 }
 
 function g721() {
@@ -7032,6 +9467,7 @@ function g721() {
 
     if (nefi <= 0) {
         text += "ほら男爵は脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 
@@ -7056,6 +9492,7 @@ function g722() {
         if (kensaku != -1) {
             pani = 1;
             text += "▼職員" + name + "は自殺性パニックに陥った\n加護欄の722は消去\n";
+            kagokesi('722');
         } else {
             kagohuti = "722";
             kagohuyo();
@@ -7086,6 +9523,7 @@ function g725() {
             text += "カウンターが減少した。\n";
             if (nefi == 1) {
                 text += "星海渡る氷精は脱走した。\n▼職員" + name + "は氷漬けにされた。\n氷精が鎮圧されるまで行動不能";
+                dassou = 1;
             }
             nefi -= 1;
             if (nefi <= 0) {
@@ -7099,6 +9537,7 @@ function g725() {
                 text += "カウンターが減少した。\n";
                 if (nefi == 1) {
                     text += "星海渡る氷精は脱走した。\n▼職員" + name + "は氷漬けにされた。\n氷精が鎮圧されるまで行動不能";
+                    dassou = 1;
                 }
                 nefi -= 1;
                 if (nefi <= 0) {
@@ -7111,6 +9550,38 @@ function g725() {
     }
 }
 
+function g731() {
+    gene += "『コンタラ』";
+    sase = [[0, 0, 0, 0, 0], [2, 2, 2, 2, 2], [2, 2, 2, 2, 2], [0, 0, 0, 0, 0]];
+    rankk = 3;
+    rank();
+    seihihan();
+    kensaku = kekka[12].indexOf('731');
+    kensaku2 = kekka[12].indexOf('7312');
+    if (seihi == 0 && kensaku != -1 && kensaku2 == -1) {
+        text += "職員" + name + "のギフト、加護による作業成功率以外の数値が逆転した\n";
+        kagokesi('731');
+        kagohuti = "7312";
+        kagohuyo();
+    }
+    if (seihi == 1) {
+        if (kensaku == -1 && kensaku2 == -1) {
+            text += "職員" + name + "にマーキングが付与された\n";
+            kagohuti = "731";
+            kagohuyo();
+        }
+    }
+    if (nefi <= 0) {
+        text += "全職員にマーキングがついた\nカウンター0→2\n";
+        nefi = 2;
+        tt12 += ",731";
+        for (i = 0; i < 5; i++) {
+            nana2 = i + 1;
+            nana = "se" + nana2 + "8";
+            document.hanteisuru[nana].value += ",731";
+        }
+    }
+}
 
 function g752() {
     gene = "752 秋色葉";
@@ -7124,7 +9595,7 @@ function g752() {
     seihihan();
     if (nefi <= 0) {
         sibou = 0;
-        text = "カウンターが３まで回復\n部門内の全職員のHPSP全回復\n";
+        text += "カウンターが３まで回復\n部門内の全職員のHPSP全回復\n";
         nefi = 3;
     } else {
         if (sagyona != 3) {
@@ -7141,6 +9612,57 @@ function g752() {
     }
 
 
+}
+
+function g767() {
+    gene += "くぎ";
+    sase = [[1, 1, 1, 1, 1.5], [2, 1.5, 1.5, 1.5, 1.5], [0.5, 0.5, 1, 1.5, 1.5], [0, 0, 0, 0, 0]];
+    rankk = 1;
+    rank();
+    seihihan();
+
+    if (seihi == 1 && sagyona == 1) {
+        ransu = Math.floor(Math.random() * 3 + 1);
+        text += "職員" + name + "のSPが" + ransu + "回復した\n";
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (seihi == 1 && sagyona == 3) {
+        ransu = Math.floor(Math.random() * 3 + 1);
+        text += "職員" + name + "のSPが" + ransu + "減少した\n";
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        if (kekka[10] <= 2) {
+            text += "職員" + name + "のSPが10減少した\n";
+        } else {
+            text += "職員" + name + "のSPが5減少した\n";
+        }
+        text += "カウンター0→3\n";
+        nefi = 3;
+    }
+}
+
+function g772() {
+    gene += "時狩りのギャンブラー";
+    sase = [[1, 1, 1.5, 1, 1.5], [2, 2, 1, 1, 1], [1, 1, 0.5, 1.5, 2], [1, 1, 1, 0.5, 0]];
+    rankk = 3;
+    rank();
+    seihihan();
+    if (sagyona == 3) {
+        text += "ロシアンルーレットを行った\n";
+        ransu = Math.floor(Math.random() * 6 + 1);
+        if (ransu != 6) {
+            ransu = Math.floor(Math.random() * 6 + 1);
+            text += "職員" + name + "のHPが" + ransu + "回復した\n";
+        } else {
+            sibou = 0;
+        }
+    }
+    if (sagyona == 1) {
+        text += "時狩りのギャンブラーは脱走した\n";
+    }
 }
 
 function g777() {
@@ -7190,9 +9712,46 @@ function g777() {
 
     if (nefi <= 0) {
         text += "堕天道様は脱走した\nカウンター0→4\n";
+        dassou = 1;
         nefi = 4;
     }
 
+}
+
+function g800() {
+    gene += "0";
+    sase = [[0, 1, 1, 1, 1], [0, 1, 1, 1, 1], [0, 1, 1, 1, 1], [0, 1, 1, 1, 1]];
+    rankk = 5;
+    rank();
+    seihihan();
+    nemax =2;
+    if (nefi <= 0) {
+        if (kekka[8] == 4 || kekka[8] == 5 || kekka[9] == 4 || kekka[9] == 5 || kekka[10] == 4 || kekka[10] == 5 || kekka[11] == 4 || kekka[11] == 5 ) {
+            text += "職員" + name + "のステータスが初期値になった（1日限り）\nこの職員の次の作業はこの幻想体になる\n";
+        } else {
+            pani = 1;
+            text += "▼職員" + name + "はパニックに陥った\n";
+        }
+        text += "カウンター0→2\n";
+        nefi = 2;
+    }
+    if (kekka[7] >= 4) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+        ransu = Math.floor(Math.random() * 5 + 1);
+        if (ransu == 5) {
+            pani = 1;
+            text += "▼職員" + name + "はパニックに陥った\n";
+        }
+    }
+    if (kekka[7] <= 3) {
+        text += "職員" + name + "のHPSP10回復\nカウンターが1増加した\n";
+        nefi += 1;
+        ransu = Math.floor(Math.random() * 10 + 1);
+        if (ransu == 1) {
+            sibou = 0;
+        }
+    }
 }
 
 function g801() {
@@ -7257,6 +9816,166 @@ function g801() {
 
 }
 
+function g802() {
+    gene += "殻無し公女";
+    sase = [[0, 0, 0, 0, 0], [2, 2, 2, 1.5, 1.5], [0.5, 1, 1.5, 1.5, 1.5], [1.5, 1, 1, 1.5, 1.5]];
+    rankk = 4;
+    rank();
+
+
+
+    seihihan();
+
+    if (irai == 1) {
+        seihi = 1;
+        text += "殻無し公女が共に鎮圧を行う\n対価としてカウンターが1減少した\n依頼完了時に自主的に収容室に戻る\n";
+        nefi -= 1;
+        if (nefi <= 0) {
+            text += "依頼完了後、収容室に戻らず敵対する\nカウンター0→3\n";
+            nefi = 3;
+        }
+    }
+
+
+
+
+    if (sagyona == 1 && seihi == 0) {
+        sibou = 0;
+        text += "カウンターが最大値まで回復した。\n";
+        nefi = 3;
+    } else {
+        if (sagyona == 1 && seihi == 1 && irai == 0) {
+            text += "カウンターが回復した。\n";
+            nefi += 1;
+
+        }
+    }
+
+    if (sagyona !== 1 && seihi == 0) {
+        text += "カウンターが減少した。\n";
+        nefi -= 1;
+    }
+
+    if (sagyona !== 0) {
+        if (kekka[9] <= 3 && irai == 0) {
+            sibou = 0;
+        }
+    } else {
+        if (sagyona == 0) {
+            text += "本能作業は依頼作業に置き換わっています。\n";
+        }
+    }
+
+    if (nefi <= 0) {
+        sibou = 0;
+        text += "殻無し公女は脱走した\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
+    }
+
+    if (sibou == 0) {
+        text += "職員" + name + "は背後から忍び寄る棘に串刺しにされた。\n";
+        ransu = Math.floor(Math.random() * 3 + 1);
+        if (ransu == 1) {
+            text += "『だめよ、背後はちゃんと気にしてないと』\n";
+        }
+        if (ransu == 2) {
+            text += "『騙されやすい人は大好きよ。こんなに血をくれるんだもの』\n";
+        }
+        if (ransu == 3) {
+
+            if (kekka[6] == "男" || kekka[6] == "男性") {
+                text += "『今更気づいても遅いのよ、" + name + "お兄様？』\n";
+            } else {
+                if (kekka[6] == "女" || kekka[6] == "女性") {
+                    text += "『今更気づいても遅いのよ、" + name + "お姉様？』\n";
+                } else {
+                    text += "『今更気づいても遅いのよ、" + name + "様？』\n";
+                }
+            }
+
+
+        }
+
+
+    }
+
+}
+
+function g803() {
+    gene += "「フロッグ探偵事務所」";
+    sase = [[1.5, 1.5, 1.5, 1.5, 1.5], [0, 0, 0, 0, 0], [1, 1, 1.5, 1.5, 1.5], [1, 1, 1, 0.5, 0.5]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    //加護付き殺す　カウンターも減る
+    kensaku = kekka[12].indexOf('803');
+    if (kensaku != -1) {
+        text += "「貴方の本性は、もうわかってるんでね。」\n";
+        sibou = 0;
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+
+    //依頼作業
+    if (irai == 1) {
+        text += "職員" + name + "は事件内容を伝えた\n";
+        text += "「おや。出番かな。」\n";
+        text += "「フロッグ探偵」は依頼脱走した。\n";
+        text += "ダイスは4d6で判定。HPは90。\n";
+        text += "攻撃属性、耐性は幻想体ページを参照。\n";
+        text += "対価としてカウンターが減少した\n";
+        nefi -= 1;
+    }
+
+    //本能作業成功加護
+    if (sagyona == 0 && seihi == 1) {
+        text += "「わざとだとしたら、とてもいい趣味をしているね。」\n";
+        kagohuti = "803";
+        kagohuyo();
+    }
+
+    //レベル3以上愛着作業失敗加護
+    if (kekka[7] >= 3 && sagyona == 2 && seihi == 0) {
+        text += "「騙そうなんて、なんとも。かわいらしい方だ。」\n";
+        kagohuti = "803";
+        kagohuyo();
+    }
+
+    //抑圧作業をする
+    if (sagyona == 3) {
+        //成功する
+        if (seihi == 1) {
+            //ランクで判断
+            if (kekka[7] >= 3) {
+                text += "議論は正式になりたった。\n";
+                text += "「いやはや、参考になったよ。」\n";
+                text += "カウンターが全回復した\n";
+                nefi = 3;
+            } else {
+                text += "議論は口喧嘩になった。\n";
+                text += "「結局、何がしたいんだね。」\n";
+                text += "カウンターが減少した\n";
+                nefi -= 1;
+            }
+            //失敗する
+        } else {
+            text += "議論は成り立たなかった。\n";
+            text += "「時間の無駄だ。やれやれ」\n";
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+
+    //脱走
+    if (nefi <= 0) {
+        text += "「フロッグ探偵」は脱走したnカウンター0→3\n";
+        nefi = 3;
+    }
+
+}
+
 function g804() {
     gene = "804 アスクレピオスの蛇";
     sase = [[1.5, 1.5, 1, 1, 1], [1, 1, 0.5, 0.5, 0.5], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2]];
@@ -7276,6 +9995,8 @@ function g804() {
     } else {
         if (sagyona == 2) {
             text += "依頼作業に置き換わっている\n";
+            peti = 0;
+            keikenti = 0;
         }
         if (seihi == 0) {
             ransu = Math.floor(Math.random() * 3 + 1);
@@ -7348,6 +10069,7 @@ function g810() {
         nefi -= 1;
         if (nefi <= 0) {
             text += "熊猫師範は脱走した\nカウンター0→2\n";
+            dassou = 1;
             nefi = 2;
         }
     }
@@ -7370,9 +10092,10 @@ function g818() {
 
 
     if (kensaku != -1) {
-        text = "カウンター減少\n";
+        text += "カウンター減少\n";
         if (nefi == 1) {
             text += "虚勢の才覚は脱走した。\n";
+            dassou = 1;
         }
         nefi -= 1;
         if (nefi <= 0) {
@@ -7413,7 +10136,7 @@ function g821() {
         if (sagyona != 2) {
             ransu = Math.floor(Math.random() * 2 + 1);
             if (ransu == 1) {
-                text = "カウンターが減少した\n";
+                text += "カウンターが減少した\n";
                 nefi -= 1;
                 if (nefi <= 0) {
                     daideme1 = 1;
@@ -7421,6 +10144,7 @@ function g821() {
                     daisu();
                     text += "夢見がちなうさちゃんは脱走した\nカウンター0→3\n6体脱走した内の" + daideme4 + "体は自動鎮圧された、ただし6の場合は全て鎮圧失敗\n";
                     nefi = 3;
+                    dassou = 1;
                 }
             }
         }
@@ -7463,6 +10187,72 @@ function g828() {
 
 }
 
+function g826() {
+    gene += "灯籠の咲く溟";
+    sase = [[1, 1, 1.5, 2, 2], [1, 0.5, 1.5, 0.5, 1], [0.5, 1, 1, 0.5, 1.5], [1.5, 1.5, 1.5, 2, 2]];
+    rankk = 5;
+    rank();
+    pale = 1;
+    seihihan();
+    kensaku = kekka[12].indexOf('826');
+    if (kensaku == -1 && seihi == 0) {
+        if (t826 == 0) {
+            t826 = 1;
+        } else {
+            if (t826 == 1) {
+                t826 = 2;
+            } else {
+                pani = 1;
+                text += "『静かにしろって言ったのに』\n";
+                text += "▼職員" + name + "はシャットダウン性パニックに陥った\n";
+                t826 = 0;
+            }
+        }
+    } else {
+        if (seihi == 1) {
+            t826 = 0;
+        }
+    }
+
+
+    kensaku = kekka[12].indexOf('826');
+    if (kensaku == -1 && seihi == 1) {
+        ransu = Math.floor(Math.random() * 3 + 1);
+        if (ransu == 1) {
+            text += "『一緒に仲間に祈りを捧げてほしい』\n";
+        }
+        if (ransu == 2) {
+            text += "『見ててもいいけど、静かにしてくれよな』\n";
+        }
+        if (ransu == 3) {
+            text += "『俺の仲間がここで泳いでるんだ』\n";
+        }
+        text += "職員" + name + "は灯籠を受け取った。SPが+20される。\n";
+        kagohuti = "826";
+        kagohuyo();
+    } else {
+        if (kensaku != -1 && seihi == 0) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        } else {
+            if (kensaku != -1 && seihi == 1) {
+                text += "▼職員" + name + "のSPが20回復した。\n";
+
+
+            }
+        }
+    }
+
+    if (nefi <= 0) {
+        text += "▼灯籠から海の生物が飛び出し、職員に憑依した。灯籠を持つ部門内の職員は【削除済み】の記憶に変化する。\n";
+        text += "1d6を振り変化する海の生物を決定すること。\nカウンター0→4\n";
+        nefi = 4;
+
+    }
+
+
+}
+
 function g829() {
     gene = "829 飛び立つ流星";
     sulo = 38;
@@ -7477,7 +10267,7 @@ function g829() {
     if (seihi == 1) {
         ransu = Math.floor(Math.random() * 3 + 1);
         if (ransu == 1) {
-            text = "職員" + name + "はながれぼしの欠片を付与された\nこの職員の加護欄に「829」を追加\n作業、鎮圧の出目+7\n";
+            text += "職員" + name + "はながれぼしの欠片を付与された\nこの職員の加護欄に「829」を追加\n作業、鎮圧の出目+7\n";
 
             kensaku = kekka[12].indexOf('829');
             if (kensaku == -1) {
@@ -7514,6 +10304,7 @@ function g829() {
         }
         if (nefi <= 0) {
             text += "星堕つる聲は脱走した\nカウンター0→2\n";
+            dassou = 1;
             nefi = 2;
         }
 
@@ -7551,6 +10342,7 @@ function g849() {
             } else {
                 if (kensaku == -1) {
                     text += "職員" + name + "と加護849の職員は最大HPの30％ダメージを受けた。\n加護欄から849を消去\n";
+                    kagokesi('849');
                 }
 
             }
@@ -7596,6 +10388,66 @@ function g874() {
     }
 }
 
+function g877() {
+    gene += "希望の指輪";
+    peti = 0;
+
+    if (sagyona == 4) {
+        if (t8772 == 0) {
+            sykasan(877, 0, 1);
+            sykensaku(877);
+            if (sykekka >= 3) {
+                text += "職員" + name + "は自殺性パニックに陥った\n";
+                pani = 0;
+                sykasan(877, 3, 0);
+            } else {
+                text += "職員" + name + "のHPSPが5分毎に7回復\n返却可能、返却時は作業項目から返却を選択する\n";
+                kensaku = kekka[12].indexOf('877');
+                if (kensaku == -1) {
+                    kagohuti = "877";
+                    kagohuyo();
+                    t877 = name;
+                    t8772 = syid;
+                    setTimeout(g8772, 960000);
+                }
+            }
+        } else {
+            kari = t8772 + 1;
+            katit = "se" + kari + "1";
+            t877=document.hanteisuru[kari].value;
+            text += "職員"+t877+"が使用中\n";
+        }
+
+    } else {
+        if (sagyona == 5) {
+            text += "希望の指輪を返却した\n加護欄から「877」を消去する\n";
+            kagokesi('877');
+            t8772 = 0;
+            t877 = "";
+        } else {
+        text += "ツール型の作業は「使用」です\n";
+
+        }
+    }
+
+}
+
+function g8772() {
+    kari = t8772 + 1;
+    katit = "se" + kari + "8";
+    karihako=document.hanteisuru[katit].value;
+    kagoti = karihako.split(/,/);
+    karihako = kagoti;
+    kensaku = karihako.indexOf('877');
+    if (kensaku != -1) {
+        ketext = "職員" + t877 + "は死亡した\n加護欄から「877」を消去する\n";
+        document.hanteisuru['kekka'].value = ketext;
+        t8772 = 0;
+        t877 = "";
+    }
+    karihako = [];
+}
+
 function g880() {
     gene = "880 銀の暴風";
     sulo = 89;
@@ -7616,11 +10468,13 @@ function g880() {
 
     if (kensaku != -1) {
         text += "金の太陽は脱走した\n";
+        dassou = 1;
         nefi = 0;
         sibou = 0;
     }
     if (nefi <= 0) {
         text += "銀の暴風は脱走した\n金の太陽を装着している職員がいる場合はこちらも脱走する\nカウンター0→2\n";
+        dassou = 1;
         if (kensaku != -1) {
             text += "『大災害』が発生した\n部門内全職員パニック\n銀の暴風と金の太陽は収容室に戻った\n";
         }
@@ -7628,6 +10482,209 @@ function g880() {
     }
 }
 
+function g886() {
+    gene += "ツギハギの司令塔";
+    sase = [[2, 2, 2, 2, 2], [1.5, 1.5, 1, 0.5, 0.5], [2, 1.5, 1.5, 1, 1], [1.5, 1.5, 1, 1, 1]];
+    rankk = 4;
+    rank();
+    seihihan();
+    kensaku = kekka[12].indexOf('8861');
+    kensaku2 = kekka[12].indexOf('8862');
+    kensaku3 = kekka[12].indexOf('8863');
+    kensaku4 = kekka[12].indexOf('8864');
+    sykensaku(886);
+    if (sykekka == 0) {
+        t8863 = 1;
+        text += "職員" + name + "は「指令」を受け取った\n指令のある間は勇気正義+10、慎重自制-10\n実行失敗でカウンター減少、成功で指令解除\n指令完了時に加護欄から「886」を消去する\n";
+        ransu = Math.floor(Math.random() * 4 + 1);
+        if (ransu == 1) {
+            kagohuti = "8861";
+            kagohuyo();
+            text += "\n";
+            ransu = Math.floor(Math.random() * 3 + 1);
+            text += "1番　作業成功" + ransu + "回\n「職員" + name + "へ。次に部屋の中で出会った者" + ransu + "名を喜ばせなさい。対象は人でないものも、無機物も含みます」\n";
+            if (ransu == 1) {
+                console.log('1-1:1');
+                sykasan(886, 3, 1);
+            }
+            if (ransu == 2) {
+                sykasan(886, 3, 3);
+                console.log('1-2:3');
+            }
+            if (ransu == 3) {
+                sykasan(886, 3, 6);
+                console.log('1-3:6');
+            }
+
+        } else {
+            if (ransu == 2) {
+                kagohuti = "8862";
+                kagohuyo();
+                text += "\n";
+                ransu = Math.floor(Math.random() * 3 + 1);
+                kari = ransu;
+                ransu = Math.floor(Math.random() * 4 + 1);
+                if (ransu == 1) {
+                    katit = "本能";
+                    if (kari == 1) {
+                        sykasan(886, 3, 10);
+                        console.log('2a-1:10');
+                    }
+                    if (kari == 2) {
+                        sykasan(886, 3, 12);
+                        console.log('2a-2:12');
+                    }
+                    if (kari == 3) {
+                        sykasan(886, 3, 15);
+                        console.log('2a-3:15');
+                    }
+                }
+                if (ransu == 2) {
+                    katit = "洞察";
+                    if (kari == 1) {
+                        sykasan(886, 3, 19);
+                        console.log('2b-1:19');
+                    }
+                    if (kari == 2) {
+                        sykasan(886, 3, 21);
+                        console.log('2b-2:21');
+                    }
+                    if (kari == 3) {
+                        sykasan(886, 3, 24);
+                        console.log('2b-3:24');
+                    }
+                }
+                if (ransu == 3) {
+                    katit = "愛着";
+                    if (kari == 1) {
+                        sykasan(886, 3, 28);
+                        console.log('2c-1:28');
+                    }
+                    if (kari == 2) {
+                        sykasan(886, 3, 30);
+                        console.log('2c-2:30');
+                    }
+                    if (kari == 3) {
+                        sykasan(886, 3, 33);
+                        console.log('2c-3:33');
+                    }
+                }
+                if (ransu == 4) {
+                    katit = "抑圧";
+                    if (kari == 1) {
+                        sykasan(886, 3, 34);
+                        console.log('2d-1:34');
+                    }
+                    if (kari == 2) {
+                        sykasan(886, 3, 36);
+                        console.log('2d-2:36');
+                    }
+                    if (kari == 3) {
+                        sykasan(886, 3, 39);
+                        console.log('2d-3:39');
+                    }
+                }
+                text += "2番　作業固定" + kari + "回" + katit + "\n「職員" + name + "へ。" + kari + "回部屋に入る度に、何者に対しても同じことをしなさい。" + katit + "作業を手順の最初から最後まで、寸分の違いも無く行うこと」\n";
+
+            } else {
+                if (ransu == 3) {
+                    if (kensaku3 != -1) {
+                    kagokesi('8863');
+                    }
+                    kagohuti = "8863";
+                    kagohuyo();
+                    text += "\n";
+                    ransu = Math.floor(Math.random() * 3 + 1);
+                    text += "3番　鎮圧で攻撃" + ransu + "回命中\n「職員" + name + "へ。次に現れた悪しき愚者に対し、" + ransu + "回懲罰を行いなさい。容赦はしないように。そして逃げ出すこともないように」\n";
+                    console.log('3');
+                } else {
+                    if (ransu == 4) {
+                        kagohuti = "8864";
+                        kagohuyo();
+                        text += "\n";
+            ransu = Math.floor(Math.random() * 3 + 1);
+            kari = ransu * 30;
+            text += "4番　" + kari + "分間行動禁止\n「職員" + name + "へ。青い光が" + ransu + "回瞬くまで、いついかなる場合においても決して動いてはなりません。指示が来ようとも、暴力が振りかかろうとも、決して」\n";
+            sykasan(886, 3, 43);
+            t886 = syid;
+            t8862 = name;
+            if (ransu == 1) {
+                setTimeout(g8862, 1800000);
+                console.log('4-1:43');
+            }
+            if (ransu == 2) {
+                setTimeout(g8862, 3600000);
+                console.log('4-2:43');
+            }
+            if (ransu == 3) {
+                setTimeout(g8862, 5400000);
+                console.log('4-3:43');
+            }
+        }
+                }
+            }
+        }
+
+
+
+    }
+
+
+
+}
+
+function g8862() {
+    syconc = syconk.indexOf(886)
+    sykekka = sycon[t886][syconc][1];
+    if (sykekka == 43) {
+        ketext = "\n職員" + t8862 + "は指令を達成した\n";
+        document.hanteisuru['kekka'].value = ketext;
+        console.log('OK');
+        sykasan(886, 3, 0);
+
+        t8862 = "";
+
+kake2 = t886 + 1;
+        kake3 = "se" + kake2 + "8";
+        kari = document.hanteisuru[kake3].value;
+        karihako = kari.split(/,/);
+            kake = karihako.indexOf('8864');
+        if (kake != -1) {
+            karihako.splice(kake, 1);
+            document.hanteisuru[kake3].value = karihako;
+        }
+    t886 = 0;
+    }
+    }
+
+
+function g887() {
+    gene += "子竜の群れ";
+    sase = [[0.5, 0.5, 0.5, 0, 0], [0.5, 0.5, 1, 1, 1], [0, 0, 0, 0, 0], [1.5, 1.5, 2, 2, 2]];
+    rankk = 2;
+    rank();
+    seihihan();
+    nemax = 2;
+
+    if (sagyona == 3) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+        if (nefi <= 0) {
+            text += "1赤ダメージ\n";
+        }
+    }
+    if (sagyona == 0 || sagyona == 2) {
+        if (seihi == 1) {
+            text += "職員" + name + "のSP5回復\nカウンターが1増加した\n";
+            nefi += 1;
+        }
+    }
+    if (nefi <= 0) {
+        text += "子竜の群れは脱走した\nカウンター0→2\n";
+        dassou = 1;
+        nefi = 2;
+    }
+}
 
 function g888() {
     gene = "888　想起の卵眼";
@@ -7659,6 +10716,7 @@ function g888() {
     }
     if (nefi <= 0) {
         text += "想起の卵眼は脱走した\n「瞳」を持つ職員は全員死亡し「イデアの雛」に変化した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -7674,6 +10732,7 @@ function g890() {
 
     if (seihi == 0) {
         text += "職員" + name + "が15分以内に再入室しなかった場合、職員" + name + "は死亡し、愛は脱走する\n";
+        dassou = 1;
     }
 
 
@@ -7765,6 +10824,21 @@ function g901() {
     }
 }
 
+function g902() {
+    gene += "宙を逝くライカ";
+    sase = [[1.5, 1.5, 1.5, 1, 1], [1.5, 1.5, 1.5, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1.5, 1.5, 1.5]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    if (t902 == 0) {
+        text += "宙を逝くライカは職員" + name + "に付き添った\n正義ランク+1\n1日の終わり、もしくは職員が死ぬまで付き添う\n";
+        t902 = 1;
+        kagohuti = "902";
+        kagohuyo();
+    }
+}
+
 function g903() {
     gene = "903 イマジナリーラバー";
     sulo = 39;
@@ -7780,11 +10854,37 @@ function g903() {
         nefi -= 1;
         if (nefi <= 0) {
             text += "イマジナリーラバーは脱走した\nカウンター0→3\n";
+            dassou = 1;
             nefi = 3;
         }
     }
 
-}
+    }
+
+    function g904() {
+        gene += "リアリティーゲイザー";
+        sase = [[0.5, 0.5, 0.5, 0.5, 0.5], [1, 1, 1, 1, 1], [0, 0, 0, 0, 0], [1, 1, 1, 1, 1]];
+        rankk = 2;
+        rank();
+        seihihan();
+        kensaku = kekka[12].indexOf('904');
+        if (t904 == 0 && sagyona == 2) {
+            text += "職員" + name + "にマーキングがついた\nこの幻想体からの経験値が2倍\n";
+            t904 == 1;
+            kagohuti = "904";
+            kagohuyo();
+        } else {
+            if (sagyona != 2 && kensaku == -1) {
+                text += "カウンターが減少した\n";
+                nefi -= 1;
+            }
+        }
+        if (nefi <= 0) {
+            text += "リアリティーゲイザーは脱走した\nカウンター0→3\n";
+            nefi = 3;
+        }
+
+    }
 
 function g905() {
     gene = "905 アブノーマリティブロイラー";
@@ -7827,9 +10927,11 @@ function g906() {
     kensaku = kekka[12].indexOf('609');
     if (kensaku != -1) {
         text += "星を歩く者は脱走した\n";
+        dassou = 1;
     }
     if (nefi <= 0) {
         text += "星を歩く者は脱走した\nカウンター0→1\n";
+        dassou = 1;
         nefi = 1;
     }
 
@@ -7876,6 +10978,7 @@ function g913() {
                 sibou = 0;
             }
             text += "この職員の加護欄から「913」を消去する\n";
+            kagokesi('913');
         } else {
             text += "宇宙/天体/星関連幻想体への作業時+999のバフ\n";
             ransu = Math.floor(Math.random() * 10 + 1);
@@ -7929,7 +11032,7 @@ function g915() {
 
     kensaku = kekka[12].indexOf('915');
 
-    text = "職員に加護が付与される。\n3分毎に1d6HP回復、15分後に消去\n";
+    text += "職員に加護が付与される。\n3分毎に1d6HP回復、15分後に消去\n";
 
     if (kensaku == -1) {
         kagohuti = "915";
@@ -7937,6 +11040,46 @@ function g915() {
     }
 
     //美食家さんの加護の即死は個別の処理には組み込めないのでここには入れないです
+}
+
+function g916() {
+    gene += "阴阳";
+    sase = [[1.5, 1.5, 1.5, 1.5, 1], [0, 0, 0, 0, 0], [1.5, 1.5, 1.5, 1.5, 1], [1.5, 1.5, 1.5, 1.5, 1]];
+    rankk = 3;
+    rank();
+    seihihan();
+    text += "HPもしくはSPが満タンでない場合カウンター減少\n";
+    if (sagyona == 1) {
+        kensaku = kekka[12].indexOf('916');
+        if (kensaku == -1) {
+            text += "職員" + name + "に加護を施した\n作業成功率+2\n";
+            kagohuti = "916";
+            kagohuyo();
+        }
+    }
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        text += "阴阳は脱走した\n職員" + name + "と加護916を持つ職員は眷属となる\nカウンター0→1\n";
+        dassou = 1;
+        nefi = 1;
+    }
+}
+
+function g917() {
+    gene += "灰被りの少女";
+    sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 0.5], [2, 2, 2, 2, 2]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    if (nefi <= 0) {
+        text += "灰被りの少女は脱走した\nカウンター0→2\n";
+        dassou = 1;
+        nefi = 2;
+    }
 }
 
 function g918() {
@@ -7958,6 +11101,7 @@ function g918() {
     }
     if (nefi <= 0) {
         text += "父の日は脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
 }
@@ -8007,6 +11151,27 @@ function g920() {
 
 
 
+}
+
+function g922() {
+    gene += "境界に咲く花";
+    sase = [[1.5, 1.5, 1, 1, 1], [1, 1, 1, 1, 0.5], [1, 1, 1, 0.5, 0.5], [2, 2, 2, 2, 2]];
+    rankk = 5;
+    rank();
+    seihihan();
+    pale = 1;
+    if (kekka[9] <= 3 || kekka[10] <= 3) {
+        sibou = 0;
+    } else {
+        if (sagyona == 2 && seihi == 1) {
+            kensaku = kekka[12].indexOf('922');
+            if (kensaku == -1) {
+                text += "職員" + name + "は加護を得た\nSP+25、作業成功率+5\n重複不可\n";
+                kagohuti = "922";
+                kagohuyo();
+            }
+        }
+    }
 }
 
 function g923() {
@@ -8088,6 +11253,25 @@ function g923() {
 
 }
 
+function g933() {
+    gene += "プレジャーレイン";
+    sase = [[1.5, 2, 2, 1, 0.5], [1, 1, 0.5, 0, 0], [1, 1, 0.5, 0, 0], [1, 1.5, 1.5, 2, 2]];
+    rankk = 5;
+    rank();
+    seihihan();
+    text += "黒5ダメージ\n";
+    if (sagyona == 1 || sagyona == 3) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+
+    if (nefi <= 0) {
+        text += "プレジャーレインは脱走した\nカウンター0→3\n";
+        nefi = 3;
+    }
+
+}
+
 function g941() {
     gene = "941 心臓を失くしたパラディン";
     sase = [[1, 1, 1, 0.5, 0.5], [2, 1, 1, 1, 0.5], [2, 2, 2, 2, 2], [1.5, 1.5, 1, 1, 1]];
@@ -8103,6 +11287,72 @@ function g941() {
         }
         if (sagyona == 3) {
             text += "この作業は依頼作業に置き換わっている\n";
+            peti = 0;
+            keikenti = 0;
+        }
+    }
+}
+
+function g959() {
+    gene += "不和の爆心地";
+    sase = [[1.5, 1.5, 1, 1, 1], [1, 1, 1.5, 1.5, 1.5], [1, 1, 0.5, 0.5, 0.5], [1.5, 1.5, 1, 1, 1]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    kensaku = kekka[12].indexOf('959');
+    if (kekka[6] == "女" || kekka[6] == "女性") {
+        ransu = Math.floor(Math.random() * 2 + 1);
+        if (sagyona == 2 && seihi == 1 && ransu == 1) {
+            text += "黄金の林檎を手渡した\n勇気正義+5（重複しない）\nメインルームに戻った後、職員" + name + "と自制の低い2人の職員（女性優先）が殺人性パニックに陥る\n鎮圧時職員は1d20を振り1が出ると殺人性パニックになる\n";
+            if (kensaku == -1) {
+                kagohuti = "959";
+                kagohuyo();
+            }
+            text += "カウンターが2減少した\n";
+            nefi -= 2;
+        } else {
+            text += "黄金の林檎を手渡した\n勇気正義+5（重複しない）\nメインルームに戻った後、職員" + name + "と自制の低い2人の職員（女性優先）が殺人性パニックに陥る\n鎮圧時職員は1d20を振り1が出ると殺人性パニックになる\n";
+            if (kensaku == -1) {
+                kagohuti = "959";
+                kagohuyo();
+            }
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+
+    } else {
+        ransu = Math.floor(Math.random() * 2 + 1);
+        if (sagyona == 2 && seihi == 1 && ransu == 1) {
+            text += "黄金の林檎を手渡した\n勇気正義+5（重複しない）\nメインルームに戻った後、職員" + name + "と自制の低い2人の職員（女性優先）が殺人性パニックに陥る\n鎮圧時職員は1d20を振り1が出ると殺人性パニックになる\n";
+            if (kensaku == -1) {
+                kagohuti = "959";
+                kagohuyo();
+            }
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+
+    if (nefi <= 0) {
+        text += "不和の爆心地は脱走した\nカウンター0→3\n";
+        nefi = 3;
+    }
+
+}
+
+function g963() {
+    gene += "難聴幽霊";
+    sase = [[2, 2, 2, 2, 2], [0.5, 0.5, 0.5, 1, 1], [1, 1, 1, 1.5, 1.5], [1, 1, 1.5, 2, 2]];
+    rankk = 2;
+    rank();
+    seihihan();
+
+    if (seihi == 0) {
+        ransu = Math.floor(Math.random() * 2 + 1);
+        if (ransu == 2) {
+            ransu = Math.floor(Math.random() * 30 + 1);
+            text += "職員" + name + "はSP" + ransu + "ダメージを受けた\n";
         }
     }
 }
@@ -8126,6 +11376,7 @@ function g964() {
     }
     if (nefi <= 0) {
         text += "プケプケは脱走した\nカウンター0→5\n";
+        dassou = 1;
         nefi = 5;
     }
 }
@@ -8166,6 +11417,7 @@ function g971() {
 
     if (sagyona == 1) {
         text += "▼職員" + name + "はチラシを受け取った。\nカウンターが減少した\nダンスパーティーは脱走した\nカウンター0→1\n職員は死んでいるため眷属にはならない\n";
+        dassou = 1;
         sibou = 0;
     }
     if (sagyona == 0 || sagyona == 2) {
@@ -8214,6 +11466,7 @@ function g974() {
 
     if (nefi <= 0) {
         text += "色褪せた憧憬は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 
@@ -8245,11 +11498,13 @@ function g975() {
     if (nefi <= 0) {
         sibou = 0;
         text += "蛇焦がれの龍は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     } else {
         if (fanke == 1) {
             sibou = 0;
             text += "蛇焦がれの龍は脱走した\n";
+            dassou = 1;
         }
     }
 }
@@ -8286,10 +11541,12 @@ function g976() {
         if (nefi >= 1 && kensaku2 != -1) {
             sibou = 0;
             text += "鳥居に住まう大蛇は脱走した\n";
+            dassou = 1;
         }
     }
     if (nefi <= 0) {
         text += "鳥居に住まう大蛇は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 }
@@ -8310,7 +11567,135 @@ function g977() {
     }
     if (nefi <= 0) {
         text += "地獄を駆ける駿馬は脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
+    }
+}
+
+function g978() {
+    gene += "羊が一匹";
+    sase = [[0, 0, 0, 0, 0], [1, 1, 1, 1.5, 1.5], [0.5, 0.5, 1, 1.5, 1.5], [2, 2, 2, 2, 2]];
+    rankk = 1;
+    rank();
+    seihihan();
+    syplus(978);
+    if (sagyona == 0) {
+        sykasan(978, 0, 1);
+        sykensaku(978);
+        if (sykekka == 3) {
+            text += "職員" + name + "は眠りについた\n30分行動不能\nSP5回復";
+            sykasan(978, 3, 0);
+        }
+    }
+    sykensaku(978);
+    if (sykekka >= 1 && sagyona != 0) {
+        sykasan(978, 3, 0);
+    }
+    if (sagyona == 0) {
+        kensaku = gnid.indexOf('971');
+        kensaku2 = gnid.indexOf('972');
+        kensaku3 = gnid.indexOf('973');
+        kensaku4 = gnid.indexOf('974');
+        kensaku5 = gnid.indexOf('975');
+        kensaku6 = gnid.indexOf('976');
+        kensaku7 = gnid.indexOf('977');
+        kensaku9 = gnid.indexOf('979');
+        kensaku10 = gnid.indexOf('980');
+        kensaku11 = gnid.indexOf('981');
+        kensaku12 = gnid.indexOf('982');
+        kensaku13 = gnid.indexOf('983');
+        if (kensaku != -1 || kensaku2 != -1 || kensaku3 != -1 || kensaku4 != -1 || kensaku5 != -1 || kensaku6 != -1 || kensaku7 != -1 || kensaku9 != -1 || kensaku10 != -1 || kensaku11 != -1 || kensaku12 != -1 || kensaku13 != -1 ) {
+            ransu = Math.floor(Math.random() * 5 + 1);
+            text += "職員" + name + "のSPが" + ransu + "回復\n";
+        }
+    }
+}
+
+function g979() {
+    gene += "猿真似救済者";
+    sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 0.5], [2, 2, 1, 1, 1]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    if (sagyona == 1 && seihi == 1) {
+        daideme1 = 4;
+        daideme2 = 6;
+        daisu();
+        if (kurike == 1) {
+            text += "黒" + daideme4 + "ダメージ\n";
+            kurike = 0;
+            kari2 = 1;
+            ransu = Math.floor(Math.random() * 2 + 1);
+            if (ransu == 1) {
+                text += "「お前はあいつの回し者か？……おれだって生きたいんだよ。」\n";
+            }
+            if (ransu == 2) {
+                text += "「ああ　まただ　また移動しないと……」\n";
+            }
+        } else {
+            kari = daideme4 / 2;
+            text += "黒" + kari + "ダメージ\n";
+            t979 += 1;
+            if (t979 >= 3) {
+                kari2 = 1;
+                t979 = 0;
+                ransu = Math.floor(Math.random() * 2 + 1);
+                if (ransu == 1) {
+                    text += "「元ある場所に返すだけさ、はは……」\n";
+                }
+                if (ransu == 2) {
+                    text += "「そんな目でおれを見るな！」\n";
+                }
+            }
+        }
+    }
+    if (sagyona == 1 || sagyona == 3) {
+        if (seihi == 1 && t9792 == 1) {
+            kari2 = 1;
+            t9792 = 0;
+            ransu = Math.floor(Math.random() * 2 + 1);
+            if (ransu == 1) {
+                text += "「…理解してくれるんじゃなかったのか？」\n";
+            }
+            if (ransu == 2) {
+                text += "「こんな事なら、仲良くならなければよかった。」\n";
+            }
+        }
+    }
+    if (sagyona == 2 && seihi == 1) {
+        t9792 = 1;
+    }
+
+    if (kari2 == 1) {
+        text += "猿真似救済者は職員" + name + "の装備を奪って脱走した\n";
+        dassou = 1;
+    }
+
+    /*
+     『干支の戌(981)』作業後、猿真似救済者に作業をする
+「…………」
+「あいつ、誰、だっけ、あいつは、何処にいる？」
+     */
+}
+
+function g980() {
+    gene += "有頂鶏";
+    sase = [[2, 2, 1, 0.5, 0.5], [2, 2, 2, 2, 2], [2, 2, 1.5, 1.5, 1], [2, 2, 1.5, 1.5, 1.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+    if (t980 == 0) {
+        text += "職員" + name + "の自制、正義が初期値になる\n";
+        t980 = 1;
+    }
+    if (kekka[8] >= 4 || kekka[9] >= 4 || kekka[10] >= 4 || kekka[11] >= 4) {
+        ransu = Math.floor(Math.random() * 5 + 1);
+        if (ransu == 1) {
+            sibou = 0;
+            dassou = 1;
+            text += "有頂鶏は脱走した\n";
+        }
     }
 }
 
@@ -8358,6 +11743,7 @@ function g988() {
     }
     if (nefi <= 0) {
         text += "貴方のバロットは脱走した\nカウンター0→3\n";
+        dassou = 1;
         nefi = 3;
     }
 }
@@ -8413,11 +11799,64 @@ function g990() {
         }
         if (nefi <= 0) {
             text += "概要は脱走した\nカウンター0→3\n";
+            dassou = 1;
             nefi = 3;
         }
     }
 
 
+
+}
+
+function g995() {
+    gene += "作られし世界の神";
+    sase = [[2, 2, 1, 1.5, 0.5], [1.5, 1, 1, 1, 2], [1, 1, 1.5, 2, 2], [1.5, 1.5, 0.5, 0, 0.5]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    if (kekka[7] <= 3 && seihi == 0) {
+        ransu = Math.floor(Math.random() * 100 + 1);
+        if (ransu <= 45) {
+            sibou = 0;
+            t995 += 1;
+        }
+    }
+    if (t995 >= 3) {
+        text += "作られし世界の神は脱走した\n";
+        dassou = 1;
+        t995 = 0;
+    }
+}
+
+function g996() {
+    gene += "ひっくり”カエル”";
+    peti = 0;
+
+    if (sagyona == 4) {
+        kensaku = kekka[12].indexOf('996');
+        if (kensaku == -1) {
+            sykasan(996, 0, 1);
+            sykensaku(996);
+            if (sykekka >= 3) {
+                text += "職員"+name+"は裏返った\n";
+                sibou = 0;
+                sykasan(996, 3, 0);
+            } else {
+                text += "職員" + name + "の現在HPとSPが反転する（ステータス上限は超えない）\n返却可能\nダメージを受けた時ダメージを跳ね返し、自動返却される（加護欄から「996」を消す）\n";
+                kagohuti = "996";
+                kagohuyo();
+            }
+        }
+    } else {
+        if (sagyona == 5) {
+            text += "返却した\n";
+            kagokesi('996');
+        } else {
+        text += "ツール型の作業は「使用」です\n";
+
+        }
+    }
 
 }
 
@@ -8464,6 +11903,7 @@ function g999() {
 
     if (nefi <= 0) {
         text += "蝕みの魔王は脱走した\nカウンター0→4\n";
+        dassou = 1;
         nefi = 4;
     }
 }
@@ -8482,9 +11922,8 @@ function g9999() {
 
 function g99999() {
 
-    text = "無効";
+    text += "無効";
 
 }
-
 
 
