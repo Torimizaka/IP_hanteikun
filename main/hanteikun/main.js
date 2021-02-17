@@ -1,7 +1,7 @@
 
 window.onload = function onLoad() {
     target = document.getElementById("output");
-    target.innerHTML = "Ver1.7t 公式垢のプロフに書いてあるバージョンと異なる際は更新してください";
+    target.innerHTML = "Ver1.7q 公式垢のプロフに書いてあるバージョンと異なる際は更新してください";
     kuriti = [0, 6, 10, 15, 19, 23, 26];
     fanti = [0, 1, 2, 3, 4, 5, 6];
     tt1 = "000";
@@ -109,7 +109,11 @@ window.onload = function onLoad() {
     t5423 = 0;
     t5424 = 0;
     t704 = -1;
-
+    t352 = 0;
+    t590 = -1;
+    t5902 = "";
+    t616 = -1;
+    t925 = "";
 
 
     irana = "";
@@ -126,20 +130,22 @@ window.onload = function onLoad() {
     gtF = [312, 329, 628, 874, 683, 908, 140, 526, 530, 708, 839, "065", 161, 320, 525, 701, 804, 828, 966, "067", 173, 404, 532, "029", 452, 453, 809, 914, 918, 941, 604];
     gtG = [721,964,"036","040","092",974,215,264,423,887,916,212,499,"035",153,323,429,480,529,567,800,978,"094",217,378,417,536,802,917,980];
     gtH = [216,502,720,963,467,696,718,767,772,803,259,959,333,826,228,304,305,709,152,303,444,731,886,904,933,979];
-    gtI = [128,223,425,712,922,995,"015",219,272,321,427,159,347,352,542,875,891,935,450,545,838];
+    gtI = [128,223,425,712,922,995,"015",219,272,321,427,159,347,352,542,875,891,935,450,545,838,150,367,616,830,894,931,945];
+    gtJ = [];
     gtTA = [432, 566, 703, 635, "020", 310, "007", "071", 540, "099"];
     gtTB = [422, "049", 524, "048", 102, 314, 905, 554, 541, 704];
     gtTC = ["050", "051", 225, 897, 408, 913, 531, 160, 230, 415];
-    gtTD = [527,603,877,534,535,996,151,911];
+    gtTD = [527, 603, 877, 534, 535, 996, 151, 911, 590, 925];
+    gtTE = [];
 
     genra1 = [];
     genra2 = [];
     genra3 = [];
-    genra4 = ["001", "002","003","005","006","008","010","012", "013","015","016", "018","019", "021","022", "023","029","030", "031","032","033" ,"034","035","036","039","040","042","047","054","061","062", "063","064","065","067", "072","079","088","089", "091","092","093","094","095",100, 106,108,110,113,116, 118,119,124, 125,126,128,135,137,140, 142,152,153,155,159,161,170,173,185,188, 192,194,199, 201,209,212,213, 214,215,216,217,219,223,228,235,243,246,255,259,264,272,291,294,299,302,303,304,305,311,312, 317,320,321,323,329, 330,333,335,347,352,354,360, 361, 365,369, 371,378,385, 403,404,409,413,417,423,425,427,429,437,444,450,451,452,453, 464,467,469,480, 486,499,502,521,523,525,526, 528,529,530,532,536,537,542,545,555,567,570,571,581,601,604,609,610,612, 614, 620, 623,625,628,650,666,683,696,701,707,708,709, 710,712,718,720,721, 722, 725, 731,752,767,772,777,800,801,802,803,804,809, 810, 818, 821,826,828, 829,838,839, 849,874,875,880,886,887,888,890,891,898, 901,902, 903,904,906,907,908,914, 915,916,917,918,920,922,923,933,935,941,959,963,964,966,971,972,974,975,976,977,978,979,980,982,988,990,995,997,999];
-    genra5 = ["007","020","048","049","050","051", "071","099",102,151,160,225,230, 310,314,408,415, 422,432,524,527,531,534,535,  540,541,554, 566,603,  635, 703,704,877,897,905,911,913,996];
+    genra4 = ["001", "002","003","005","006","008","010","012", "013","015","016", "018","019", "021","022", "023","029","030", "031","032","033" ,"034","035","036","039","040","042","047","054","061","062", "063","064","065","067", "072","079","088","089", "091","092","093","094","095",100, 106,108,110,113,116, 118,119,124, 125,126,128,135,137,140, 142,150,152,153,155,159,161,170,173,185,188, 192,194,199, 201,209,212,213, 214,215,216,217,219,223,228,235,243,246,255,259,264,272,291,294,299,302,303,304,305,311,312, 317,320,321,323,329, 330,333,335,347,352,354,360, 361, 365,367,369, 371,378,385, 403,404,409,413,417,423,425,427,429,437,444,450,451,452,453, 464,467,469,480, 486,499,502,521,523,525,526, 528,529,530,532,536,537,542,545,555,567,570,571,581,601,604,609,610,612, 614,616, 620, 623,625,628,650,666,683,696,701,707,708,709, 710,712,718,720,721, 722, 725, 731,752,767,772,777,800,801,802,803,804,809, 810, 818, 821,826,828, 829,830,838,839, 849,874,875,880,886,887,888,890,891,894,898, 901,902, 903,904,906,907,908,914, 915,916,917,918,920,922,923,931,933,935,941,945,959,963,964,966,971,972,974,975,976,977,978,979,980,982,988,990,995,997,999];
+    genra5 = ["007","020","048","049","050","051", "071","099",102,151,160,225,230, 310,314,408,415, 422,432,524,527,531,534,535,  540,541,554, 566,590,603,  635, 703,704,877,897,905,911,913,925,996];
     genra6 = [];
     //      0          1           2             3            4         5           6           7          8            9           10          11          1 2         13           14         15         16         17            18           19          20          21        22          23           24          25           26          27          28          29         30          31          32          33          34          35          36          37          38           39          40          41        42            43          44          45          46         47          48          49          50          51         52        53             54          55          56         57         58           59           60          61          62         63           64         65          66          67          68          69           70          71         72           73          74         75          76           77         78          79           80         81           82         83            84        85          86          87          88          89          90           91          92         93          94         95          96        97             98            99          100         101          102         103        104        105          106         107         108         109         110         111         112        113          114          115         116         117         118         119        120          121        122         123         124       125            126         127         128        129         130         131         132         133          134        135          136          137        138        139         140         141        142          143          144        145          146        147             148      149         150         151           152       153         154        155          156          157          158      159          160          161          162        163         164       165          166          167        168         169         170          171          172     173           174        175            176       177        178          179         180        181          182        183         184        185           186         187         188         189        190           191         192      193        194         195       196        197       198     199        200           201         202         203        204         205          206       
-    con = [["001", 0, "https://privatter.net/p/6703366"], ["018", 2, "https://privatter.net/p/6748615"], ["031", 0, "https://privatter.net/p/6703466"], ["063", 0, "https://privatter.net/p/6695438"], ["125", 2, "https://privatter.net/p/6703511"], ["201", 1, "https://privatter.net/p/6695568"], ["317", 1, "https://privatter.net/p/6702502"], ["365", 0, "https://privatter.net/p/6746799"], ["464", 1, "https://privatter.net/p/6745119"], ["614", 2, "https://privatter.net/p/6695815"], ["710", 2, "https://privatter.net/p/6744563"], ["722", 2, "https://privatter.net/p/6695983"], ["752", 3, "https://privatter.net/p/6744635"], ["901", 0, "https://privatter.net/p/6738147"], ["915", 0, "https://privatter.net/p/6696047"], ["118", 0, "https://privatter.net/p/6755338"], ["521", 3, "https://privatter.net/p/6755379"], ["042", 1, "https://privatter.net/p/6758917"], ["330", 2, "https://privatter.net/p/6762214"], ["623", 0, "https://privatter.net/p/6758874"], ["019", 0, "https://privatter.net/p/6766679"], ["725", 2, "https://privatter.net/p/6766770"], ["849", 0, "https://privatter.net/p/6766399"], ["002", 2, "https://privatter.net/p/6771383"], ["021", 3, "https://privatter.net/p/6771524"], ["106", 3, "https://privatter.net/p/6771635"], ["361", 0, "https://privatter.net/p/6771670"], ["818", 3, "https://privatter.net/p/6771782"], ["023", 0, "https://privatter.net/p/6778268"], ["091", 3, "https://privatter.net/p/6778286"], ["142", 0, "https://privatter.net/p/6778302"], ["192", 0, "https://privatter.net/p/6778314"], ["214", 2, "https://privatter.net/p/6778327"], ["371", 2, "https://privatter.net/p/6778343"], ["528", 0, "https://privatter.net/p/6778352"], ["620", 1, "https://privatter.net/p/6778375"], ["810", 2, "https://privatter.net/p/6778395"], ["821", 3, "https://privatter.net/p/6778448"], ["829", 1, "https://privatter.net/p/6778582"], ["903", 3, "https://privatter.net/p/6778632"], ["013", 0, "https://privatter.net/p/6782727"], ["072", 2, "https://privatter.net/p/6782754"], ["403", 2, "https://privatter.net/p/6782810"], ["707", 3, "https://privatter.net/p/6786497"], ["971", 1, "https://privatter.net/p/6786446"], ["003", 3, "https://privatter.net/p/6789998"], ["110", 1, "https://privatter.net/p/6790048"], ["194", 1, "https://privatter.net/p/6790092"], ["005", 3, "https://privatter.net/p/6798989"], ["012", 4, "https://privatter.net/p/6799118"], ["022", 4, "https://privatter.net/p/6799176"], ["209", 2, "https://privatter.net/p/6799263"], ["413", 1, "https://privatter.net/p/6799346"], ["920", 0, "https://privatter.net/p/6799416"], ["982", 0, "https://privatter.net/p/6799505"], ["9999", 2, "https://privatter.net/p/6748615"], ["061", 0, "kari"], ["095", 0, "kari"], ["199", 3, "kari"], ["235", 2, "kari"], ["243", 0, "kari"], ["354", 2, "kari"], ["451", 3, "kari"], ["898", 0, "kari"], ["923", 0, "kari"], ["999", 4, "kari"], ["032", 5, "kari"], ["079", 0, "kari"], ["108", 2, "kari"], ["124", 0, "kari"], ["137", 3, "kari"], ["571", 3, "kari"], ["581", 1, "kari"], ["610", 4, "kari"], ["126", 2, "kari"], ["135", 2, "kari"], ["291", 2, "kari"], ["033", 3, "kari"], ["213", 3, "kari"], ["523", 3, "kari"], ["625", 2, "kari"], ["888", 3, "kari"], ["997", 0, "kari"], ["008", 3, "kari"], ["601", 0, "kari"], ["666", 0, "kari"], ["777", 4, "kari"], ["972", 0, "kari"], ["185", 0, "kari"], ["335", 2, "kari"], ["880", 2, "kari"], ["010", 0, "kari"], ["039", 0, "kari"], ["064", 5, "kari"], ["311", 0, "kari"], ["360", 2, "kari"], ["469", 0, "kari"], ["990", "?", "kari"], ["047", 2, "kari"], ["089", 2, "kari"], ["302", 2, "kari"], ["369", 0, "kari"], ["385", 3, "kari"], ["409", 3, "kari"], ["554", 3, "kari"], ["570", 3, "kari"], ["612", 3, "kari"], ["801", 0, "kari"], ["988", 3, "kari"], ["034", 3, "kari"], ["119", 0, "kari"], ["609", 1, "kari"], ["906", 1, "kari"], ["006", 0, "kari"], ["016", 4, "kari"], ["030", 3, "kari"], ["062", 3, "kari"], ["116", 5, "kari"], ["155", 3, "kari"], ["170", 1, "kari"], ["188", 1, "kari"], ["255", 2, "kari"], ["299", 0, "kari"], ["537", 3, "kari"], ["555", 0, "kari"], ["890", 1, "kari"], ["907", 0, "kari"], ["975", 3, "kari"], ["976", 3, "kari"], ["054", 0, "kari"], ["246", 0, "kari"], ["294", 4, "kari"], ["437", 0, "kari"], ["486", 0, "kari"], ["650", 3, "kari"], ["977", 3, "kari"], ["088", 2, "kari"], ["093", 1, "kari"], ["100", 0, "kari"], ["113", 5, "kari"], ["312", 3, "kari"], ["329", 0, "kari"], ["628", 0, "kari"], ["874", 3, "kari"], ["683", 3, "kari"], ["908", 1, "kari"], ["140", 1, "kari"], ["526", 3, "kari"], ["530", 5, "kari"], ["708", 0, "kari"], ["839", 2, "kari"], ["432", 0, "kari"], ["566", 0, "kari"], ["703", 0, "kari"], ["635", 0, "kari"], ["020", 0, "kari"], ["310", 0, "kari"], ["099", 0, "kari"], ["007", 0, "kari"], ["071", 0, "kari"], ["540", 0, "kari"], ["422", 0, "kari"], ["049", 0, "kari"], ["524", 0, "kari"], ["048", 0, "kari"], ["102", 0, "kari"], ["314", 0, "kari"], ["905", 0, "kari"], ["541", 0, "kari"], ["704", 0, "https://privatter.net/p/7070394"], ["050", 0, "kari"], ["051", 0, "kari"], ["225", 0, "kari"], ["897", 0, "kari"], ["408", 0, "kari"], ["913", 0, "kari"], ["531", 0, "kari"], ["065", 2, "kari"], ["160", 0, "kari"], ["161", 1, "kari"], ["320", 2, "kari"], ["525", 2, "kari"], ["701", 3, "kari"], ["804", 3, "kari"], ["828", 0, "kari"], ["966", 0, "kari"], ["067", 2, "kari"], ["173", 3, "kari"], ["230", 0, "kari"], ["404", 2, "kari"], ["532", 1, "kari"], ["029", 3, "kari"], ["452", 3, "kari"], ["453", 3, "kari"], ["604", 0, "kari"], ["809", 5, "kari"], ["914", 0, "kari"], ["918", 2, "kari"], ["941", 0, "kari"], ["415", 0, "kari"], ["721", 2, "kari"], ["964", 5, "kari"], ["036", 0, "kari"], ["040", 3, "kari"], ["092", 0, "kari"], ["974", 3, "kari"], ["215", 3, "https://privatter.net/p/6983390"], ["264", 3, "https://privatter.net/p/6983461"], ["423", 0, "https://privatter.net/p/6983502"], ["887", 2, "https://privatter.net/p/6983575"], ["916", 1, "https://privatter.net/p/6983642"], ["212", 0, "https://privatter.net/p/6986596"], ["499", 0, "https://privatter.net/p/6983930"], ["035", 0, "https://privatter.net/p/6990990"], ["153", 5, "https://privatter.net/p/6983692"], ["323", 5, "https://privatter.net/p/6992461"], ["429", 0, "https://privatter.net/p/6987429"], ["480", 3, "https://privatter.net/p/6994956"], ["529", 2, "https://privatter.net/p/6989966"], ["567", 2, "https://privatter.net/p/6993378"], ["800", 2, "https://privatter.net/p/6995043"], ["978", 0, "https://privatter.net/p/6995150"], ["094", 0, "https://privatter.net/p/6998708"], ["217", 2, "https://privatter.net/p/6994838"], ["378", 3, "https://privatter.net/p/6989284"], ["417", 2, "https://privatter.net/p/6994485"], ["527", 0, "https://privatter.net/p/6997663"], ["536", 3, "https://privatter.net/p/6997713"], ["802", 3, "https://privatter.net/p/6994890"], ["917", 2, "https://privatter.net/p/6998742"], ["980", 1, "https://privatter.net/p/6998793"], ["216", 5, "https://privatter.net/p/7002768"], ["502", 0, "https://privatter.net/p/7002974"], ["720", 2, "https://privatter.net/p/7003006"], ["963", 0, "https://privatter.net/p/7002115"], ["467", 4, "https://privatter.net/p/7013131"], ["696", 0, "https://privatter.net/p/7011051"], ["718", 2, "https://privatter.net/p/7013189"], ["767", 3, "https://privatter.net/p/7011558"], ["772", 1, "https://privatter.net/p/7013235"], ["803", 3, "https://privatter.net/p/7011786"], ["902", 0, "https://privatter.net/p/7013276"], ["259", 2, "https://privatter.net/p/7011507"], ["959", 3, "https://privatter.net/p/7011506"], ["333", 3, "https://privatter.net/p/7020799"], ["603", 0, "https://privatter.net/p/7020028"], ["826", 4, "https://privatter.net/p/7020422"], ["877", 0, "https://privatter.net/p/7020870"], ["228", 0, "https://privatter.net/p/7026403"], ["304", 3, "https://privatter.net/p/7028333"], ["305", 3, "https://privatter.net/p/6995786"], ["534", 0, "https://privatter.net/p/7022790"], ["535", 0, "https://privatter.net/p/7022697"], ["709", 4, "https://privatter.net/p/7013612"], ["152", 0, "https://privatter.net/p/7029879"], ["303", 3, "https://privatter.net/p/6986577"], ["444", 2, "https://privatter.net/p/7032510"], ["731", 2, "https://privatter.net/p/7029596"], ["886", 3, "https://privatter.net/p/7021856"], ["904", 3, "https://privatter.net/p/7028636"], ["933", 3, "https://privatter.net/p/7030278"], ["979", 0, "https://privatter.net/p/7028241"], ["996", 0, "https://privatter.net/p/7031786"], ["128", 3, "https://privatter.net/p/7021177"], ["151", 0, "https://privatter.net/p/7046298"], ["223", 0, "https://privatter.net/p/7045757"], ["425", 3, "https://privatter.net/p/7044858"], ["712", 0, "https://privatter.net/p/7046348"], ["922", 0, "https://privatter.net/p/7046375"], ["995", 1, "https://privatter.net/p/7046432"], ["015", 2, "https://privatter.net/p/7049269"], ["219", 0, "https://privatter.net/p/7049931"], ["272", 2, "https://privatter.net/p/7049966"], ["321", 0, "https://privatter.net/p/7048925"], ["427", 0, "https://privatter.net/p/7054557"], ["911", 0, "https://privatter.net/p/7054593"], ["159", 3, "https://privatter.net/p/7059938"], ["347", 2, "https://privatter.net/p/7069842"], ["352", 0, "https://privatter.net/p/7063170"], ["542", 3, "https://privatter.net/p/7067111"], ["875", 4, "https://privatter.net/p/7063423"], ["891", 2, "https://privatter.net/p/7069934"], ["935", 0, "https://privatter.net/p/7061426"], ["450", 0, "https://privatter.net/p/7072482"], ["545", 0, "https://privatter.net/p/7072790"], ["838", 1, "https://privatter.net/p/7075035"]];
+    con = [["001", 0, "https://privatter.net/p/6703366"], ["018", 2, "https://privatter.net/p/6748615"], ["031", 0, "https://privatter.net/p/6703466"], ["063", 0, "https://privatter.net/p/6695438"], ["125", 2, "https://privatter.net/p/6703511"], ["201", 1, "https://privatter.net/p/6695568"], ["317", 1, "https://privatter.net/p/6702502"], ["365", 0, "https://privatter.net/p/6746799"], ["464", 1, "https://privatter.net/p/6745119"], ["614", 2, "https://privatter.net/p/6695815"], ["710", 2, "https://privatter.net/p/6744563"], ["722", 2, "https://privatter.net/p/6695983"], ["752", 3, "https://privatter.net/p/6744635"], ["901", 0, "https://privatter.net/p/6738147"], ["915", 0, "https://privatter.net/p/6696047"], ["118", 0, "https://privatter.net/p/6755338"], ["521", 3, "https://privatter.net/p/6755379"], ["042", 1, "https://privatter.net/p/6758917"], ["330", 2, "https://privatter.net/p/6762214"], ["623", 0, "https://privatter.net/p/6758874"], ["019", 0, "https://privatter.net/p/6766679"], ["725", 2, "https://privatter.net/p/6766770"], ["849", 0, "https://privatter.net/p/6766399"], ["002", 2, "https://privatter.net/p/6771383"], ["021", 3, "https://privatter.net/p/6771524"], ["106", 3, "https://privatter.net/p/6771635"], ["361", 0, "https://privatter.net/p/6771670"], ["818", 3, "https://privatter.net/p/6771782"], ["023", 0, "https://privatter.net/p/6778268"], ["091", 3, "https://privatter.net/p/6778286"], ["142", 0, "https://privatter.net/p/6778302"], ["192", 0, "https://privatter.net/p/6778314"], ["214", 2, "https://privatter.net/p/6778327"], ["371", 2, "https://privatter.net/p/6778343"], ["528", 0, "https://privatter.net/p/6778352"], ["620", 1, "https://privatter.net/p/6778375"], ["810", 2, "https://privatter.net/p/6778395"], ["821", 3, "https://privatter.net/p/6778448"], ["829", 1, "https://privatter.net/p/6778582"], ["903", 3, "https://privatter.net/p/6778632"], ["013", 0, "https://privatter.net/p/6782727"], ["072", 2, "https://privatter.net/p/6782754"], ["403", 2, "https://privatter.net/p/6782810"], ["707", 3, "https://privatter.net/p/6786497"], ["971", 1, "https://privatter.net/p/6786446"], ["003", 3, "https://privatter.net/p/6789998"], ["110", 1, "https://privatter.net/p/6790048"], ["194", 1, "https://privatter.net/p/6790092"], ["005", 3, "https://privatter.net/p/6798989"], ["012", 4, "https://privatter.net/p/6799118"], ["022", 4, "https://privatter.net/p/6799176"], ["209", 2, "https://privatter.net/p/6799263"], ["413", 1, "https://privatter.net/p/6799346"], ["920", 0, "https://privatter.net/p/6799416"], ["982", 0, "https://privatter.net/p/6799505"], ["9999", 2, "https://privatter.net/p/6748615"], ["061", 0, "kari"], ["095", 0, "kari"], ["199", 3, "kari"], ["235", 2, "kari"], ["243", 0, "kari"], ["354", 2, "kari"], ["451", 3, "kari"], ["898", 0, "kari"], ["923", 0, "kari"], ["999", 4, "kari"], ["032", 5, "kari"], ["079", 0, "kari"], ["108", 2, "kari"], ["124", 0, "kari"], ["137", 3, "kari"], ["571", 3, "kari"], ["581", 1, "kari"], ["610", 4, "kari"], ["126", 2, "kari"], ["135", 2, "kari"], ["291", 2, "kari"], ["033", 3, "kari"], ["213", 3, "kari"], ["523", 3, "kari"], ["625", 2, "kari"], ["888", 3, "kari"], ["997", 0, "kari"], ["008", 3, "kari"], ["601", 0, "kari"], ["666", 0, "kari"], ["777", 4, "kari"], ["972", 0, "kari"], ["185", 0, "kari"], ["335", 2, "kari"], ["880", 2, "kari"], ["010", 0, "kari"], ["039", 0, "kari"], ["064", 5, "kari"], ["311", 0, "kari"], ["360", 2, "kari"], ["469", 0, "kari"], ["990", "?", "kari"], ["047", 2, "kari"], ["089", 2, "kari"], ["302", 2, "kari"], ["369", 0, "kari"], ["385", 3, "kari"], ["409", 3, "kari"], ["554", 3, "kari"], ["570", 3, "kari"], ["612", 3, "kari"], ["801", 0, "kari"], ["988", 3, "kari"], ["034", 3, "kari"], ["119", 0, "kari"], ["609", 1, "kari"], ["906", 1, "kari"], ["006", 0, "kari"], ["016", 4, "kari"], ["030", 3, "kari"], ["062", 3, "kari"], ["116", 5, "kari"], ["155", 3, "kari"], ["170", 1, "kari"], ["188", 1, "kari"], ["255", 2, "kari"], ["299", 0, "kari"], ["537", 3, "kari"], ["555", 0, "kari"], ["890", 1, "kari"], ["907", 0, "kari"], ["975", 3, "kari"], ["976", 3, "kari"], ["054", 0, "kari"], ["246", 0, "kari"], ["294", 4, "kari"], ["437", 0, "kari"], ["486", 0, "kari"], ["650", 3, "kari"], ["977", 3, "kari"], ["088", 2, "kari"], ["093", 1, "kari"], ["100", 0, "kari"], ["113", 5, "kari"], ["312", 3, "kari"], ["329", 0, "kari"], ["628", 0, "kari"], ["874", 3, "kari"], ["683", 3, "kari"], ["908", 1, "kari"], ["140", 1, "kari"], ["526", 3, "kari"], ["530", 5, "kari"], ["708", 0, "kari"], ["839", 2, "kari"], ["432", 0, "kari"], ["566", 0, "kari"], ["703", 0, "kari"], ["635", 0, "kari"], ["020", 0, "kari"], ["310", 0, "kari"], ["099", 0, "kari"], ["007", 0, "kari"], ["071", 0, "kari"], ["540", 0, "kari"], ["422", 0, "kari"], ["049", 0, "kari"], ["524", 0, "kari"], ["048", 0, "kari"], ["102", 0, "kari"], ["314", 0, "kari"], ["905", 0, "kari"], ["541", 0, "kari"], ["704", 0, "https://privatter.net/p/7070394"], ["050", 0, "kari"], ["051", 0, "kari"], ["225", 0, "kari"], ["897", 0, "kari"], ["408", 0, "kari"], ["913", 0, "kari"], ["531", 0, "kari"], ["065", 2, "kari"], ["160", 0, "kari"], ["161", 1, "kari"], ["320", 2, "kari"], ["525", 2, "kari"], ["701", 3, "kari"], ["804", 3, "kari"], ["828", 0, "kari"], ["966", 0, "kari"], ["067", 2, "kari"], ["173", 3, "kari"], ["230", 0, "kari"], ["404", 2, "kari"], ["532", 1, "kari"], ["029", 3, "kari"], ["452", 3, "kari"], ["453", 3, "kari"], ["604", 0, "kari"], ["809", 5, "kari"], ["914", 0, "kari"], ["918", 2, "kari"], ["941", 0, "kari"], ["415", 0, "kari"], ["721", 2, "kari"], ["964", 5, "kari"], ["036", 0, "kari"], ["040", 3, "kari"], ["092", 0, "kari"], ["974", 3, "kari"], ["215", 3, "https://privatter.net/p/6983390"], ["264", 3, "https://privatter.net/p/6983461"], ["423", 0, "https://privatter.net/p/6983502"], ["887", 2, "https://privatter.net/p/6983575"], ["916", 1, "https://privatter.net/p/6983642"], ["212", 0, "https://privatter.net/p/6986596"], ["499", 0, "https://privatter.net/p/6983930"], ["035", 0, "https://privatter.net/p/6990990"], ["153", 5, "https://privatter.net/p/6983692"], ["323", 5, "https://privatter.net/p/6992461"], ["429", 0, "https://privatter.net/p/6987429"], ["480", 3, "https://privatter.net/p/6994956"], ["529", 2, "https://privatter.net/p/6989966"], ["567", 2, "https://privatter.net/p/6993378"], ["800", 2, "https://privatter.net/p/6995043"], ["978", 0, "https://privatter.net/p/6995150"], ["094", 0, "https://privatter.net/p/6998708"], ["217", 2, "https://privatter.net/p/6994838"], ["378", 3, "https://privatter.net/p/6989284"], ["417", 2, "https://privatter.net/p/6994485"], ["527", 0, "https://privatter.net/p/6997663"], ["536", 3, "https://privatter.net/p/6997713"], ["802", 3, "https://privatter.net/p/6994890"], ["917", 2, "https://privatter.net/p/6998742"], ["980", 1, "https://privatter.net/p/6998793"], ["216", 5, "https://privatter.net/p/7002768"], ["502", 0, "https://privatter.net/p/7002974"], ["720", 2, "https://privatter.net/p/7003006"], ["963", 0, "https://privatter.net/p/7002115"], ["467", 4, "https://privatter.net/p/7013131"], ["696", 0, "https://privatter.net/p/7011051"], ["718", 2, "https://privatter.net/p/7013189"], ["767", 3, "https://privatter.net/p/7011558"], ["772", 1, "https://privatter.net/p/7013235"], ["803", 3, "https://privatter.net/p/7011786"], ["902", 0, "https://privatter.net/p/7013276"], ["259", 2, "https://privatter.net/p/7011507"], ["959", 3, "https://privatter.net/p/7011506"], ["333", 3, "https://privatter.net/p/7020799"], ["603", 0, "https://privatter.net/p/7020028"], ["826", 4, "https://privatter.net/p/7020422"], ["877", 0, "https://privatter.net/p/7020870"], ["228", 0, "https://privatter.net/p/7026403"], ["304", 3, "https://privatter.net/p/7028333"], ["305", 3, "https://privatter.net/p/6995786"], ["534", 0, "https://privatter.net/p/7022790"], ["535", 0, "https://privatter.net/p/7022697"], ["709", 4, "https://privatter.net/p/7013612"], ["152", 0, "https://privatter.net/p/7029879"], ["303", 3, "https://privatter.net/p/6986577"], ["444", 2, "https://privatter.net/p/7032510"], ["731", 2, "https://privatter.net/p/7029596"], ["886", 3, "https://privatter.net/p/7021856"], ["904", 3, "https://privatter.net/p/7028636"], ["933", 3, "https://privatter.net/p/7030278"], ["979", 0, "https://privatter.net/p/7028241"], ["996", 0, "https://privatter.net/p/7031786"], ["128", 3, "https://privatter.net/p/7021177"], ["151", 0, "https://privatter.net/p/7046298"], ["223", 0, "https://privatter.net/p/7045757"], ["425", 3, "https://privatter.net/p/7044858"], ["712", 0, "https://privatter.net/p/7046348"], ["922", 0, "https://privatter.net/p/7046375"], ["995", 1, "https://privatter.net/p/7046432"], ["015", 2, "https://privatter.net/p/7049269"], ["219", 0, "https://privatter.net/p/7049931"], ["272", 2, "https://privatter.net/p/7049966"], ["321", 0, "https://privatter.net/p/7048925"], ["427", 0, "https://privatter.net/p/7054557"], ["911", 0, "https://privatter.net/p/7054593"], ["159", 3, "https://privatter.net/p/7059938"], ["347", 2, "https://privatter.net/p/7069842"], ["352", 0, "https://privatter.net/p/7063170"], ["542", 3, "https://privatter.net/p/7067111"], ["875", 4, "https://privatter.net/p/7063423"], ["891", 2, "https://privatter.net/p/7069934"], ["935", 0, "https://privatter.net/p/7061426"], ["450", 0, "https://privatter.net/p/7072482"], ["545", 0, "https://privatter.net/p/7072790"], ["838", 1, "https://privatter.net/p/7075035"], ["150", 0, "https://privatter.net/p/7078404"], ["367", 3, "https://privatter.net/p/7082974"], ["590", 1, "https://privatter.net/p/7078402"], ["616", 3, "https://privatter.net/p/7078380"], ["830", 5, "https://privatter.net/p/7082432"], ["894", 3, "https://privatter.net/p/7075378"], ["925", 0, "https://privatter.net/p/7083042"], ["931", 0, "https://privatter.net/p/7083093"], ["945", 0, "https://privatter.net/p/7083140"]];
 
     //リザルト計算用
     reco = 1;
@@ -234,6 +240,12 @@ function sycount() {
         kazoe = [704, 0];
         sycon[i].push(kazoe);
         syconk.push(704);
+        kazoe = [150, 0];
+        sycon[i].push(kazoe);
+        syconk.push(150);
+        kazoe = [925, 0];
+        sycon[i].push(kazoe);
+        syconk.push(925);
     }
 
 }
@@ -336,9 +348,7 @@ function textset(){
 }
 
 function counte() {
-    if (tt1 == 432 || tt1 == 566 || tt1 == 703 || tt1 == 635 || tt1 == "020" || tt1 == 310 || tt1 == "099" || tt1 == "007" || tt1 == "071" || tt1 == 540 || tt1 == 422 || tt1 == "049" || tt1 == 524 || tt1 == "048" || tt1 == 102 || tt1 == 314 || tt1 == 905 || tt1 == 541 || tt1==704 ||tt1=="050" || tt1=="051" ||tt1==225 || tt1==897 || tt1==408 || tt1==913 || tt1==531 ||tt1==415) {
-        tire = "ツール";
-    }
+
     conc = con.map(function (value, index) { return value[0]; });
     conc2 = con.map(function (value, index) { return value[1]; });
     conc3 = conc.indexOf(tt1);
@@ -1181,7 +1191,13 @@ function hanteityu() {
     }
     if (t152 == syid && kekka[2] != 152) {
         text = "職員" + name + "は小さな貴方の為の可愛い虫籠以外に作業できない\n";
+        seihi = 3;
     } else {
+        if (syid == t590) {
+            text = "職員" + name + "は椅子に座っている\n";
+            seihi = 3;
+        } else {
+            //ここから
     namae = "g";
     namae += kekka[2];
     hantei = namae;
@@ -1197,6 +1213,38 @@ function hanteityu() {
             }
         } 
 
+            if (kekka[2] == 931) {
+                if (kekka[10] == 1) {
+                    if (deme >= 4) {
+                        kurike = 1;
+                    }
+                }
+                if (kekka[10] == 2) {
+                    if (deme >= 8) {
+                        kurike = 1;
+                    }
+                }
+                if (kekka[10] == 3) {
+                    if (deme >= 13) {
+                        kurike = 1;
+                    }
+                }
+                if (kekka[10] == 4) {
+                    if (deme >= 17) {
+                        kurike = 1;
+                    }
+                }
+                if (kekka[10] == 5) {
+                    if (deme >= 21) {
+                        kurike = 1;
+                    }
+                }
+                if (kekka[10] == 6) {
+                    if (deme >= 24) {
+                        kurike = 1;
+                    }
+                }
+            }
 
         if (kurike == 1) {
             if (gift == 0) {
@@ -1205,7 +1253,8 @@ function hanteityu() {
                 kuritxt = "クリティカル\n";
             }
         }
-
+//ここまで
+        }
     }
     if (irai == 1) {
         if (kekka[2] != "033") {
@@ -1273,6 +1322,8 @@ function hanteityu() {
         }
     }
 
+    //パニック反応
+
     if (pani == 1) {
         kensaku = kekka[12].indexOf('915');
         if (kensaku != -1) {
@@ -1281,6 +1332,28 @@ function hanteityu() {
             
         }
 
+    }
+
+    kensaku894 = gnid.indexOf('894');
+    if (pani == 1 && kekka[2] != 894 && kensaku894 != -1) {
+        conc = con.map(function (value, index) { return value[0]; });
+        conc2 = con.map(function (value, index) { return value[1]; });
+        conc4 = conc.indexOf('894');
+        kari = conc2[conc4];
+        text += "\n万雷の曲芸団のカウンターが減少した\n";
+        kari -= 1;
+        if (kari <= 0) {
+            text += "万雷の曲芸団は脱走した\nカウンター0→3\n";
+            dassou = 1;
+            kari = 3;
+        }
+        con[conc4][1] = kari;
+    }
+
+    kensaku945 = kekka[12].indexOf('945');
+    if (kensaku945 != -1 && pani == 1 && sibou == 1) {
+        sibou = 0;
+        text += "職員" + name + "は本に吸い込まれた\n";
     }
 
     kensaku015 = kekka[12].indexOf('015');
@@ -1585,6 +1658,22 @@ if (sykekka >= 2 &&kekka[2]!="036") {
             dassou = 1;
             con[97] = 2;
         }
+    }
+
+    kensaku830 = gnid.indexOf('830');
+    if (sibou == 0 && kekka[2] != 830 && kensaku830 != -1) {
+        conc = con.map(function (value, index) { return value[0]; });
+        conc2 = con.map(function (value, index) { return value[1]; });
+        conc4 = conc.indexOf('830');
+        kari = conc2[conc4];
+        text += "\n夜祭花火のカウンターが減少した\n";
+        kari -= 1;
+        if (kari <= 0) {
+            text += "部門全域に花火が打ち上がった\n配属職員全員に5赤ダメージ、SP10回復\nただしカウンター0になった時点で誰も死亡していなかった場合は何も起きない\nカウンター0→5\n";
+            dassou = 1;
+            kari = 5;
+        }
+        con[conc4][1] = kari;
     }
 
     if (kensaku12 != -1 && pani == 1) {
@@ -2302,7 +2391,7 @@ function seihihan() {
 }
 
 function kagoche(id, puls) {
-    //加護持ちかどうか職員全員から調べてkensaku2に返す
+    //加護持ちかどうか職員全員から調べてkensakuCに返す
     //id＝幻想体ID　puls＝欲しい結果　0か1か　0＝加護無し　1＝加護持ち
     ch = [];
     chke = [];
@@ -4992,6 +5081,36 @@ function g142() {
 
 }
 
+function g150() {
+    gene += "晴れ時々カニ";
+    sase = [[1, 1, 0.5, 0.5, 0.5], [1, 1, 2, 2, 2], [0.5, 0.5, 0.5, 0, 0], [1.5, 1.5, 2, 2, 2]];
+    rankk = 1;
+    rank();
+    seihihan();
+
+    if (sagyona == 2 && seihi == 1) {
+        sykasan(150, 0, 1);
+        sykensaku(150);
+        if (sykekka >= 3) {
+            text += "職員" + name + "はカニになった\n";
+            sibou = 0;
+            sykasan(150, 3, 0);
+        } else {
+            text += "職員" + name + "の後をカニがついてきた\n5分毎にSP2d6回復\n15分で消える\n";
+            if (sykekka == 2) {
+                text += "勇気+5、自制-5\n";
+            }
+        }
+    }
+    if (sagyona == 3) {
+        sykensaku(150);
+        if (sykekka != 0) {
+            text += "晴れ時々カニによる効果がリセットされた\n";
+            sykasan(150, 3, 0);
+        }
+    }
+}
+
 function g151() {
     gene += "名前のない歌";
     peti = 0;
@@ -6956,6 +7075,7 @@ function g352() {
                 text += "職員" + name + "はパイをキャッチした\n任意のタイミングで使用できる\n";
             } else {
                 text += "職員" + name + "はパイをキャッチできなかった\n5赤ダメージ\n";
+                t352 = 1;
                 ransu = Math.floor(Math.random() * 6 + 1);
                 if (ransu >= 5) {
                     sibou = 0;
@@ -6964,20 +7084,23 @@ function g352() {
         } else {
             text += "職員" + name + "はパイを受け取った\n";
         }
-        if (sagyona == 0 && sibou == 1) {
+        if (t352 == 0) {
+        if (sagyona == 0 ) {
             text += "ポテトミートパイ\nHP8回復\n";
         }
-        if (sagyona == 1 && sibou == 1) {
+        if (sagyona == 1 ) {
             text += "ベジタブルチーズパイ\nSP8回復\n";
         }
-        if (sagyona == 2 && sibou == 1) {
+        if (sagyona == 2 ) {
             text += "パンプキンアップルパイ\nHP5SP3回復\n";
         }
-        if (sagyona == 3 && sibou == 1) {
+        if (sagyona == 3 ) {
             text += "トマトフィッシュパイ\nHP3SP5回復\n";
         }
-    }
+        }
 
+    }
+    t352 = 0;
 }
 
 function g354() {
@@ -7185,6 +7308,26 @@ function g365() {
     }
 
 
+
+}
+
+function g367() {
+    gene += "朽チタ白百合";
+    sase = [[2, 2, 1, 1, 1], [2, 2, 1.5, 1, 1], [1.5, 1.5, 1.5, 1.5, 1.5], [2, 2, 1.5, 1.5, 1]];
+    rankk = 5;
+    rank();
+    seihihan();
+    kari = kekka[10] * 4;
+    if (deme <= kari) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+
+    if (nefi <= 0) {
+        text += "朽チタ白百合は脱走した\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
+    }
 
 }
 
@@ -9073,6 +9216,33 @@ function g581() {
 
 }
 
+function g590() {
+    gene += "椅子";
+    peti = 0;
+
+    if (sagyona == 4) {
+        if (t590 == -1) {
+            text += "職員" + name + "は椅子に座らされた\n10分間行動不能\n座っている間他部門内職員の被ダメージ、浸食の増減を肩代わりする\n死亡した場合は自動的に蘇生される\n座っている間は暴走が発生しない\n";
+            t590 = syid;
+            t5902 = name;
+            setTimeout(g5902, 600000);
+        } else {
+            text += "既に職員" + t5902 + "が座っている\n";
+        }
+    } else {
+        text += "ツール型の作業は「使用」です\n";
+    }
+
+}
+
+function g5902() {
+    if (t590 != -1) {
+        text += "職員" + t5902 + "は椅子から解放された\n";
+        t590 = -1;
+        t5902 = "";
+    }
+}
+
 function g601() {
     gene = "601 倖せの意味";
     sulo = 83;
@@ -9293,6 +9463,33 @@ function g614() {
                 nefi = 2;
             }
         }
+    }
+}
+
+function g616() {
+    gene += "一時の夢";
+    sase = [[1, 1, 1, 1, 1.5], [0.5, 0.5, 1, 1, 1.5], [0, 0.5, 1, 1, 1], [1.5, 2, 2, 2, 2]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    kensaku = kekka[12].indexOf('616');
+    if (sagyona == 2 && seihi == 1) {
+        kagoche("616", 1);
+        if (kensakuC == -1) {
+            text += "職員" + name + "に少女が追従した\n作業ダメージ、鎮圧時ダメージを合計30ポイントまで庇う\n31を超えると消滅、31ポイント以上受けた時点でのダメージは全て職員が受ける\n消滅時、1d6で2以下が出ると自殺性パニックになり更にカウンターが下がる\n";
+            kagohuti = "616";
+            kagohuyo();
+        }
+    }
+    if (kekka[6] == "女" || kekka[6] == "女性") {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        text += "一時の夢は脱走した\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
     }
 }
 
@@ -10876,6 +11073,36 @@ function g829() {
 
     }
 
+function g830() {
+    gene += "夜祭花火";
+    sase = [[0.5, 0.5, 0.5, 0.5, 0.5], [1, 1, 1, 1, 1], [0, 0, 0, 0, 0], [2, 2, 2, 2, 2]];
+    rankk = 1;
+    rank();
+    seihihan();
+
+    if (sagyona == 0 || sagyona == 2) {
+        if (seihi == 1) {
+            kensaku = kekka[12].indexOf('830');
+            if (kensaku == -1) {
+                text += "職員" + name + "は「花火の加護」を得る\n1時間毎にSP5回復\n死亡時カウンター減少\n";
+                kagohuti = "830";
+                kagohuyo();
+            }
+        }
+    }
+    if (sagyona == 3) {
+        ransu = Math.floor(Math.random() * 2 + 1);
+        if (ransu == 1) {
+            text += "カウンターが減少した\n";
+            nefi -= 1;
+        }
+    }
+    if (nefi <= 0) {
+        text += "部門全域に花火が打ち上がった\n配属職員全員に5赤ダメージ、SP10回復\nただしカウンター0になった時点で誰も死亡していなかった場合は何も起きない\nカウンター0→5\n";
+        nefi = 5;
+    }
+}
+
     function g839() {
         gene = "839 星堕つる聲";
         sase = [[2, 2, 2, 2, 2], [2, 2, 1.5, 1, 1], [2, 2, 1.5, 1, 1], [2, 2, 1, 0.5, 0]];
@@ -11467,6 +11694,19 @@ function g891() {
 
 }
 
+function g894() {
+    gene += "万雷の曲芸団";
+    sase = [[1, 1, 0.5, 0.5, 0.5], [2, 2, 2, 2, 2], [0.5, 0.5, 0.5, 0, 0], [1, 1.5, 1.5, 2, 2]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    if (nefi <= 0) {
+        text += "万雷の曲芸団は脱走した\nカウンター0→3\n";
+        nefi = 3;
+    }
+}
+
 function g897() {
     gene = "897 何の変哲もないごく一般的なトイレ";
     peti = 0;
@@ -12004,6 +12244,42 @@ function g923() {
 
 }
 
+function g925() {
+    gene += "贖罪";
+    peti = 0;
+
+    if (sagyona == 4) {
+        text += "職員" + name + "は5分毎にHP5回復\nこのツールは返却可能\n";
+    } else {
+        if (sagyona == 5) {
+            text += "返却した\n30分以内に返却しなかった場合死亡する\n";
+            sykasan(925, 0, 1);
+            sykensaku(925);
+            if (sykekka >= 4) {
+                text += "▼職員" + name + "は自殺性パニックに陥った\n";
+                sykasan(925, 3, 0);
+            }
+        } else {
+            text += "ツール型の作業は「使用」です\n";
+        }
+    }
+
+}
+
+function g931() {
+    gene += "ハートの無い心電図";
+    sase = [[1, 1, 1, 1, 1], [1, 1, 1, 0.5, 0.5], [0, 0, 0, 0, 0], [1, 1, 1, 1.5, 1.5]];
+    rankk = 3;
+    rank();
+    seihihan();
+    if (kekka[7] >= 3) {
+        seihi = 0;
+    }
+    if (sagyona == 2) {
+        sibou = 0;
+    }
+}
+
 function g933() {
     gene += "プレジャーレイン";
     sase = [[1.5, 2, 2, 1, 0.5], [1, 1, 0.5, 0, 0], [1, 1, 0.5, 0, 0], [1, 1.5, 1.5, 2, 2]];
@@ -12059,6 +12335,23 @@ function g941() {
             text += "この作業は依頼作業に置き換わっている\n";
             peti = 0;
             keikenti = 0;
+        }
+    }
+}
+
+function g945() {
+    gene += "絵のない絵本";
+    sase = [[1, 1, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 1, 1], [0, 0, 0, 0, 0], [1, 1, 1.5, 1.5, 1.5]];
+    rankk = 1;
+    rank();
+    seihihan();
+
+    if (seihi == 1) {
+        kensaku = kekka[12].indexOf('945');
+        if (kensaku == -1) {
+            text += "職員" + name + "はHPが1d6回復する加護を得た\n20分で消える\n";
+            kagohuti = "945";
+            kagohuyo();
         }
     }
 }
