@@ -1,7 +1,7 @@
 
 window.onload = function onLoad() {
     target = document.getElementById("output");
-    target.innerHTML = "Ver1.8c 公式垢のプロフに書いてあるバージョンと異なる際は更新してください";
+    target.innerHTML = "Ver1.8d 公式垢のプロフに書いてあるバージョンと異なる際は更新してください";
     kuriti = [0, 6, 10, 15, 19, 23, 26];
     fanti = [0, 1, 2, 3, 4, 5, 6];
     tt1 = "000";
@@ -49,7 +49,7 @@ window.onload = function onLoad() {
     keilog = [];
     nunba = [];
 
-    gnid = [0,0,0,0,0,0];
+    gnid = [0, 0, 0, 0, 0, 0];
     //幻想体用
     t990 = 0;
     seiti990 = 15;
@@ -132,6 +132,8 @@ window.onload = function onLoad() {
     t318 = -1;
     t3182 = [];
     t375 = 0;
+    t912 = "";
+    t9999 = 0;
 
     zenkai = [];
     serogtext = "";
@@ -140,33 +142,49 @@ window.onload = function onLoad() {
 
     irana = "";
     irana2 = "";
-    
+
 
 
     gtA = ["001", "018", "031", "063", 125, 201, 317, 365, 464, 614, 710, 722, 752, 901, 915, 118, 521, "042", 623, 330, "019", 725, 849, "002", "021", 106, 361, 818];
     gtB = ["023", "091", 142, 192, 214, 371, 528, 620, 810, 821, 829, 903, "013", "072", 403, 707, 971, "003", 110, 194, "005", "012", "022", 209, 413, 920, 982];
     gtC = ["061", "095", 199, 235, 243, 354, 451, 898, 923, 999, "032", "079", 108, 124, 137, 571, 581, 610, 126, 135, 291, "033", 213, 523, 625, 888, 997];
-    gtD = ["008", 601, 666, 777, 972, 185, 335, 880, "010", "039", "064", 311, 360, 469, 990, "047", "089", 302, 369, 385, 409,  570, 612, 801, 988, "034", 119, 609, 906];
+    gtD = ["008", 601, 666, 777, 972, 185, 335, 880, "010", "039", "064", 311, 360, 469, 990, "047", "089", 302, 369, 385, 409, 570, 612, 801, 988, "034", 119, 609, 906];
     gtE = ["006", "016", "030", "062", 116, 155, 170, 188, 255, 299, 537, 555, 890, 907, 975, 976, "054", 246, 294, 437, 486, 650, 977, "088", "093", 100, 113];
     gtF = [312, 329, 628, 874, 683, 908, 140, 526, 530, 708, 839, "065", 161, 320, 525, 701, 804, 828, 966, "067", 173, 404, 532, "029", 452, 453, 809, 914, 918, 941, 604];
-    gtG = [721,964,"036","040","092",974,215,264,423,887,916,212,499,"035",153,323,429,480,529,567,800,978,"094",217,378,417,536,802,917,980];
-    gtH = [216,502,720,963,467,696,718,767,772,803,259,959,333,826,228,304,305,709,152,303,444,731,886,904,933,979];
-    gtI = [128,223,425,712,922,995,"015",219,272,321,427,159,347,352,542,875,891,935,450,545,838,150,367,616,830,894,931,945];
-    gtJ = ["027",462,776,932,973,993,"037",139,200,308,600,822,952,955,171,642,717,775,981,"053",375,396,491,715,"045","083",262,263,390,406,430,808];
+    gtG = [721, 964, "036", "040", "092", 974, 215, 264, 423, 887, 916, 212, 499, "035", 153, 323, 429, 480, 529, 567, 800, 978, "094", 217, 378, 417, 536, 802, 917, 980];
+    gtH = [216, 502, 720, 963, 467, 696, 718, 767, 772, 803, 259, 959, 333, 826, 228, 304, 305, 709, 152, 303, 444, 731, 886, 904, 933, 979];
+    gtI = [128, 223, 425, 712, 922, 995, "015", 219, 272, 321, 427, 159, 347, 352, 542, 875, 891, 935, 450, 545, 838, 150, 367, 616, 830, 894, 931, 945];
+    gtJ = ["027", 462, 776, 932, 973, 993, "037", 139, 200, 308, 600, 822, 952, 955, 171, 642, 717, 775, 981, "053", 375, 396, 491, 715, "045", "083", 262, 263, 390, 406, 430, 808];
+    gtK = ["087",205,359,364,440,514,672,820,913];
     gtTA = [432, 566, 703, 635, "020", 310, "007", "071", 540, "099"];
     gtTB = [422, "049", 524, "048", 102, 314, 905, 554, 541, 704];
-    gtTC = ["050", "051", 225, 897, 408, 913, 531, 160, 230, 415];
+    gtTC = ["050", "051", 225, 897, 408, 912, 531, 160, 230, 415];
     gtTD = [527, 603, 877, 534, 535, 996, 151, 911, 590, 925];
-    gtTE = [145,318,598,984];
+    gtTE = [145,318,598,984,910];
+
+    allno = [];
+
+    allno  = allno .concat(gtA);
+    allno  = allno .concat(gtB);
+    allno  = allno .concat(gtC);
+        allno  = allno .concat(gtD);
+        allno  = allno .concat(gtE);
+        allno  = allno .concat(gtF);
+        allno  = allno .concat(gtG);
+        allno  = allno .concat(gtH);
+        allno  = allno .concat(gtI);
+    allno  = allno .concat(gtJ);
+    allno  = allno .concat(gtK);
+    allno2 = allno.length-1;
 
     genra1 = [];
     genra2 = [];
     genra3 = [];
-    genra4 = ["001", "002","003","005","006","008","010","012", "013","015","016", "018","019", "021","022", "023","027","029","030", "031","032","033" ,"034","035","036","037","039","040","042","045","047","053","054","061","062", "063","064","065","067", "072","079","083","088","089", "091","092","093","094","095",100, 106,108,110,113,116, 118,119,124, 125,126,128,135,137,139,140, 142,150,152,153,155,159,161,170,171,173,185,188, 192,194,199,200, 201,209,212,213, 214,215,216,217,219,223,228,235,243,246,255,259,262,263,264,272,291,294,299,302,303,304,305,308,311,312, 317,320,321,323,329, 330,333,335,347,352,354,360, 361, 365,367,369, 371,375,378,385,390,396, 403,404,406,409,413,417,423,425,427,429,430,437,444,450,451,452,453, 462,464,467,469,480, 486,491,499,502,521,523,525,526, 528,529,530,532,536,537,542,545,555,567,570,571,581,600,601,604,609,610,612, 614,616, 620, 623,625,628,642,650,666,683,696,701,707,708,709, 710,712,715,717,718,720,721, 722, 725, 731,752,767,772,775,776,777,800,801,802,803,804,808,809, 810, 818, 821,822,826,828, 829,830,838,839, 849,874,875,880,886,887,888,890,891,894,898, 901,902, 903,904,906,907,908,914, 915,916,917,918,920,922,923,931,932,933,935,941,945,952,955,959,963,964,966,971,972,973,974,975,976,977,978,979,980,981,982,988,990,993,995,997,999];
-    genra5 = ["007","020","048","049","050","051", "071","099",102,145,151,160,225,230, 310,314,318,408,415, 422,432,524,527,531,534,535,540,541,554, 566,590,598,603,  635, 703,704,808,877,897,905,911,913,925,984,996];
+    genra4 = ["001", "002","003","005","006","008","010","012", "013","015","016", "018","019", "021","022", "023","027","029","030", "031","032","033" ,"034","035","036","037","039","040","042","045","047","053","054","061","062", "063","064","065","067", "072","079","083","087","088","089", "091","092","093","094","095",100, 106,108,110,113,116, 118,119,124, 125,126,128,135,137,139,140, 142,150,152,153,155,159,161,170,171,173,185,188, 192,194,199,200, 201,205,209,212,213, 214,215,216,217,219,223,228,235,243,246,255,259,262,263,264,272,291,294,299,302,303,304,305,308,311,312, 317,320,321,323,329, 330,333,335,347,352,354,359,360, 361,364, 365,367,369, 371,375,378,385,390,396, 403,404,406,409,413,417,423,425,427,429,430,437,440,444,450,451,452,453, 462,464,467,469,480, 486,491,499,502,514,521,523,525,526, 528,529,530,532,536,537,542,545,555,567,570,571,581,600,601,604,609,610,612, 614,616, 620, 623,625,628,642,650,666,672,683,696,701,707,708,709, 710,712,715,717,718,720,721, 722, 725, 731,752,767,772,775,776,777,800,801,802,803,804,808,809, 810, 818, 820,821,822,826,828, 829,830,838,839, 849,874,875,880,886,887,888,890,891,894,898, 901,902, 903,904,906,907,908,913,914, 915,916,917,918,920,922,923,931,932,933,935,941,945,952,955,959,963,964,966,971,972,973,974,975,976,977,978,979,980,981,982,988,990,993,995,997,999];
+    genra5 = ["007","020","048","049","050","051", "071","099",102,145,151,160,225,230, 310,314,318,408,415, 422,432,524,527,531,534,535,540,541,554, 566,590,598,603,  635, 703,704,877,897,905,910,911,912,925,984,996];
     genra6 = [];
 
-    con = [["001", 0, "https://privatter.net/p/6703366"], ["018", 2, "https://privatter.net/p/6748615"], ["031", 0, "https://privatter.net/p/6703466"], ["063", 0, "https://privatter.net/p/6695438"], ["125", 2, "https://privatter.net/p/6703511"], ["201", 1, "https://privatter.net/p/6695568"], ["317", 1, "https://privatter.net/p/6702502"], ["365", 0, "https://privatter.net/p/6746799"], ["464", 1, "https://privatter.net/p/6745119"], ["614", 2, "https://privatter.net/p/6695815"], ["710", 2, "https://privatter.net/p/6744563"], ["722", 2, "https://privatter.net/p/6695983"], ["752", 3, "https://privatter.net/p/6744635"], ["901", 0, "https://privatter.net/p/6738147"], ["915", 0, "https://privatter.net/p/6696047"], ["118", 0, "https://privatter.net/p/6755338"], ["521", 3, "https://privatter.net/p/6755379"], ["042", 1, "https://privatter.net/p/6758917"], ["330", 2, "https://privatter.net/p/6762214"], ["623", 0, "https://privatter.net/p/6758874"], ["019", 0, "https://privatter.net/p/6766679"], ["725", 2, "https://privatter.net/p/6766770"], ["849", 0, "https://privatter.net/p/6766399"], ["002", 2, "https://privatter.net/p/6771383"], ["021", 3, "https://privatter.net/p/6771524"], ["106", 3, "https://privatter.net/p/6771635"], ["361", 0, "https://privatter.net/p/6771670"], ["818", 3, "https://privatter.net/p/6771782"], ["023", 0, "https://privatter.net/p/6778268"], ["091", 3, "https://privatter.net/p/6778286"], ["142", 0, "https://privatter.net/p/6778302"], ["192", 0, "https://privatter.net/p/6778314"], ["214", 2, "https://privatter.net/p/6778327"], ["371", 2, "https://privatter.net/p/6778343"], ["528", 0, "https://privatter.net/p/6778352"], ["620", 1, "https://privatter.net/p/6778375"], ["810", 2, "https://privatter.net/p/6778395"], ["821", 3, "https://privatter.net/p/6778448"], ["829", 1, "https://privatter.net/p/6778582"], ["903", 3, "https://privatter.net/p/6778632"], ["013", 0, "https://privatter.net/p/6782727"], ["072", 2, "https://privatter.net/p/6782754"], ["403", 2, "https://privatter.net/p/6782810"], ["707", 3, "https://privatter.net/p/6786497"], ["971", 1, "https://privatter.net/p/6786446"], ["003", 3, "https://privatter.net/p/6789998"], ["110", 1, "https://privatter.net/p/6790048"], ["194", 1, "https://privatter.net/p/6790092"], ["005", 3, "https://privatter.net/p/6798989"], ["012", 4, "https://privatter.net/p/6799118"], ["022", 4, "https://privatter.net/p/6799176"], ["209", 2, "https://privatter.net/p/6799263"], ["413", 1, "https://privatter.net/p/6799346"], ["920", 0, "https://privatter.net/p/6799416"], ["982", 0, "https://privatter.net/p/6799505"], ["9999", 2, "https://privatter.net/p/6748615"], ["061", 0, "kari"], ["095", 0, "kari"], ["199", 3, "kari"], ["235", 2, "kari"], ["243", 0, "kari"], ["354", 2, "kari"], ["451", 3, "kari"], ["898", 0, "kari"], ["923", 0, "kari"], ["999", 4, "kari"], ["032", 5, "kari"], ["079", 0, "kari"], ["108", 2, "kari"], ["124", 0, "kari"], ["137", 3, "kari"], ["571", 3, "kari"], ["581", 1, "kari"], ["610", 4, "kari"], ["126", 2, "kari"], ["135", 2, "kari"], ["291", 2, "kari"], ["033", 3, "kari"], ["213", 3, "kari"], ["523", 3, "kari"], ["625", 2, "kari"], ["888", 3, "kari"], ["997", 0, "kari"], ["008", 3, "kari"], ["601", 0, "kari"], ["666", 0, "kari"], ["777", 4, "kari"], ["972", 0, "kari"], ["185", 0, "kari"], ["335", 2, "kari"], ["880", 2, "kari"], ["010", 0, "kari"], ["039", 0, "kari"], ["064", 5, "kari"], ["311", 0, "kari"], ["360", 2, "kari"], ["469", 0, "kari"], ["990", "?", "kari"], ["047", 2, "kari"], ["089", 2, "kari"], ["302", 2, "kari"], ["369", 0, "kari"], ["385", 3, "kari"], ["409", 3, "kari"], ["554", 3, "kari"], ["570", 3, "kari"], ["612", 3, "kari"], ["801", 0, "kari"], ["988", 3, "kari"], ["034", 3, "kari"], ["119", 0, "kari"], ["609", 1, "kari"], ["906", 1, "kari"], ["006", 0, "kari"], ["016", 4, "kari"], ["030", 3, "kari"], ["062", 3, "kari"], ["116", 5, "kari"], ["155", 3, "kari"], ["170", 1, "kari"], ["188", 1, "kari"], ["255", 2, "kari"], ["299", 0, "kari"], ["537", 3, "kari"], ["555", 0, "kari"], ["890", 1, "kari"], ["907", 0, "kari"], ["975", 3, "kari"], ["976", 3, "kari"], ["054", 0, "kari"], ["246", 0, "kari"], ["294", 4, "kari"], ["437", 0, "kari"], ["486", 0, "kari"], ["650", 3, "kari"], ["977", 3, "kari"], ["088", 2, "kari"], ["093", 1, "kari"], ["100", 0, "kari"], ["113", 5, "kari"], ["312", 3, "kari"], ["329", 0, "kari"], ["628", 0, "kari"], ["874", 3, "kari"], ["683", 3, "kari"], ["908", 1, "kari"], ["140", 1, "kari"], ["526", 3, "kari"], ["530", 5, "kari"], ["708", 0, "kari"], ["839", 2, "kari"], ["432", 0, "kari"], ["566", 0, "kari"], ["703", 0, "kari"], ["635", 0, "kari"], ["020", 0, "kari"], ["310", 0, "kari"], ["099", 0, "kari"], ["007", 0, "kari"], ["071", 0, "kari"], ["540", 0, "kari"], ["422", 0, "kari"], ["049", 0, "kari"], ["524", 0, "kari"], ["048", 0, "kari"], ["102", 0, "kari"], ["314", 0, "kari"], ["905", 0, "kari"], ["541", 0, "kari"], ["704", 0, "https://privatter.net/p/7070394"], ["050", 0, "kari"], ["051", 0, "kari"], ["225", 0, "kari"], ["897", 0, "kari"], ["408", 0, "kari"], ["913", 0, "kari"], ["531", 0, "kari"], ["065", 2, "kari"], ["160", 0, "kari"], ["161", 1, "kari"], ["320", 2, "kari"], ["525", 2, "kari"], ["701", 3, "kari"], ["804", 3, "kari"], ["828", 0, "kari"], ["966", 0, "kari"], ["067", 2, "kari"], ["173", 3, "kari"], ["230", 0, "kari"], ["404", 2, "kari"], ["532", 1, "kari"], ["029", 3, "kari"], ["452", 3, "kari"], ["453", 3, "kari"], ["604", 0, "kari"], ["809", 5, "kari"], ["914", 0, "kari"], ["918", 2, "kari"], ["941", 0, "kari"], ["415", 0, "kari"], ["721", 2, "kari"], ["964", 5, "kari"], ["036", 0, "kari"], ["040", 3, "kari"], ["092", 0, "kari"], ["974", 3, "kari"], ["215", 3, "https://privatter.net/p/6983390"], ["264", 3, "https://privatter.net/p/6983461"], ["423", 0, "https://privatter.net/p/6983502"], ["887", 2, "https://privatter.net/p/6983575"], ["916", 1, "https://privatter.net/p/6983642"], ["212", 0, "https://privatter.net/p/6986596"], ["499", 0, "https://privatter.net/p/6983930"], ["035", 0, "https://privatter.net/p/6990990"], ["153", 5, "https://privatter.net/p/6983692"], ["323", 5, "https://privatter.net/p/6992461"], ["429", 0, "https://privatter.net/p/6987429"], ["480", 3, "https://privatter.net/p/6994956"], ["529", 2, "https://privatter.net/p/6989966"], ["567", 2, "https://privatter.net/p/6993378"], ["800", 2, "https://privatter.net/p/6995043"], ["978", 0, "https://privatter.net/p/6995150"], ["094", 0, "https://privatter.net/p/6998708"], ["217", 2, "https://privatter.net/p/6994838"], ["378", 3, "https://privatter.net/p/6989284"], ["417", 2, "https://privatter.net/p/6994485"], ["527", 0, "https://privatter.net/p/6997663"], ["536", 3, "https://privatter.net/p/6997713"], ["802", 3, "https://privatter.net/p/6994890"], ["917", 2, "https://privatter.net/p/6998742"], ["980", 1, "https://privatter.net/p/6998793"], ["216", 5, "https://privatter.net/p/7002768"], ["502", 0, "https://privatter.net/p/7002974"], ["720", 2, "https://privatter.net/p/7003006"], ["963", 0, "https://privatter.net/p/7002115"], ["467", 4, "https://privatter.net/p/7013131"], ["696", 0, "https://privatter.net/p/7011051"], ["718", 2, "https://privatter.net/p/7013189"], ["767", 3, "https://privatter.net/p/7011558"], ["772", 1, "https://privatter.net/p/7013235"], ["803", 3, "https://privatter.net/p/7011786"], ["902", 0, "https://privatter.net/p/7013276"], ["259", 2, "https://privatter.net/p/7011507"], ["959", 3, "https://privatter.net/p/7011506"], ["333", 3, "https://privatter.net/p/7020799"], ["603", 0, "https://privatter.net/p/7020028"], ["826", 4, "https://privatter.net/p/7020422"], ["877", 0, "https://privatter.net/p/7020870"], ["228", 0, "https://privatter.net/p/7026403"], ["304", 3, "https://privatter.net/p/7028333"], ["305", 3, "https://privatter.net/p/6995786"], ["534", 0, "https://privatter.net/p/7022790"], ["535", 0, "https://privatter.net/p/7022697"], ["709", 4, "https://privatter.net/p/7013612"], ["152", 0, "https://privatter.net/p/7029879"], ["303", 3, "https://privatter.net/p/6986577"], ["444", 2, "https://privatter.net/p/7032510"], ["731", 2, "https://privatter.net/p/7029596"], ["886", 3, "https://privatter.net/p/7021856"], ["904", 3, "https://privatter.net/p/7028636"], ["933", 3, "https://privatter.net/p/7030278"], ["979", 0, "https://privatter.net/p/7028241"], ["996", 0, "https://privatter.net/p/7031786"], ["128", 3, "https://privatter.net/p/7021177"], ["151", 0, "https://privatter.net/p/7046298"], ["223", 0, "https://privatter.net/p/7045757"], ["425", 3, "https://privatter.net/p/7044858"], ["712", 0, "https://privatter.net/p/7046348"], ["922", 0, "https://privatter.net/p/7046375"], ["995", 1, "https://privatter.net/p/7046432"], ["015", 2, "https://privatter.net/p/7049269"], ["219", 0, "https://privatter.net/p/7049931"], ["272", 2, "https://privatter.net/p/7049966"], ["321", 0, "https://privatter.net/p/7048925"], ["427", 0, "https://privatter.net/p/7054557"], ["911", 0, "https://privatter.net/p/7054593"], ["159", 3, "https://privatter.net/p/7059938"], ["347", 2, "https://privatter.net/p/7069842"], ["352", 0, "https://privatter.net/p/7063170"], ["542", 3, "https://privatter.net/p/7067111"], ["875", 4, "https://privatter.net/p/7063423"], ["891", 2, "https://privatter.net/p/7069934"], ["935", 0, "https://privatter.net/p/7061426"], ["450", 0, "https://privatter.net/p/7072482"], ["545", 0, "https://privatter.net/p/7072790"], ["838", 1, "https://privatter.net/p/7075035"], ["150", 0, "https://privatter.net/p/7078404"], ["367", 3, "https://privatter.net/p/7082974"], ["590", 1, "https://privatter.net/p/7078402"], ["616", 3, "https://privatter.net/p/7078380"], ["830", 5, "https://privatter.net/p/7082432"], ["894", 3, "https://privatter.net/p/7075378"], ["925", 0, "https://privatter.net/p/7083042"], ["931", 0, "https://privatter.net/p/7083093"], ["945", 0, "https://privatter.net/p/7083140"], ["027", 0, "https://privatter.net/p/7084729"], ["145", 0, "https://privatter.net/p/7084666"], ["462", 0, "https://privatter.net/p/7083452"], ["776", 3, "https://privatter.net/p/7083192"], ["932", 4, "https://privatter.net/p/7087178"], ["973", 3, "https://privatter.net/p/7083708"], ["993", 0, "https://privatter.net/p/7086548"], ["037", 3, "https://privatter.net/p/7089162"], ["139", 2, "https://privatter.net/p/7089747"], ["200", 2, "https://privatter.net/p/7090197"], ["308", 0, "https://privatter.net/p/7090902"], ["600", 2, "https://privatter.net/p/7083723"], ["822", 1, "https://privatter.net/p/7090938"], ["952", 3, "https://privatter.net/p/7091049"], ["955", 2, "https://privatter.net/p/7083724"], ["171", 3, "https://privatter.net/p/7099115"], ["642", 0, "https://privatter.net/p/7083761"], ["717", 4, "https://privatter.net/p/7100747"], ["775", 2, "https://privatter.net/p/7099372"], ["981", 1, "https://privatter.net/p/7098768"], ["053", 3, "https://privatter.net/p/7103674"], ["318", 0, "https://privatter.net/p/7100226"], ["375", 3, "https://privatter.net/p/7102976"], ["396", 1, "https://privatter.net/p/7105021"], ["491", 3, "https://privatter.net/p/7103566"], ["715", 3, "https://privatter.net/p/7105182"], ["045", 2, "https://privatter.net/p/7077295"], ["083", 1, "https://privatter.net/p/7106319"], ["262", 1, "https://privatter.net/p/7092356"], ["263", 1, "https://privatter.net/p/7110307"], ["390", 3, "https://privatter.net/p/7110337"], ["406", 0, "https://privatter.net/p/7091893"], ["430", 0, "https://privatter.net/p/7109014"], ["598", 0, "https://privatter.net/p/7107842"], ["808", 1, "https://privatter.net/p/7106283"], ["984", 1, "https://privatter.net/p/7105135"]];
+    con = [["001", 0, "https://privatter.net/p/6703366"], ["018", 2, "https://privatter.net/p/6748615"], ["031", 0, "https://privatter.net/p/6703466"], ["063", 0, "https://privatter.net/p/6695438"], ["125", 2, "https://privatter.net/p/6703511"], ["201", 1, "https://privatter.net/p/6695568"], ["317", 1, "https://privatter.net/p/6702502"], ["365", 0, "https://privatter.net/p/6746799"], ["464", 1, "https://privatter.net/p/6745119"], ["614", 2, "https://privatter.net/p/6695815"], ["710", 2, "https://privatter.net/p/6744563"], ["722", 2, "https://privatter.net/p/6695983"], ["752", 3, "https://privatter.net/p/6744635"], ["901", 0, "https://privatter.net/p/6738147"], ["915", 0, "https://privatter.net/p/6696047"], ["118", 0, "https://privatter.net/p/6755338"], ["521", 3, "https://privatter.net/p/6755379"], ["042", 1, "https://privatter.net/p/6758917"], ["330", 2, "https://privatter.net/p/6762214"], ["623", 0, "https://privatter.net/p/6758874"], ["019", 0, "https://privatter.net/p/6766679"], ["725", 2, "https://privatter.net/p/6766770"], ["849", 0, "https://privatter.net/p/6766399"], ["002", 2, "https://privatter.net/p/6771383"], ["021", 3, "https://privatter.net/p/6771524"], ["106", 3, "https://privatter.net/p/6771635"], ["361", 0, "https://privatter.net/p/6771670"], ["818", 3, "https://privatter.net/p/6771782"], ["023", 0, "https://privatter.net/p/6778268"], ["091", 3, "https://privatter.net/p/6778286"], ["142", 0, "https://privatter.net/p/6778302"], ["192", 0, "https://privatter.net/p/6778314"], ["214", 2, "https://privatter.net/p/6778327"], ["371", 2, "https://privatter.net/p/6778343"], ["528", 0, "https://privatter.net/p/6778352"], ["620", 1, "https://privatter.net/p/6778375"], ["810", 2, "https://privatter.net/p/6778395"], ["821", 3, "https://privatter.net/p/6778448"], ["829", 1, "https://privatter.net/p/6778582"], ["903", 3, "https://privatter.net/p/6778632"], ["013", 0, "https://privatter.net/p/6782727"], ["072", 2, "https://privatter.net/p/6782754"], ["403", 2, "https://privatter.net/p/6782810"], ["707", 3, "https://privatter.net/p/6786497"], ["971", 1, "https://privatter.net/p/6786446"], ["003", 3, "https://privatter.net/p/6789998"], ["110", 1, "https://privatter.net/p/6790048"], ["194", 1, "https://privatter.net/p/6790092"], ["005", 3, "https://privatter.net/p/6798989"], ["012", 4, "https://privatter.net/p/6799118"], ["022", 4, "https://privatter.net/p/6799176"], ["209", 2, "https://privatter.net/p/6799263"], ["413", 1, "https://privatter.net/p/6799346"], ["920", 0, "https://privatter.net/p/6799416"], ["982", 0, "https://privatter.net/p/6799505"], ["9999", 2, "https://privatter.net/p/6748615"], ["061", 0, "kari"], ["095", 0, "kari"], ["199", 3, "kari"], ["235", 2, "kari"], ["243", 0, "kari"], ["354", 2, "kari"], ["451", 3, "kari"], ["898", 0, "kari"], ["923", 0, "kari"], ["999", 4, "kari"], ["032", 5, "kari"], ["079", 0, "kari"], ["108", 2, "kari"], ["124", 0, "kari"], ["137", 3, "kari"], ["571", 3, "kari"], ["581", 1, "kari"], ["610", 4, "kari"], ["126", 2, "kari"], ["135", 2, "kari"], ["291", 2, "kari"], ["033", 3, "kari"], ["213", 3, "kari"], ["523", 3, "kari"], ["625", 2, "kari"], ["888", 3, "kari"], ["997", 0, "kari"], ["008", 3, "kari"], ["601", 0, "kari"], ["666", 0, "kari"], ["777", 4, "kari"], ["972", 0, "kari"], ["185", 0, "kari"], ["335", 2, "kari"], ["880", 2, "kari"], ["010", 0, "kari"], ["039", 0, "kari"], ["064", 5, "kari"], ["311", 0, "kari"], ["360", 2, "kari"], ["469", 0, "kari"], ["990", "?", "kari"], ["047", 2, "kari"], ["089", 2, "kari"], ["302", 2, "kari"], ["369", 0, "kari"], ["385", 3, "kari"], ["409", 3, "kari"], ["554", 3, "kari"], ["570", 3, "kari"], ["612", 3, "kari"], ["801", 0, "kari"], ["988", 3, "kari"], ["034", 3, "kari"], ["119", 0, "kari"], ["609", 1, "kari"], ["906", 1, "kari"], ["006", 0, "kari"], ["016", 4, "kari"], ["030", 3, "kari"], ["062", 3, "kari"], ["116", 5, "kari"], ["155", 3, "kari"], ["170", 1, "kari"], ["188", 1, "kari"], ["255", 2, "kari"], ["299", 0, "kari"], ["537", 3, "kari"], ["555", 0, "kari"], ["890", 1, "kari"], ["907", 0, "kari"], ["975", 3, "kari"], ["976", 3, "kari"], ["054", 0, "kari"], ["246", 0, "kari"], ["294", 4, "kari"], ["437", 0, "kari"], ["486", 0, "kari"], ["650", 3, "kari"], ["977", 3, "kari"], ["088", 2, "kari"], ["093", 1, "kari"], ["100", 0, "kari"], ["113", 5, "kari"], ["312", 3, "kari"], ["329", 0, "kari"], ["628", 0, "kari"], ["874", 3, "kari"], ["683", 3, "kari"], ["908", 1, "kari"], ["140", 1, "kari"], ["526", 3, "kari"], ["530", 5, "kari"], ["708", 0, "kari"], ["839", 2, "kari"], ["432", 0, "kari"], ["566", 0, "kari"], ["703", 0, "kari"], ["635", 0, "kari"], ["020", 0, "kari"], ["310", 0, "kari"], ["099", 0, "kari"], ["007", 0, "kari"], ["071", 0, "kari"], ["540", 0, "kari"], ["422", 0, "kari"], ["049", 0, "kari"], ["524", 0, "kari"], ["048", 0, "kari"], ["102", 0, "kari"], ["314", 0, "kari"], ["905", 0, "kari"], ["541", 0, "kari"], ["704", 0, "https://privatter.net/p/7070394"], ["050", 0, "kari"], ["051", 0, "kari"], ["225", 0, "kari"], ["897", 0, "kari"], ["408", 0, "kari"], ["912", 0, "kari"], ["531", 0, "kari"], ["065", 2, "kari"], ["160", 0, "kari"], ["161", 1, "kari"], ["320", 2, "kari"], ["525", 2, "kari"], ["701", 3, "kari"], ["804", 3, "kari"], ["828", 0, "kari"], ["966", 0, "kari"], ["067", 2, "kari"], ["173", 3, "kari"], ["230", 0, "kari"], ["404", 2, "kari"], ["532", 1, "kari"], ["029", 3, "kari"], ["452", 3, "kari"], ["453", 3, "kari"], ["604", 0, "kari"], ["809", 5, "kari"], ["914", 0, "kari"], ["918", 2, "kari"], ["941", 0, "kari"], ["415", 0, "kari"], ["721", 2, "kari"], ["964", 5, "kari"], ["036", 0, "kari"], ["040", 3, "kari"], ["092", 0, "kari"], ["974", 3, "kari"], ["215", 3, "https://privatter.net/p/6983390"], ["264", 3, "https://privatter.net/p/6983461"], ["423", 0, "https://privatter.net/p/6983502"], ["887", 2, "https://privatter.net/p/6983575"], ["916", 1, "https://privatter.net/p/6983642"], ["212", 0, "https://privatter.net/p/6986596"], ["499", 0, "https://privatter.net/p/6983930"], ["035", 0, "https://privatter.net/p/6990990"], ["153", 5, "https://privatter.net/p/6983692"], ["323", 5, "https://privatter.net/p/6992461"], ["429", 0, "https://privatter.net/p/6987429"], ["480", 3, "https://privatter.net/p/6994956"], ["529", 2, "https://privatter.net/p/6989966"], ["567", 2, "https://privatter.net/p/6993378"], ["800", 2, "https://privatter.net/p/6995043"], ["978", 0, "https://privatter.net/p/6995150"], ["094", 0, "https://privatter.net/p/6998708"], ["217", 2, "https://privatter.net/p/6994838"], ["378", 3, "https://privatter.net/p/6989284"], ["417", 2, "https://privatter.net/p/6994485"], ["527", 0, "https://privatter.net/p/6997663"], ["536", 3, "https://privatter.net/p/6997713"], ["802", 3, "https://privatter.net/p/6994890"], ["917", 2, "https://privatter.net/p/6998742"], ["980", 1, "https://privatter.net/p/6998793"], ["216", 5, "https://privatter.net/p/7002768"], ["502", 0, "https://privatter.net/p/7002974"], ["720", 2, "https://privatter.net/p/7003006"], ["963", 0, "https://privatter.net/p/7002115"], ["467", 4, "https://privatter.net/p/7013131"], ["696", 0, "https://privatter.net/p/7011051"], ["718", 2, "https://privatter.net/p/7013189"], ["767", 3, "https://privatter.net/p/7011558"], ["772", 1, "https://privatter.net/p/7013235"], ["803", 3, "https://privatter.net/p/7011786"], ["902", 0, "https://privatter.net/p/7013276"], ["259", 2, "https://privatter.net/p/7011507"], ["959", 3, "https://privatter.net/p/7011506"], ["333", 3, "https://privatter.net/p/7020799"], ["603", 0, "https://privatter.net/p/7020028"], ["826", 4, "https://privatter.net/p/7020422"], ["877", 0, "https://privatter.net/p/7020870"], ["228", 0, "https://privatter.net/p/7026403"], ["304", 3, "https://privatter.net/p/7028333"], ["305", 3, "https://privatter.net/p/6995786"], ["534", 0, "https://privatter.net/p/7022790"], ["535", 0, "https://privatter.net/p/7022697"], ["709", 4, "https://privatter.net/p/7013612"], ["152", 0, "https://privatter.net/p/7029879"], ["303", 3, "https://privatter.net/p/6986577"], ["444", 2, "https://privatter.net/p/7032510"], ["731", 2, "https://privatter.net/p/7029596"], ["886", 3, "https://privatter.net/p/7021856"], ["904", 3, "https://privatter.net/p/7028636"], ["933", 3, "https://privatter.net/p/7030278"], ["979", 0, "https://privatter.net/p/7028241"], ["996", 0, "https://privatter.net/p/7031786"], ["128", 3, "https://privatter.net/p/7021177"], ["151", 0, "https://privatter.net/p/7046298"], ["223", 0, "https://privatter.net/p/7045757"], ["425", 3, "https://privatter.net/p/7044858"], ["712", 0, "https://privatter.net/p/7046348"], ["922", 0, "https://privatter.net/p/7046375"], ["995", 1, "https://privatter.net/p/7046432"], ["015", 2, "https://privatter.net/p/7049269"], ["219", 0, "https://privatter.net/p/7049931"], ["272", 2, "https://privatter.net/p/7049966"], ["321", 0, "https://privatter.net/p/7048925"], ["427", 0, "https://privatter.net/p/7054557"], ["911", 0, "https://privatter.net/p/7054593"], ["159", 3, "https://privatter.net/p/7059938"], ["347", 2, "https://privatter.net/p/7069842"], ["352", 0, "https://privatter.net/p/7063170"], ["542", 3, "https://privatter.net/p/7067111"], ["875", 4, "https://privatter.net/p/7063423"], ["891", 2, "https://privatter.net/p/7069934"], ["935", 0, "https://privatter.net/p/7061426"], ["450", 0, "https://privatter.net/p/7072482"], ["545", 0, "https://privatter.net/p/7072790"], ["838", 1, "https://privatter.net/p/7075035"], ["150", 0, "https://privatter.net/p/7078404"], ["367", 3, "https://privatter.net/p/7082974"], ["590", 1, "https://privatter.net/p/7078402"], ["616", 3, "https://privatter.net/p/7078380"], ["830", 5, "https://privatter.net/p/7082432"], ["894", 3, "https://privatter.net/p/7075378"], ["925", 0, "https://privatter.net/p/7083042"], ["931", 0, "https://privatter.net/p/7083093"], ["945", 0, "https://privatter.net/p/7083140"], ["027", 0, "https://privatter.net/p/7084729"], ["145", 0, "https://privatter.net/p/7084666"], ["462", 0, "https://privatter.net/p/7083452"], ["776", 3, "https://privatter.net/p/7083192"], ["932", 4, "https://privatter.net/p/7087178"], ["973", 3, "https://privatter.net/p/7083708"], ["993", 0, "https://privatter.net/p/7086548"], ["037", 3, "https://privatter.net/p/7089162"], ["139", 2, "https://privatter.net/p/7089747"], ["200", 2, "https://privatter.net/p/7090197"], ["308", 0, "https://privatter.net/p/7090902"], ["600", 2, "https://privatter.net/p/7083723"], ["822", 1, "https://privatter.net/p/7090938"], ["952", 3, "https://privatter.net/p/7091049"], ["955", 2, "https://privatter.net/p/7083724"], ["171", 3, "https://privatter.net/p/7099115"], ["642", 0, "https://privatter.net/p/7083761"], ["717", 4, "https://privatter.net/p/7100747"], ["775", 2, "https://privatter.net/p/7099372"], ["981", 1, "https://privatter.net/p/7098768"], ["053", 3, "https://privatter.net/p/7103674"], ["318", 0, "https://privatter.net/p/7100226"], ["375", 3, "https://privatter.net/p/7102976"], ["396", 1, "https://privatter.net/p/7105021"], ["491", 3, "https://privatter.net/p/7103566"], ["715", 3, "https://privatter.net/p/7105182"], ["045", 2, "https://privatter.net/p/7077295"], ["083", 1, "https://privatter.net/p/7106319"], ["262", 1, "https://privatter.net/p/7092356"], ["263", 1, "https://privatter.net/p/7110307"], ["390", 3, "https://privatter.net/p/7110337"], ["406", 0, "https://privatter.net/p/7091893"], ["430", 0, "https://privatter.net/p/7109014"], ["598", 0, "https://privatter.net/p/7107842"], ["808", 1, "https://privatter.net/p/7106283"], ["984", 1, "https://privatter.net/p/7105135"], ["087", 0, "https://privatter.net/p/7117816"], ["205", 1, "https://privatter.net/p/7115807"], ["359", 0, "https://privatter.net/p/7115886"], ["364", 0, "https://privatter.net/p/7112669"], ["440", 2, "https://privatter.net/p/7115628"], ["514", 0, "https://privatter.net/p/7109815"], ["672", 1, "https://privatter.net/p/7117939"], ["820", 3, "https://privatter.net/p/7115427"], ["910", 0, "https://privatter.net/p/7117977"], ["913", 3, "https://privatter.net/p/7107313"]];
 
     //リザルト計算用
     reco = 1;
@@ -174,6 +192,10 @@ window.onload = function onLoad() {
 
     sentakuti = [];
 
+    dassoulog = [];
+    dassousyoki = "DAY28,29は脱走時、次の補正が入ります（脱走時に記載をお願いします）　";
+    target = document.getElementById("dassoulog");
+    target.innerHTML = dassousyoki;
 }
 
 function syplus(sysy) {
@@ -409,6 +431,7 @@ function set1() {
     counte();
     link();
     textset();
+    t9999 = 0;
 }
 function set2() {
     tt1 = document.hanteisuru['gen2'].value;
@@ -416,6 +439,7 @@ function set2() {
     counte();
     link();
     textset();
+    t9999 = 0;
 }
 function set3() {
     tt1 = document.hanteisuru['gen3'].value;
@@ -423,6 +447,7 @@ function set3() {
     counte();
     link();
     textset();
+    t9999 = 0;
 }
 function set4() {
     tt1 = document.hanteisuru['gen4'].value;
@@ -430,6 +455,7 @@ function set4() {
     counte();
     link();
     textset();
+    t9999 = 0;
 }
 function set5() {
     tt1 = document.hanteisuru['gen5'].value;
@@ -437,9 +463,15 @@ function set5() {
     counte();
     link();
     textset();
+    t9999 = 0;
 }
 function set6() {
     tt1 = document.hanteisuru['gen6'].value;
+    if (tt1 == "9999") {
+        ransu = Math.floor(Math.random() * allno2 + 1);
+        tt1 = String(allno[ransu]);
+        t9999 = 1;
+    }
     gnid[5] = tt1;
     counte();
     link();
@@ -462,6 +494,7 @@ function set_log(roche) {
                 keiti.push(sysysy);
                 keilog.push("");
                 zenkai.push('0');
+                dassoulog.push(1);
                 save.push([i, "noname", "none", "1", "1", "1", "1", "1", "000", "0", "00" + i]);
                 nunba.push(i);
             }
@@ -559,6 +592,7 @@ function set_log(roche) {
                 keiti.push(sysysy);
                 keilog.push("");
                 zenkai.push('0');
+                dassoulog.push(1);
                 save.push([i, "noname", "none", "1", "1", "1", "1", "1", "000", "0", "00" + i]);
                 nunba.push(i);
             }
@@ -589,6 +623,7 @@ function set_log_keiken(roche) {
                 sysysy = [i, 0, 0, 0, 0];
                 keiti.push(sysysy);
                 zenkai.push('0');
+                dassoulog.push(1);
                 save.push([i, "noname", "none", "1", "1", "1", "1", "1", "000", "0", "00" + i]);
                 nunba.push(i);
             }
@@ -657,6 +692,32 @@ function set(idd) {
     document.hanteisuru['bahu'].value = tt13;
     kakee = syisg.indexOf(tt14);
     syid = idd;
+    dassoulog[syid] = Number(tt10);
+    let total = dassoulog.reduce(function (sum, element) {
+        return sum + element;
+    }, 0);
+    hp = 0;
+    dise = 0;
+    for (i = 0; i <= total; i++) {
+        if (i >= 1 ) {
+            if ((i % 5) == 0) {
+                
+                    hp += 30;
+                
+            }
+            if ((i % 10) == 0) {
+                
+                    dise += 4;
+                
+            }
+        }
+    }
+    if (dise >= 13) {
+        dise = 13;
+    }
+    dassoutxt = dassousyoki+"HP+"+hp+"（上限は元の3倍まで）　与ダメ+"+dise;
+    target = document.getElementById("dassoulog");
+    target.innerHTML = dassoutxt;
 }
 function set8() {
 
@@ -673,6 +734,8 @@ function set8() {
     syisg.splice(skesi, 1);
     skesi = zenkai.length - 1;
     zenkai.splice(skesi, 1);
+    skesi = dassoulog.length - 1;
+    dassoulog.splice(skesi, 1);
     skesi = keiti.length - 1;
     keiti.splice(skesi, 1);
     skesi = sycon.length - 1;
@@ -708,6 +771,7 @@ function set10() {
     sycon = [];
     keiti = [];
     zenkai = [];
+    dassoulog = [];
     save = [];
     nunba = [];
     sych = [];
@@ -827,26 +891,31 @@ function gatya() {
         genra3 = genra3.concat(gtJ);
     }
     if (checkbox[10].checked) {
+        genra1 = genra1.concat(gtK);
+        genra3 = genra3.concat(gtK);
+    }
+    if (checkbox[11].checked) {
     genra3 = genra3.concat(gtTA);
     genra2 = genra2.concat(gtTA);
     }
-    if (checkbox[11].checked) {
+    if (checkbox[12].checked) {
         genra3 = genra3.concat(gtTB);
         genra2 = genra2.concat(gtTB);
     }
-    if (checkbox[12].checked) {
+    if (checkbox[13].checked) {
         genra3 = genra3.concat(gtTC);
         genra2 = genra2.concat(gtTC);
     }
-    if (checkbox[13].checked) {
+    if (checkbox[14].checked) {
         genra3 = genra3.concat(gtTD);
         genra2 = genra2.concat(gtTD);
     }
-    if (checkbox[14].checked) {
+    if (checkbox[15].checked) {
         genra3 = genra3.concat(gtTE);
         genra2 = genra2.concat(gtTE);
     }
     
+    console.log(genra2);
 
     var arr = [];
     var arr2 = [];
@@ -913,12 +982,20 @@ function gatya() {
             check = genra2[randam];
             console.log(genra2[randam]);
             arr2.push(check);
+            console.log(genra2[randam]);
             gnid[4] = String(genra2[randam]);
             kensa = genra5.indexOf(genra2[randam]);
+            console.log(kensa);
             select.options[kensa].selected = true;
-
+           
     }
-    
+
+    //9999
+    var select = document.getElementById("gen6");
+
+
+        select.options[340].selected = true;
+
 }
 
 function gatya2() {
@@ -1341,7 +1418,7 @@ function nini() {
 
 function hanteityu() {
     irai=0;
-    rankk = 1;
+    rankk = 0;
     gene = "";
     name = "noname";
     seihi = 0;
@@ -1631,6 +1708,26 @@ function hanteityu() {
         text += "\n黒10ダメージ\n";
     }
 
+    kensaku440 = kekka[12].indexOf('440');
+    if (seihi == 0 && kensaku440 != -1) {
+        conc = con.map(function (value, index) { return value[0]; });
+        conc2 = con.map(function (value, index) { return value[1]; });
+        conc4 = conc.indexOf('440');
+        kari = conc2[conc4];
+        text += "440の加護が消失した\n悠然たる皇帝のカウンターが減少した\n";
+        kagokesi('440');
+        kari -= 1;
+        if (kari <= 0) {
+            text += "悠然たる皇帝は脱走したnカウンター0→2\n";
+            dassou = 1;
+            kari = 2;
+        }
+        con[conc4][1] = kari;
+        if (kekka[2] == 440) {
+            nefi = kari;
+        }
+    }
+
     kensaku717 = gnid.indexOf('717');
     if (kensaku717 != -1) {
         kensaku1 = kekka[12].indexOf('717');
@@ -1843,12 +1940,12 @@ if (sykekka >= 2 &&kekka[2]!="036") {
     }
 
     //宇宙地図
-    kensaku913 = kekka[12].indexOf('913');
-    if (kensaku913 != -1 && kekka[2] != 913) {
+    kensaku912 = kekka[12].indexOf('912');
+    if (kensaku912 != -1 && kekka[2] != 912) {
         if (kekka[2] != 125 && kekka[2] != 997 && kekka[2] != 829 && kekka[2] != 906 && kekka[2] != 609 && kekka[2] != "005" && kekka[2] != 625 && kekka[2] != 102 && kekka[2] != 314 && kekka[2] != "031" && kekka[2] != 185 && kekka[2] != 725 && kekka[2] != "033" && kekka[2] != 777) {
             if (zenkai[syid] != 125 && zenkai[syid] != 997 && zenkai[syid] != 829 && zenkai[syid] != 906 && zenkai[syid] != 609 && zenkai[syid] != "005" && zenkai[syid] != 625 && zenkai[syid] != 102 && zenkai[syid] != 314 && zenkai[syid] != "031" && zenkai[syid] != 185 && zenkai[syid] != 725 && zenkai[syid] != "033" && zenkai[syid] != 777) {
             sibou = 0;
-            text += "この職員の加護欄から「913」を消去する\n";
+            text += "この職員の加護欄から「912」を消去する\n";
         }
         }
     }
@@ -1871,7 +1968,7 @@ if (sykekka >= 2 &&kekka[2]!="036") {
     }
 
     kensaku093 = kekka[12].indexOf('093');
-    kensaku0931 = kekka[12].indexOf('1913');
+    kensaku0931 = kekka[12].indexOf('1912');
 
     if (kekka[2] != 093 && sagyona == 2) {
         kensaku093 = kekka[12].indexOf('093');
@@ -2848,6 +2945,9 @@ function sagyobahu(ti) {
 }
 
 function seihihan() {
+    if (sagyona == 4 || sagyona == 5) {
+        text = "使用、返却はツール型のみです\n";
+    } else {
     if (kekka[2]==219) {
         seiti = 15;
         keikenti = 2;
@@ -2896,6 +2996,8 @@ function seihihan() {
             seihi = 1;
         }
     }
+    }
+
    
 }
 
@@ -3984,6 +4086,8 @@ function g045() {
         } else {
             if (kensaku == -1) {
                 text += "職員" + name + "は白" + daideme4 + "ダメージを受けた\n";
+                text += "カウンターが減少した\n";
+                nefi -= 1;
             }
         }
     }
@@ -4541,6 +4645,25 @@ function g067() {
                 text += "囚人は処刑され死亡した\n囚人の浸食値+1\n職員" + name + "のSPが" + daideme4 + "減少し作業成功率と鎮圧時出目が+3\n";
                 t067 = 0;
             }
+        }
+    }
+}
+
+function g087() {
+    gene += "植木鉢";
+    sase = [[0, 0, 0.5, 2, 2], [2, 0.5, 1.5, 2, 1], [2, 2, 2, 2, 2], [2, 2, 2, 2, 2]];
+    rankk = 3;
+    rank();
+    seihihan();
+
+    if (seihi == 0) {
+        kensaku = kekka[12].indexOf('087');
+        if (kensaku == -1) {
+            text += "職員" + name + "は「種」を得た\n作業成功率-3、与ダメ+3\n";
+            kagohuti = "087";
+            kagohuyo();
+        } else {
+            sibou = 0;
         }
     }
 }
@@ -6290,6 +6413,29 @@ function g201() {
 
 }
 
+function g205() {
+    gene += "虚飾の偶像";
+    sase = [[2, 2, 2, 2, 2], [1.5, 1, 1, 1, 1], [0.5, 0.5, 0.5, 0, 0], [1.5, 1.5, 1.5, 1.5, 1.5]];
+    rankk = 3;
+    rank();
+    seihihan();
+    if (nefi <= 0) {
+        kagoche("205", 1);
+        if (kensakuC == -1) {
+            text += "作業・鎮圧ダイス+1\n加護を得てから合計50％SPが減少すると死亡しカウンターが減少する\n";
+            kagohuti = "205";
+            kagohuyo();
+        }
+        text += "カウンター0→1\n";
+        nefi = 1;
+    }
+    text += "SPが減少している状態で入室するとカウンターが減少する\n";
+    if (kekka[9] <= 3) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+}
+
 function g209() {
     gene = "209 愛詰めの箱";
     sulo = 51;
@@ -7966,6 +8112,39 @@ function g354() {
 
 }
 
+function g359() {
+    gene += "フォーティファイド";
+    sase = [[0.5, 0.5, 0.5, 0, 0], [2, 1.5, 2, 1.5, 1.5], [1, 1, 1, 0.5, 0], [1, 1, 1, 1, 0.5]];
+    rankk = 3;
+    rank();
+    seihihan();
+
+    kensaku = kekka[12].indexOf('359');
+    kensaku2 = kekka[12].indexOf('3592');
+    kensaku3 = kekka[12].indexOf('3593');
+    if (kensaku2 != -1) {
+        text += "職員" + name + "は昏睡状態になった\n20分行動不能、5分毎に10赤ダメージ\n20分で回復する（加護欄から3593を消す）\n";
+        kagohuti = "3593";
+        kagohuyo();
+    } else {
+        if (seihi == 0 || fanke == 1) {
+            if (kensaku == -1) {
+                text += "職員" + name + "は酩酊状態になった\n作業成功率-5、SPで受けるダメージ-5\n20分で回復する（加護欄から359を消す）\n";
+                kagohuti = "359";
+                kagohuyo();
+            }
+        }
+        if (seihi == 1) {
+            if (kensaku != -1) {
+                text += "職員" + name + "は泥酔状態になった\n作業成功率-10、SPで受けるダメージ-10\n20分で回復する（加護欄から3592を消す）\n";
+                kagohuti = "3592";
+                kagohuyo();
+            }
+        }
+    }
+
+}
+
 function g360() {
     gene = "360 伝染鳩";
     sulo = 94;
@@ -8043,6 +8222,26 @@ function g361() {
     if (seihi == 0 && kensaku != -1) {
         text += "加護欄から「361」を消去\n";
         kagokesi('361');
+    }
+
+}
+
+function g364() {
+    gene += "言葉のあや";
+    sase = [[1.5, 1.5, 1.5, 1.5, 1.5], [2, 2, 2, 2, 2], [0.5, 0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5, 0.5]];
+    rankk = 2;
+    rank();
+    seihihan();
+
+
+    if (sagyona == 2) {
+        text += "職員" + name + "は手紙を読んだ\n「貴方のことが大好き！いつでも見守ってるからね！」\n";
+    }
+    if (sagyona == 3) {
+        text += "職員" + name + "は手紙を読んだ\n「あんたなんか大嫌い！目に針でも刺して失血死すればいいのよ！」\n";
+    }
+    if (kekka[6] == "男" || kekka[6] == "男性") {
+        text += "職員" + name + "は魅了された\n解除できなかった場合パニックに陥る\n";
     }
 
 }
@@ -8810,6 +9009,34 @@ function g437() {
 
 }
 
+function g440() {
+    gene += "悠然たる皇帝";
+    sase = [[0, 0.5, 1, 1, 2], [0, 0.5, 1, 1, 2], [0, 1, 1, 1, 2], [0, 0.5, 2, 2, 2]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    kensaku = kekka[12].indexOf('440');
+    if (kekka[7] <= 4 && seihi == 1 && kensaku == -1) {
+        if (sagyona == 0) {
+            text += "職員" + name + "は加護を受け、臣下となった\n勇気+20\n";
+            kagohuti = "440";
+            kagohuyo();
+        }
+        if (sagyona == 1) {
+            text += "職員" + name + "は加護を受け、臣下となった\n慎重+20\n";
+            kagohuti = "440";
+            kagohuyo();
+        }
+    }
+    if (nefi <= 0) {
+        text += "悠然たる皇帝は脱走した\nカウンター0→2\n";
+        dassou = 1;
+        nefi = 2;
+    }
+
+}
+
 function g444() {
     gene += "巡り廻って灰になる";
     sase = [[2, 1.5, 1, 1, 1], [2, 1.5, 1, 1, 1], [2, 1.5, 1, 1, 1], [2, 1.5, 1, 1, 1]];
@@ -8818,6 +9045,12 @@ function g444() {
     seihihan();
     pale = 1;
 
+    kensaku = kekka[12].indexOf('440');
+    if (kensaku != -1) {
+        sibou = 0;
+        text += "巡り廻って灰になるは脱走した\n";
+        dassou = 1;
+    } else {
     if (kurike == 1) {
         text += "カウンターが全回復した\n";
         nefi = 2;
@@ -8836,10 +9069,14 @@ function g444() {
         }
     }
 
+    }
+
     if (nefi <= 0) {
         text += "巡り廻って灰になるは脱走した\nカウンター0→2\n";
+        dassou = 1;
         nefi = 2;
     }
+
 }
 
 function g450() {
@@ -9261,6 +9498,683 @@ function g502() {
             kagohuyo();
         }
     }
+}
+
+function g514() {
+    gene += "「中庸」";
+    sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    if (irai == 1) {
+        irana2 = "調合";
+        //加護欄に特定妨害加護があるかの判定(たすけてください)
+        //該当の加護(target内番号加護)があったらtrue,なかったらfalseを返してほしいです。
+        target = ["015", "018", "036", "106", "135", "213", "214", "303", "361", "369", "499", "5711", "5712", "5713", "5714", "696", "708", "874", "997"];
+        caution = kekka[12].some(value => value = target);
+        console.log(caution);
+
+        //調合失敗の時の処理
+        if (caution == true) {
+            //ここもこれでしっかり分かれるのか怪しいです
+
+
+            //015
+            kensaku = kekka[12].indexOf('015');
+            if (kensaku != -1) {
+                text += "液体がうごめいた？！\n";
+            }
+            //018
+            kensaku = kekka[12].indexOf('018');
+            if (kensaku != -1) {
+                text += "胞子が入ってしまった。\n";
+            }
+            //036
+            kensaku = kekka[12].indexOf('036');
+            if (kensaku != -1) {
+                text += "カップが花だらけだ\n";
+            }
+            //106
+            kensaku = kekka[12].indexOf('106');
+            if (kensaku != -1) {
+                text += "何かが浮いてしまっている……。\n";
+            }
+            //135
+            kensaku = kekka[12].indexOf('135');
+            if (kensaku != -1) {
+                text += "容器ごと錆が広がっている……。\n";
+            }
+            //213
+            kensaku = kekka[12].indexOf('213');
+            if (kensaku != -1) {
+                text += "液体も何もかも、手が震えてこぼしてしまった。\n";
+            }
+            //214
+            kensaku = kekka[12].indexOf('214');
+            if (kensaku != -1) {
+                text += "全部がチョコレートになった。\n";
+            }
+            //303
+            kensaku = kekka[12].indexOf('303');
+            if (kensaku != -1) {
+                text += "……なんか青く光っているような？\n";
+            }
+            //361
+            kensaku = kekka[12].indexOf('361');
+            if (kensaku != -1) {
+                text += "酸っぱいにおいがたちこめてきた……。\n";
+            }
+            //369
+            kensaku = kekka[12].indexOf('369');
+            if (kensaku != -1) {
+                text += "……液体の上に白い膜が…\n";
+            }
+            //499
+            kensaku = kekka[12].indexOf('499');
+            if (kensaku != -1) {
+                text += "全部チーズになってしまった。\n";
+            }
+            //571
+            kensaku = kekka[12].indexOf('5711');
+            if (kensaku != -1) {
+                text += "インクも交じって何が何だかわからない。\n";
+            }
+            kensaku = kekka[12].indexOf('5712');
+            if (kensaku != -1) {
+                text += "インクも交じって何が何だかわからない。\n";
+            }
+            kensaku = kekka[12].indexOf('5713');
+            if (kensaku != -1) {
+                text += "インクも交じって何が何だかわからない。\n";
+            }
+            kensaku = kekka[12].indexOf('5714');
+            if (kensaku != -1) {
+                text += "インクも交じって何が何だかわからない。\n";
+            }
+            //696
+            kensaku = kekka[12].indexOf('696');
+            if (kensaku != -1) {
+                text += "いつの間に血液が……。\n";
+            }
+            //708
+            kensaku = kekka[12].indexOf('708');
+            if (kensaku != -1) {
+                text += "液体が全て濁り始めた\n";
+            }
+            //874
+            kensaku = kekka[12].indexOf('874');
+            if (kensaku != -1) {
+                text += "全部が砂糖になった！\n";
+            }
+            //997
+            kensaku = kekka[12].indexOf('997');
+            if (kensaku != -1) {
+                text += "たくさんの粉が入った気がする……。\n";
+            }
+
+            text += "調合失敗\n";
+            text += "加護514のものを手動で消去してください。\n";
+            seihi = 0;
+            //ここまで自動失敗。
+
+        } else {
+            //調合判定
+
+            //エーテル
+            kensaku = kekka[12].indexOf('5146');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('5147');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('5145');
+                    if (kensaku != -1) {
+                        //ここから処理
+                        text += "あなたの目の前にできたのは「万物の元」だ。\n";
+                        text += "調合成功\n";
+                        text += "「エーテル」を手に入れた\n";
+                        text += "ギフトを入手した。\n";
+                        text += "加護514のものを手動で消去してください。\n";
+                        //ここまで処理
+                    }
+                }
+            }
+            //ここまでエーテル
+
+            //アルカナ
+            kensaku = kekka[12].indexOf('51411');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51421');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('51431');
+                    if (kensaku != -1) {
+                        kensaku = kekka[12].indexOf('51441');
+                        if (kensaku != -1) {
+                            //ここから処理
+                            text += "中身が光り輝いて、部門に浄化をもたらした。\n";
+                            text += "調合成功\n";
+                            text += "「アルカナ」を手に入れた\n";
+                            text += "部門内、タロットカードに関係する他幻想i体の加護消失\n";
+                            text += "(手動でお願いします)n";
+                            kagohuti = "5146";
+                            kagohuyo();
+                            text += "加護51411~51441のものを手動で消去してください。\n";
+
+                            //ここまで処理
+                        }
+                    }
+                }
+            }
+            //ここまでアルカナ
+
+            //仙丹
+            kensaku = kekka[12].indexOf('51412');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51422');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('51432');
+                    if (kensaku != -1) {
+                        kensaku = kekka[12].indexOf('51442');
+                        if (kensaku != -1) {
+                            //ここから処理
+                            text += "中身から黒い粒があふれた。薬のようだ。\n";
+                            text += "調合成功\n";
+                            text += "「仙丹」を手に入れた\n";
+                            text += "一度だけ職員一名のHP,SPを全快。\n";
+                            kagohuti = "5147";
+                            kagohuyo();
+                            text += "加護51412~51442のものを手動で消去してください。\n";
+                            //ここまで処理
+                        }
+                    }
+                }
+            }
+            //ここまで仙丹
+
+            //どくりんご
+            kensaku = kekka[12].indexOf('51432');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51442');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('51431');
+                    if (kensaku != -1) {
+                        kensaku = kekka[12].indexOf('51412');
+                        if (kensaku != -1) {
+                            //ここから処理
+                            text += "果実は毒々しくもおいしそうになった。\n";
+                            text += "調合成功\n";
+                            text += "「毒リンゴ」を手に入れた\n";
+                            text += "一度だけ敵に投擲可能。１ターン消費。\n";
+                            text += "相手へ継続ターンごとダメージ+5n";
+                            text += "加護514のものを手動で消去してください。\n";
+                            //ここまで処理
+                        }
+                    }
+                }
+            }
+            //ここまで毒りんご
+
+            //体温計
+            kensaku = kekka[12].indexOf('51431');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51421');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('51411');
+                    if (kensaku != -1) {
+                        kensaku = kekka[12].indexOf('514112');
+                        if (kensaku != -1) {
+                            //ここから処理
+                            text += "なぜか隣に容器がある。注ぎ込んでふたを閉めた。\n";
+                            text += "調合成功\n";
+                            text += "「体温計」を手に入れた\n";
+                            text += "今日一日、当職員のSP回復に+10の補正。\n";
+                            text += "加護514のものを手動で消去してください。\n";
+                            //ここまで処理
+                        }
+                    }
+                }
+            }
+            //ここまで毒りんご
+
+            //爆弾
+            kensaku = kekka[12].indexOf('51411');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51421');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('51422');
+                    if (kensaku != -1) {
+                        //ここから処理
+                        text += "さらさらとした粉だが、隣に置かれたのは「導火線」だ。\n";
+                        text += "調合成功\n";
+                        text += "「爆発物」を手に入れた\n";
+                        text += "一度だけ敵に投擲可能。１ターン消費。\n";
+                        text += "相手へダメージ30+5d6n";
+                        text += "加護514のものを手動で消去してください。\n";
+                        //ここまで処理
+                    }
+                }
+            }
+            //ここまで爆弾
+
+            //うめぼし
+            kensaku = kekka[12].indexOf('51412');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51441');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('514412');
+                    if (kensaku != -1) {
+                        //ここから処理
+                        text += "あれ、なんだかすっぱそうだ。\n";
+                        text += "調合成功\n";
+                        text += "「うめぼし」を手に入れた\n";
+                        text += "一度だけ、自殺パニックを抑える。その際mpは1で復帰。\n";
+                        text += "加護514のものを手動で消去してください。\n";
+                        //ここまで処理
+                    }
+                }
+            }
+            //ここまでうめぼし
+
+            //王水
+            kensaku = kekka[12].indexOf('51432');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51442');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('51441');
+                    if (kensaku != -1) {
+                        //ここから処理
+                        text += "盃まで溶けだした。急いで移し替えないと。\n";
+                        text += "調合成功\n";
+                        text += "「王様の水」を手に入れた\n";
+                        text += "一度だけ、鎮圧時に１ターン消費で投擲できる。\n";
+                        text += "相手通常攻撃ダメージに -５の補正。\n";
+                        text += "加護514のものを手動で消去してください。\n";
+                        //ここまで処理
+                    }
+                }
+            }
+            //ここまで王水
+
+            //果実酒
+            kensaku = kekka[12].indexOf('51412');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('514122');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('51442');
+                    if (kensaku != -1) {
+                        //ここから処理
+                        text += "あれ、なんだかお酒の匂いがする。\n";
+                        text += "調合成功\n";
+                        text += "「果実酒」を飲んだ。\n";
+                        text += "おいしい。\n";
+                        text += "当職員のHP, SPを20回復。\n";
+                        text += "加護514のものを手動で消去してください。\n";
+                        //ここまで処理
+                    }
+                }
+            }
+            //ここまで果実酒
+
+            //入浴剤
+            kensaku = kekka[12].indexOf('51432');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51441');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('51411');
+                    if (kensaku != -1) {
+                        //ここから処理
+                        text += "なんだかいいにおいのする砂だ。\n";
+                        text += "調合成功\n";
+                        text += "「入浴剤」を手に入れた\n";
+                        text += "「水をあびた」場合、SP30回復n";
+                        text += "加護514のものを手動で消去してください。\n";
+                        //ここまで処理
+                    }
+                }
+            }
+            //ここまで入浴剤
+
+            //「辰砂」
+            kensaku = kekka[12].indexOf('51422');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51431');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('514222');
+                    if (kensaku != -1) {
+                        //ここから処理
+                        text += "毒が浮いた。触ると痛い\n";
+                        text += "調合成功\n";
+                        text += "「魔法の毒」を手に入れた\n";
+                        text += "近距離ダメージを食らった際、相手に+3ダメージ\n";
+                        text += "加護514のものを手動で消去してください。\n";
+                        //ここまで処理
+                    }
+                }
+            }
+            //ここまで辰砂
+
+            //果物の夢
+            kensaku = kekka[12].indexOf('51412');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('514122');
+                if (kensaku != -1) {
+                    kensaku = kekka[12].indexOf('51415');
+                    if (kensaku != -1) {
+                        //ここから処理
+                        text += "あなたの前にたくさんの果物が転がる。\n";
+                        text += "調合成功\n";
+                        text += "「果物の夢」を見た。\n";
+                        text += "なぜか食べた果物の味を思い出した。\n";
+                        text += "「作業で果物を食べる」際、この職員のみ効果が倍になる。\n";
+                        text += "加護514のものを手動で消去してください。\n";
+                        //ここまで処理
+                    }
+                }
+            }
+            //ここまで「果物の夢」
+
+            //黄色い絵の具
+            kensaku = kekka[12].indexOf('51411');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51442');
+                if (kensaku != -1) {
+                    //ここから処理
+                    text += "容器が黄色く染まった\n";
+                    text += "調合成功\n";
+                    text += "黄色い絵の具を手に入れた。\n";
+                    text += "愛着作業成功率+5n";
+                    text += "加護514のものを手動で消去してください。\n";
+                    //ここまで処理
+                }
+            }
+            //ここまで黄色絵の具
+
+            //光る絵の具
+            kensaku = kekka[12].indexOf('51421');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('51432');
+                if (kensaku != -1) {
+                    //ここから処理
+                    text += "液体が蛍光色だ\n";
+                    text += "調合成功\n"
+                    text += "光る絵の具を手に入れた。\n";
+                    text += "一度のみ、「暗闇・夜」での即死時、\n";
+                    text += "1d2で2が出た場合、50 + 2d50ダメに変換\n";
+                    text += "加護514のものを手動で消去してください。\n";
+                    //ここまで処理
+                }
+            }
+            //ここまで光る絵の具
+
+            //海の夢
+            kensaku = kekka[12].indexOf('51441');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('5145');
+                if (kensaku != -1) {
+                    //ここから処理
+                    text += "さざ波の音が聞こえる……\n";
+                    text += "「海の夢」を見た。\n";
+                    text += "当職員のSP10回復\n";
+                    //ここまで処理
+                }
+            }
+            //ここまで海の夢
+
+            //金の夢
+            kensaku = kekka[12].indexOf('51421');
+            if (kensaku != -1) {
+                kensaku = kekka[12].indexOf('5145');
+                if (kensaku != -1) {
+                    //ここから処理
+                    text += "すべてが黄金だ。向こうに自分が見える？\n";
+                    text += "「黄金の夢」を見た。\n";
+                    text += "当職員のSP10回復\n";
+                    //ここまで処理
+                }
+            }
+            //ここまで金の夢
+
+
+            //調合判定終わり
+        }
+
+    } else {
+
+        //材料を渡す処理
+
+        //特殊物体　あたりはずれ
+        daideme1 = 1;
+        daideme2 = 20;
+        daisu();
+
+        if (daideme4 == 20) {
+            text += "夢のかたまりを手に入れた\n";
+            kagohuti = "5145";
+            kagohuyo();
+
+        } else {
+
+            //はずれ　作業によって材料を配る
+            daideme1 = 1;
+            daideme2 = 2;
+            daisu();
+
+            //本能1 爆発も含む
+            if (sagyona == 0) {
+                if (daideme4 == 1) {
+                    kensaku = kekka[12].indexOf('51411');
+                    if (kensaku == -1) {
+                        text += "黄色い粉を手に入れた\n";
+                        kagohuti = "51411";
+                        kagohuyo();
+                    }
+                    kensaku = kekka[12].indexOf('514112');
+                    if (kensaku == -1) {
+                        text += "黄色い粉を手に入れた\n";
+                        kagohuti = "514112";
+                        kagohuyo();
+                    }
+                    else {
+                        text += "「中庸」は逆位置を示した。\n";
+                        daideme1 = 6
+                        daideme2 = 10
+                        daisu();
+                        text += "部門全体にHP50+" + daideme4 + "のダメージ。\n";
+                        text += "加護514のものを手動で消去してください。\n";
+                    }
+                    //本能2
+                } else {
+                    kensaku = kekka[12].indexOf('51412');
+                    if (kensaku == -1) {
+                        text += "赤い果物を手に入れた\n";
+                        kagohuti = "51412";
+                        kagohuyo();
+                    } else {
+                        kensaku = kekka[12].indexOf('514122');
+                        if (kensaku == -1) {
+                            text += "赤い果物を手に入れた\n";
+                            kagohuti = "514122";
+                            kagohuyo();
+                        }
+                        else {
+                            text += "「中庸」は逆位置を示した。\n";
+                            daideme1 = 6
+                            daideme2 = 10
+                            daisu();
+                            text += "部門全体にHP50+" + daideme4 + "のダメージ。\n";
+                            text += "加護514のものを手動で消去してください。\n";
+                        }
+                    }
+                }
+            }
+
+
+
+
+            //洞察1
+            if (sagyona == 1) {
+                if (daideme4 == 1) {
+                    kensaku = kekka[12].indexOf('51421');
+                    if (kensaku == -1) {
+                        text += "光る石を手に入れた\n";
+                        kagohuti = "51421";
+                        kagohuyo();
+                    }
+                    kensaku = kekka[12].indexOf('514212');
+                    if (kensaku == -1) {
+                        text += "光る石を手に入れた\n";
+                        kagohuti = "514212";
+                        kagohuyo();
+                    }
+                    else {
+                        text += "「中庸」は逆位置を示した。\n";
+                        daideme1 = 6
+                        daideme2 = 10
+                        daisu();
+                        text += "部門全体にHP50+" + daideme4 + "のダメージ。\n";
+                        text += "加護514のものを手動で消去してください。\n";
+                    }
+                    //洞察2
+                } else {
+                    kensaku = kekka[12].indexOf('51422');
+                    if (kensaku == -1) {
+                        text += "赤い石を手に入れた\n";
+                        kagohuti = "51422";
+                        kagohuyo();
+                    } else {
+
+                        kensaku = kekka[12].indexOf('514222');
+                        if (kensaku == -1) {
+                            text += "赤い石を手に入れた\n";
+                            kagohuti = "514222";
+                            kagohuyo();
+                        }
+                        else {
+                            text += "「中庸」は逆位置を示した。\n";
+                            daideme1 = 6
+                            daideme2 = 10
+                            daisu();
+                            text += "部門全体にHP50+" + daideme4 + "のダメージ。\n";
+                            text += "加護514のものを手動で消去してください。\n";
+                        }
+                    }
+
+                }
+            }
+
+
+            //愛着
+            if (sagyona == 2) {
+                if (daideme4 == 1) {
+                    kensaku = kekka[12].indexOf('51431');
+                    if (kensaku == -1) {
+                        text += "光る液体を手に入れた\n";
+                        kagohuti = "51431";
+                        kagohuyo();
+                    }
+                    kensaku = kekka[12].indexOf('514312');
+                    if (kensaku == -1) {
+                        text += "光る液体を手に入れた\n";
+                        kagohuti = "514312";
+                        kagohuyo();
+                    }
+                    else {
+                        text += "「中庸」は逆位置を示した。\n";
+                        daideme1 = 6
+                        daideme2 = 10
+                        daisu();
+                        text += "部門全体にHP50+" + daideme4 + "のダメージ。\n";
+                        text += "加護514のものを手動で消去してください。￥n";
+                    }
+
+                    //愛着2
+                } else {
+                    kensaku = kekka[12].indexOf('51432');
+                    if (kensaku == -1) {
+                        text += "泡立つ液体を手に入れた\n";
+                        kagohuti = "51432";
+                        kagohuyo();
+                    } else {
+                        kensaku = kekka[12].indexOf('514322');
+                        if (kensaku == -1) {
+                            text += "泡立つ液体を手に入れた\n";
+                            kagohuti = "514322";
+                            kagohuyo();
+                        }
+                        else {
+                            text += "「中庸」は逆位置を示した。\n";
+                            daideme1 = 6
+                            daideme2 = 10
+                            daisu();
+                            text += "部門全体にHP50+" + daideme4 + "のダメージ。\n";
+                            text += "加護514のものを手動で消去してください。\n";
+                        }
+                    }
+
+
+                }
+            }
+
+            //抑圧
+            if (sagyona == 3) {
+                if (daideme4 == 1) {
+                    kensaku = kekka[12].indexOf('51441');
+                    if (kensaku == -1) {
+                        text += "しょっぱい粒を手に入れた\n";
+                        kagohuti = "51441";
+                        kagohuyo();
+                    } else {
+                        kensaku = kekka[12].indexOf('514412');
+                        if (kensaku == -1) {
+                            text += "しょっぱい粒を手に入れた\n";
+                            kagohuti = "514412";
+                            kagohuyo();
+                        }
+                        else {
+                            text += "「中庸」は逆位置を示した。\n";
+                            daideme1 = 6
+                            daideme2 = 10
+                            daisu();
+                            text += "部門全体にHP50+" + daideme4 + "のダメージ。\n";
+                            text += "加護514のものを手動で消去してください。\n";
+                        }
+                    }
+
+                    //抑圧2
+                } else {
+                    kensaku = kekka[12].indexOf('51442');
+                    if (kensaku == -1) {
+                        text += "溶ける液体を手に入れた\n";
+                        kagohuti = "51442";
+                        kagohuyo();
+                    } else {
+                        kensaku = kekka[12].indexOf('514422');
+                        if (kensaku == -1) {
+                            text += "溶ける液体を手に入れた\n";
+                            kagohuti = "514422";
+                            kagohuyo();
+                        }
+                        else {
+                            text += "「中庸」は逆位置を示した。\n";
+                            daideme1 = 6
+                            daideme2 = 10
+                            daisu();
+                            text += "部門全体にHP50+" + daideme4 + "のダメージ。\n";
+                            text += "加護514のものを手動で消去してください。\n";
+                        }
+                    }
+
+
+
+                    //ここまで外れ内部
+                }
+            }
+            //ここまで当たりはずれ
+
+        }
+
+
+    }
+    
 }
 
 function g521() {
@@ -10952,6 +11866,29 @@ function g666() {
 
 }
 
+function g672() {
+    gene += "エステロス";
+    sase = [[1.5, 1.5, 1, 0.5, 0.5], [0, 0.5, 1, 1.5, 2], [1, 1, 1, 1, 1], [1, 1, 1, 1, 0.5]];
+    rankk = 4;
+    rank();
+    seihihan();
+
+    kensaku = kekka[12].indexOf('6722');
+    if (kensaku == -1) {
+        text += "職員" + name + "に羽根が纏わりついた\n30分間作業から戻った時と鎮圧に向かった時に周囲の職員（作業時は部門内職員、鎮圧時は鎮圧参加者）に感染する恐れがある\n1d（7-対象職員勇気ランク）で1が出た職員の加護欄に「672」を追加\n30分経過したらこの職員の加護欄から「6722」を消す\n";
+        kagokesi('672');
+        kagohuti = "6722";
+        kagohuyo();
+    } else {
+        text += "部門内の感染者（加護672を持つ職員）全員が特殊な殺人性パニックに陥る\n感染者達は職員" + name + "をターゲットにする\n";
+    }
+    if (sagyona == 1 || seihi == 0 || nefi <= 0) {
+        text += "カウンターが減少した\n部門内職員全員に感染する恐れがある\n1d（7-対象職員勇気ランク）で1が出た職員の加護欄に「672」を追加\nカウンター0→1\n";
+        nefi = 1;
+    }
+
+}
+
 function g683() {
     gene = "683 古びた刀";
     sase = [[1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]];
@@ -12279,6 +13216,30 @@ function g818() {
 
 }
 
+function g820() {
+    gene += "揺らぐ深更";
+    sase = [[0.5, 0.5, 0.5, 0, 0], [1, 1, 1, 0.5, 0], [1, 1, 1, 1.5, 1.5], [2, 2, 1.5, 1.5, 1]];
+    rankk = 5;
+    rank();
+    seihihan();
+    pale = 1;
+
+    if (sagyona == 0 || sagyona == 2 || sagyona == 3) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+
+    if (sagyona == 3) {
+        text += "HP10%のダメージ\n";
+    }
+
+    if (nefi <= 0) {
+        text += "揺らぐ深更は脱走した\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
+    }
+}
+
 function g821() {
     gene = "821 夢見がちなうさちゃん";
     sulo = 37;
@@ -13316,6 +14277,44 @@ function g908() {
 
 }
 
+function g910() {
+    gene += "What a Wonderful Stage!!!";
+    peti = 0;
+
+    if (sagyona == 4) {
+        kensaku = kekka[12].indexOf('910');
+        if (kensaku == -1) {
+            text += "職員" + name + "の防具が「What a Wonderful Stage!!!」になった\n赤強い、白弱い、黒強い、青普通\n全ステ+30、与ダメ+3\n返却可能\n";
+            setTimeout(g9102, 18000000);
+            kagohuti = "910";
+            kagohuyo();
+        }
+
+
+
+    } else {
+        if (sagyona == 5) {
+            kensaku = kekka[12].indexOf('910');
+            if (kensaku != -1) {
+                text += "鎮圧に向かっていない場合は身体を乗っ取られた\n";
+                kagokesi('910');
+            }
+
+        } else {
+            text += "ツール型の作業は「使用」「返却」です\n";
+        }
+
+    }
+
+}
+
+function g9102() {
+    kagoche("910", 1);
+    if (kensakuC != -1) {
+        text += "What a Wonderful Stage!!!を装着していた職員は身体を乗っ取られた\n";
+    }
+}
+
 function g911() {
     gene += "赤き道";
     peti = 0;
@@ -13336,31 +14335,27 @@ function g911() {
 
 }
 
-function g913() {
-    gene = "913 宇宙地図";
+function g912() {
+    gene = "912 宇宙地図";
     peti = 0;
 
     if (sagyona == 4) {
-        kensaku = kekka[12].indexOf('913');
+        kensaku = kekka[12].indexOf('912');
         if (kensaku != -1) {
-            if (zenkai[syid] == 913) {
+            if (zenkai[syid] == 912) {
                 sibou = 0;
             }
-            text += "この職員の加護欄から「913」を消去する\n";
-            kagokesi('913');
+            text += "この職員の加護欄から「912」を消去する\n";
+            kagokesi('912');
         } else {
             text += "宇宙/天体/星関連への作業時+999のバフ\n";
             ransu = Math.floor(Math.random() * 10 + 1);
             if (ransu == 1) {
-                text += "地図をメインルームに持ち帰った\n部門内全職員に同様のバフを与え、全員の加護欄に「913」を追加\n";
-                tt12 += ",913";
-                document.hanteisuru['se18'].value += ",913";
-                document.hanteisuru['se28'].value += ",913";
-                document.hanteisuru['se38'].value += ",913";
-                document.hanteisuru['se48'].value += ",913";
-                document.hanteisuru['se58'].value += ",913";
+                text += "地図をメインルームに持ち帰った\n部門内全職員に同様のバフを与え、全員の加護欄に「912」を追加\n";
+                tt12 += ",912";
+
             } else {
-                kagohuti = "913";
+                kagohuti = "912";
                 kagohuyo();
             }
         }
@@ -13368,6 +14363,43 @@ function g913() {
         text += "ツール型の作業は「使用」です\n";
     }
 
+}
+
+function g913() {
+    gene += "利己の揺籃";
+    sase = [[1, 0.5, 0.5, 0, 0], [2, 1.5, 1, 0.5, 0.5], [2, 2, 1.5, 1, 1], [2, 2, 2, 1.5, 1]];
+    rankk = 5;
+    rank();
+    seihihan();
+
+    if (seihi == 1) {
+        ransu = Math.floor(Math.random() * 2 + 1);
+        if (ransu == 1) {
+            kensaku = kekka[12].indexOf('913');
+            if (kensaku == -1) {
+                kagoche('913', 1);
+                text += "職員" + name + "は利己の揺籃と契約を結んだ\n悪魔が追従し、鎮圧の手伝いをする\n悪魔単体で鎮圧は行わず、肩代わりもしない\n死亡しても契約は残り（下記の死亡を除き死亡時も加護913は残す）、次の契約者が現れるとそちらに移る\nHPSPが合計30減ると死亡する\n";
+                kagohuti = "913";
+                kagohuyo();
+            if (kensakuC != -1) {
+                text += "▼職員" + t913 + "は死んでいる\n";
+            }
+            t913 = name;
+            }
+
+        }
+
+
+    }
+    if (seihi == 0) {
+        text += "カウンターが減少した\n";
+        nefi -= 1;
+    }
+    if (nefi <= 0) {
+        text += "利己の揺籃は脱走した\nカウンター0→3\n";
+        dassou = 1;
+        nefi = 3;
+    }
 }
 
 function g914() {
